@@ -37,6 +37,7 @@ def line_is_in_scene(line, scene_in_one_string):
 def get_one_string(scene_sentences):
     scene_in_one_string = ''
     for sentence in scene_sentences:
+        scene_in_one_string += ' '
         scene_in_one_string += sentence
     return scene_in_one_string
 
@@ -53,11 +54,12 @@ def text_join(scenes, lines_in_ep):
     line_id = 0
     for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
         # scene_lines_counter = 0
+        # TODO may be a problem here, not enough lines are added
         scene_in_one_string = get_one_string(scene_sentences)
         while line_is_in_scene(lines_in_ep[line_id][1], scene_in_one_string):
-            new_line = [scene_id, line_id, lines_in_ep[line_id][0],
-                        lines_in_ep[line_id][1], scene_characters]
-            np.append(new_table, new_line, axis=0)
+            new_line = np.array([[scene_id, line_id, lines_in_ep[line_id][0],
+                        lines_in_ep[line_id][1], scene_characters]])
+            new_table = np.append(new_table, new_line, axis=0)
             line_id += 1
     return new_table
 
@@ -72,31 +74,39 @@ def get_episode_lines(episodes):
     """
     speaker_and_line_dic = {}
     for episode in episodes:
+        # print(episode)
+        # k=2
         season_num, episode_num = int(episode[0][0]), int(episode[0][1])
         episode_speakers_and_lines = []
         names = episode[1]["Name"].tolist()
         lines = episode[1]["Sentence"].tolist()
         for i in range(len(lines)):
             episode_speakers_and_lines.append((names[i], lines[i]))
-        speaker_and_line_dic[(season_num, episode_num)
-                             ] = episode_speakers_and_lines
+        speaker_and_line_dic[(season_num, episode_num)] = episode_speakers_and_lines
     return speaker_and_line_dic
 
 
-def create_final_csv(lines_csv, scene_with_srt_csv):
+def create_final_csv():
     # all_scenes = get_scenes()  # TODO extract scenes from csv
     table = np.ndarray(shape=(0, LINE_FEATURES_NUM))
     data = pd.read_csv(LINES_CSV, delimiter=";", header=0)
     df = pd.DataFrame(data)
-    episodes = df.groupby('Episode')
+    episodes = df.groupby(['Season', 'Episode'])
     speaker_and_line_dic = get_episode_lines(episodes)
     scenes_lines_dic = get_scenes_lines_dic()
 
     for season in offsets.keys():
+        if not season == 4: continue
         for episode in offsets[season].keys():
-            table.extend(text_join(scenes=scenes_lines_dic[(
-                season, episode)], lines_in_episode=speaker_and_line_dic[(season, episode)]))
+            if episode == 4:
+                k=0
+            scenes = scenes_lines_dic[(season, episode)]
+            lines = speaker_and_line_dic[(season, episode)]
+            episode_table = text_join(scenes=scenes, lines_in_ep=lines)
+            table = np.append(table, episode_table, axis=0)
 
+
+create_final_csv()
         # print(group)
 
     # for season in NUM_OF_SEASONS:
