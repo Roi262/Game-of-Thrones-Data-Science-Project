@@ -27,7 +27,7 @@ def line_is_in_scene(line, scene_in_one_string):
     i = 0
     # REMARK: Very brute force solution. not so bad since we only create the table once
     while i + window_size < len(scene_in_one_string):
-        cur_string = scene_in_one_string[i:i+window_size]
+        cur_string = scene_in_one_string[i:i + window_size]
         if fuzz.ratio(line, cur_string) >= FUZZY_THRESH:
             return True
         i += 1
@@ -42,6 +42,18 @@ def get_one_string(scene_sentences):
     return scene_in_one_string
 
 
+def clean_csv(scenes, lines_in_ep):
+    verified_lines = []
+
+    for (speaker, line) in lines_in_ep:
+        for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
+            scene_in_one_string = get_one_string(scene_sentences)
+            if line_is_in_scene(line, scene_in_one_string):
+                verified_lines.append((speaker, line))
+
+    return verified_lines
+
+
 def text_join(scenes, lines_in_ep):
     """
     Arguments:
@@ -50,6 +62,8 @@ def text_join(scenes, lines_in_ep):
         lines_in_episode {[(speaker, line)]} -- list of tuples of speaker and line
     """
     new_table = np.ndarray(shape=(0, LINE_FEATURES_NUM))
+
+    lines_in_ep = clean_csv(scenes, lines_in_ep)
 
     line_id = 0
     for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
@@ -104,26 +118,26 @@ def create_final_csv():
         if not season == 4: continue
         for episode in offsets[season].keys():
             if episode == 4:
-                k=0
+                k = 0
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
             episode_table = text_join(scenes=scenes, lines_in_ep=lines)
             if episode == 4:
-                j=0
+                j = 0
             table = np.append(table, episode_table, axis=0)
 
 
 create_final_csv()
-        # print(group)
+# print(group)
 
-    # for season in NUM_OF_SEASONS:
-    #     for episode
-    # for line in lines_csv:
+# for season in NUM_OF_SEASONS:
+#     for episode
+# for line in lines_csv:
 
-    # for episode in script:
-    #     scenes = get_scenes_in_epiode()
-    #     lines = get_lines_in_episode()
-    #     text_join(table, scenes, lines)
+# for episode in script:
+#     scenes = get_scenes_in_epiode()
+#     lines = get_lines_in_episode()
+#     text_join(table, scenes, lines)
 
 
 # create_final_csv()
