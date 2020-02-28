@@ -56,11 +56,16 @@ def text_join(scenes, lines_in_ep):
         # scene_lines_counter = 0
         # TODO may be a problem here, not enough lines are added
         scene_in_one_string = get_one_string(scene_sentences)
-        while line_is_in_scene(lines_in_ep[line_id][1], scene_in_one_string):
+        line = lines_in_ep[line_id][1]
+        while line_is_in_scene(line, scene_in_one_string):
+            if line == 'Youll have to continue later Its time':
+                gg=0
             new_line = np.array([[scene_id, line_id, lines_in_ep[line_id][0],
                         lines_in_ep[line_id][1], scene_characters]])
             new_table = np.append(new_table, new_line, axis=0)
             line_id += 1
+            line = lines_in_ep[line_id][1]
+            
     return new_table
 
 
@@ -103,6 +108,8 @@ def create_final_csv():
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
             episode_table = text_join(scenes=scenes, lines_in_ep=lines)
+            if episode == 4:
+                j=0
             table = np.append(table, episode_table, axis=0)
 
 
