@@ -4,16 +4,18 @@ import csv
 import pandas as pd
 import numpy as np
 
+offsets = {}
 
 import os
 
-directory = r'C:\Users\admin'
+directory = r'C:\Users\admin' # add path to tamars files
 for entry in os.scandir(directory):
     if (entry.path.endswith(".jpg")
             or entry.path.endswith(".png")) and entry.is_file():
+            # add path to offsets
         print(entry.path)
 
-        
+
 
 
 

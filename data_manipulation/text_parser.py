@@ -12,6 +12,7 @@ LINES_CSV = "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Proje
 FUZZY_THRESH = 85
 LINE_FEATURES_NUM = 5
 
+scenes_in_one_string = {}
 
 def line_is_in_scene(line, scene_in_one_string):
     """Checks whether a given line is in the given sentences of a certain scene.
@@ -34,30 +35,36 @@ def line_is_in_scene(line, scene_in_one_string):
     return False
 
 
-def get_one_string(scene_sentences):
+def get_one_string(scene_sentences, season, episode, scene_id):
+    if scenes_in_one_string[(season, episode, scene_id)]:
+        return scenes_in_one_string[(season, episode, scene_id)]
     scene_in_one_string = ''
     for sentence in scene_sentences:
         scene_in_one_string += ' '
         scene_in_one_string += sentence
+    scenes_in_one_string[(season, episode, scene_id)] = scene_in_one_string
     return scene_in_one_string
 
-# TODO make this run faster
-def clean_csv(scenes, lines_in_ep):
-    verified_lines = []
 
+# TODO make this run faster
+def clean_csv(scenes, lines_in_ep, season, episode):
+    verified_lines = []
+    lines_scenes_dic = {}
     for (speaker, line) in lines_in_ep:
         for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
-            scene_in_one_string = get_one_string(scene_sentences)
+            lines_scenes_dic[((speaker, line), scene_id)] = False
+            scene_in_one_string = get_one_string(scene_sentences, season, episode, scene_id)
             # if line == 'No':
             #     j=0
             if line_is_in_scene(line, scene_in_one_string):
+                lines_scenes_dic[((speaker, line), scene_id)] = True
                 verified_lines.append((speaker, line))
                 break
 
-    return verified_lines
+    return verified_lines, lines_scenes_dic
 
 
-def text_join(scenes, lines_in_ep):
+def text_join(scenes, lines_in_ep, season, episode):
     """
     Arguments:
         scenes {[([sentences], [characters]),...]} -- all the scenes in the episode. list of tuples. each tuple represents a scene,
@@ -66,27 +73,26 @@ def text_join(scenes, lines_in_ep):
     """
     new_table = np.ndarray(shape=(0, LINE_FEATURES_NUM))
 
-    lines_in_ep = clean_csv(scenes, lines_in_ep)
-
+    lines_in_ep, lines_scenes_dic = clean_csv(scenes, lines_in_ep, season, episode)
     line_id = 0
     for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
-        # scene_lines_counter = 0
         # TODO may be a problem here, not enough lines are added
         if line_id == len(lines_in_ep):
                 break
         scene_in_one_string = get_one_string(scene_sentences)
+        speaker = lines_in_ep[line_id][0]
         line = lines_in_ep[line_id][1]
-        while line_is_in_scene(line, scene_in_one_string):
-            if line == 'Youll have to continue later Its time':
-                gg=0
-            new_line = np.array([[scene_id, line_id, lines_in_ep[line_id][0],
-                        lines_in_ep[line_id][1], scene_characters]])
+        while lines_scenes_dic[((speaker, line), scene_id)]:
+            # if line == 'Youll have to continue later Its time':
+            #     gg=0
+            new_line = np.array([[scene_id, line_id, speaker,
+                        line, scene_characters]])
             new_table = np.append(new_table, new_line, axis=0)
             line_id += 1
             if line_id == len(lines_in_ep):
                 break
+            speaker = lines_in_ep[line_id][0]
             line = lines_in_ep[line_id][1]
-            
     return new_table
 
 
@@ -128,7 +134,7 @@ def create_final_csv():
                 k = 0
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
-            episode_table = text_join(scenes=scenes, lines_in_ep=lines)
+            episode_table = text_join(scenes=scenes, lines_in_ep=lines, season, episode)
             if episode == 4:
                 j = 0
             table = np.append(table, episode_table, axis=0)
