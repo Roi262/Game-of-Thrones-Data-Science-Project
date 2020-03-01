@@ -1,5 +1,7 @@
 import csv
+import pickle
 import pandas as pd
+from os import path
 import numpy as np
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
@@ -9,17 +11,25 @@ NUM_OF_SEASONS = 7
 LINES_CSV = "../data/Game of Thrones/kaggle_cleaned.csv"
 
 # TODO find best ratio
-FUZZY_THRESH = 85
+FUZZY_THRESH = 75
 LINE_FEATURES_NUM = 5
 
-scenes_in_one_string = {}
+
+def save_pickle(obj, path):
+    with open(path, "wb") as f:
+        pickle.dump(obj, f)
+
+
+def load_pickle(path):
+    with open(path, "rb") as f:
+        return pickle.load(f)
+
 
 def line_is_in_scene(line, scene_in_one_string):
     """Checks whether a given line is in the given sentences of a certain scene.
     check is done as follows:
     1. create one long string of the scene
     2. check if line is in the scene with p accuracy
-
     Arguments:
         line {string} -- A line in the script
         scene_sentences {array of strings} -- an array of strings in a scene
@@ -35,35 +45,30 @@ def line_is_in_scene(line, scene_in_one_string):
     return False
 
 
-def get_one_string(scene_sentences, season, episode, scene_id):
-    if (season, episode, scene_id) in scenes_in_one_string:
-        return scenes_in_one_string[(season, episode, scene_id)]
+def get_one_string(scene_sentences):
     scene_in_one_string = ''
     for sentence in scene_sentences:
         scene_in_one_string += ' '
         scene_in_one_string += sentence
-    scenes_in_one_string[(season, episode, scene_id)] = scene_in_one_string
     return scene_in_one_string
-
 
 # TODO make this run faster
 def clean_csv(scenes, lines_in_ep, season, episode):
+    pickle_path = 'verified_lines: season{}, episode {}'.format(season, episode)
+    if path.exists(pickle_path):
+        return load_pickle(pickle_path)
+
     verified_lines = []
-    # lines_scenes_dic = {}
-    lines_scenes_set = set()
     for (speaker, line) in lines_in_ep:
         for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
-            # lines_scenes_dic[((speaker, line), scene_id)] = False
-            scene_in_one_string = get_one_string(scene_sentences, season, episode, scene_id)
+            scene_in_one_string = get_one_string(scene_sentences)
             # if line == 'No':
             #     j=0
             if line_is_in_scene(line, scene_in_one_string):
-                lines_scenes_set.add(((speaker, line), scene_id))
-                # lines_scenes_dic[((speaker, line), scene_id)] = True
                 verified_lines.append((speaker, line))
                 break
-
-    return verified_lines, lines_scenes_set
+    save_pickle(verified_lines, pickle_path)
+    return verified_lines
 
 
 def text_join(scenes, lines_in_ep, season, episode):
@@ -75,26 +80,27 @@ def text_join(scenes, lines_in_ep, season, episode):
     """
     new_table = np.ndarray(shape=(0, LINE_FEATURES_NUM))
 
-    lines_in_ep, lines_scenes_set = clean_csv(scenes, lines_in_ep, season, episode)
+    lines_in_ep = clean_csv(scenes, lines_in_ep, season, episode)
+
     line_id = 0
     for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
+        # scene_lines_counter = 0
         # TODO may be a problem here, not enough lines are added
         if line_id == len(lines_in_ep):
                 break
-        # scene_in_one_string = get_one_string(scene_sentences, season, episode, scene_id)
-        speaker = lines_in_ep[line_id][0]
+        scene_in_one_string = get_one_string(scene_sentences)
         line = lines_in_ep[line_id][1]
-        while ((speaker, line), scene_id) in lines_scenes_set:
-            # if line == 'Youll have to continue later Its time':
-            #     gg=0
-            new_line = np.array([[scene_id, line_id, speaker,
-                        line, scene_characters]])
+        while line_is_in_scene(line, scene_in_one_string):
+            if line_id == 75:
+                g = 9
+            new_line = np.array([[scene_id, line_id, lines_in_ep[line_id][0],
+                        lines_in_ep[line_id][1], scene_characters]])
             new_table = np.append(new_table, new_line, axis=0)
             line_id += 1
             if line_id == len(lines_in_ep):
                 break
-            speaker = lines_in_ep[line_id][0]
             line = lines_in_ep[line_id][1]
+            
     return new_table
 
 
@@ -102,7 +108,6 @@ def get_episode_lines(episodes):
     """
     Arguments:
         episodes {[type]} -- a list of episode dataframes
-
     Returns:
         [dictionary] -- {(season, episode): [(speaker, line),...] - list of tuples of speaker and line}
     """
@@ -132,7 +137,8 @@ def create_final_csv():
     for season in offsets.keys():
         if not season == 4: continue
         for episode in offsets[season].keys():
-            if episode == 4:
+            if not episode == 3:
+                continue
                 k = 0
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
@@ -142,6 +148,7 @@ def create_final_csv():
             table = np.append(table, episode_table, axis=0)
             k=2
     p=0
+    np.savetxt('/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - NEW/data/Game of Thrones/joint_lines_with_scenes.csv', table, delimiter=';')
 # TODO print table to file
 
 create_final_csv()
