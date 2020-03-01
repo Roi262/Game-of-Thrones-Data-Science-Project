@@ -57,7 +57,7 @@ def get_one_string(scene_sentences):
 def clean_csv(scenes, lines_in_ep, season, episode):
     pickle_dir = '/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - New/data_manipulation/pickles/'
     if season < 4:
-        pickle_path = pickle_dir + 'verified_lines_season{}_episode_{}'.format(season, episode)
+        pickle_path = pickle_dir + 'verified_lines_season_{}_episode_{}'.format(season, episode)
     else:
         pickle_path = pickle_dir + 'verified_lines: season{}, episode {}'.format(season, episode)
 
