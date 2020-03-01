@@ -1,7 +1,7 @@
 import pandas as pd
 import ast
 
-Path = "../data/Game of Thrones/STR converted to CSV/ori_episodes/Game of Thrones - 3x05 - Kissed by Fire.HDTV.en.csv"
+Path = "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S07E03 The Queen_s Justice.csv"
 
 offsets = {
         1: {
@@ -60,7 +60,7 @@ offsets = {
                 7: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S05E07 The Gift.csv", "offset": -106},
                 8: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S05E08 Hardhome.csv", "offset": -102},
                 9: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S05E09 The Dance Of Dragons.csv", "offset": -148},
-                10: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S05E10 Mother's Mercy.csv", "offset": -195}
+                10: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S05E10 Mother_s Mercy.csv", "offset": -195}
                 },
             6: {
                 1: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S06E01 The Red Woman.csv", "offset": -308},
@@ -77,7 +77,7 @@ offsets = {
             7: {
                 1: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S07E01 Dragonstone.csv", "offset": -79},
                 2: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S07E02 Stormborn.csv", "offset": -77},
-                3: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S07E03 The Queen's Justice.csv", "offset":  33},
+                3: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S07E03 The Queen_s Justice.csv", "offset":  33},
                 4: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S07E04 The Spoils Of War.csv", "offset": -33},
                 5: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S07E05 Eastwatch.csv", "offset": -34},
                 6: {"path": "../data/Game of Thrones/STR converted to CSV/tamar_episodes/Game Of Thrones S07E06 Beyond The Wall.csv", "offset": -34},
@@ -143,8 +143,6 @@ def join_scene_with_srt(srt_csv_filename: str, scene_csv_filename: str, scene_of
 def get_scenes_lines_dic():
     scenes_lines_dic = {}
     for season in offsets.keys():
-        if not season == 4:
-            continue
         for episode in offsets[season].keys():
             scenes_lines_dic[(season, episode)] = join_scene_with_srt(
                 offsets[season][episode]["path"],

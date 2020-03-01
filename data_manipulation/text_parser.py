@@ -52,9 +52,10 @@ def get_one_string(scene_sentences):
         scene_in_one_string += sentence
     return scene_in_one_string
 
+
 # TODO make this run faster
 def clean_csv(scenes, lines_in_ep, season, episode):
-    pickle_path = 'verified_lines: season{}, episode {}'.format(season, episode)
+    pickle_path = f'verified_lines_season_{season}_episode_{episode}'
     if path.exists(pickle_path):
         return load_pickle(pickle_path)
 
@@ -87,20 +88,20 @@ def text_join(scenes, lines_in_ep, season, episode):
         # scene_lines_counter = 0
         # TODO may be a problem here, not enough lines are added
         if line_id == len(lines_in_ep):
-                break
+            break
         scene_in_one_string = get_one_string(scene_sentences)
         line = lines_in_ep[line_id][1]
         while line_is_in_scene(line, scene_in_one_string):
             if line_id == 75:
                 g = 9
             new_line = np.array([[scene_id, line_id, lines_in_ep[line_id][0],
-                        lines_in_ep[line_id][1], scene_characters]])
+                                  lines_in_ep[line_id][1], scene_characters]])
             new_table = np.append(new_table, new_line, axis=0)
             line_id += 1
             if line_id == len(lines_in_ep):
                 break
             line = lines_in_ep[line_id][1]
-            
+
     return new_table
 
 
@@ -125,7 +126,7 @@ def get_episode_lines(episodes):
     return speaker_and_line_dic
 
 
-def create_final_csv():
+def create_final_csv(season_s, episode_e):
     # all_scenes = get_scenes()  # TODO extract scenes from csv
     table = np.ndarray(shape=(0, LINE_FEATURES_NUM))
     data = pd.read_csv(LINES_CSV, delimiter=";", header=0)
@@ -135,23 +136,23 @@ def create_final_csv():
     scenes_lines_dic = get_scenes_lines_dic()
 
     for season in offsets.keys():
-        if not season == 4: continue
+        if season not in [season_s]: continue
         for episode in offsets[season].keys():
-            if not episode == 3:
-                continue
-                k = 0
+            if episode not in [episode_e]: continue
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
             episode_table = text_join(scenes=scenes, lines_in_ep=lines, season=season, episode=episode)
             if episode == 4:
                 j = 0
             table = np.append(table, episode_table, axis=0)
-            k=2
-    p=0
-    np.savetxt('/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - NEW/data/Game of Thrones/joint_lines_with_scenes.csv', table, delimiter=';')
+            k = 2
+    p = 0
+
+    pd.DataFrame(table).to_csv(f"../data/Game of Thrones/joint_lines_with_scenes_{season_s}_{episode_e}.csv")
+
 # TODO print table to file
 
-create_final_csv()
+create_final_csv(1,6)
 # print(group)
 
 # for season in NUM_OF_SEASONS:
