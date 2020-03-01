@@ -120,7 +120,7 @@ def get_scenes_lines_dic():
         for episode in offsets[season].keys():
             scenes_lines_dic[(season, episode)] = join_scene_with_srt(
                 offsets[season][episode]["path"],
-                "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project/data/Game of Thrones/scenes_timestamps.csv",
+                "../data/Game of Thrones/scenes_timestamps.csv",
                 offsets[season][episode]["offset"], season, episode)
     return scenes_lines_dic
 

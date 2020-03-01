@@ -6,7 +6,7 @@ from fuzzywuzzy import process
 from join_srt_and_scenes import get_scenes_lines_dic, offsets
 
 NUM_OF_SEASONS = 7
-LINES_CSV = "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project/data/Game of Thrones/kaggle_cleaned.csv"
+LINES_CSV = "../data/Game of Thrones/kaggle_cleaned.csv"
 
 # TODO find best ratio
 FUZZY_THRESH = 85
