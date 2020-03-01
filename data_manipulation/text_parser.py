@@ -1,5 +1,5 @@
 import csv
-import pickle
+import pickle, glob
 import pandas as pd
 from os import path
 import numpy as np
@@ -8,7 +8,8 @@ from fuzzywuzzy import process
 from join_srt_and_scenes import get_scenes_lines_dic, offsets
 
 NUM_OF_SEASONS = 7
-LINES_CSV = "../data/Game of Thrones/kaggle_cleaned.csv"
+# LINES_CSV = "../data/Game of Thrones/kaggle_cleaned.csv"
+LINES_CSV = "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - New/data/Game of Thrones/kaggle_cleaned.csv"
 
 # TODO find best ratio
 FUZZY_THRESH = 75
@@ -54,14 +55,16 @@ def get_one_string(scene_sentences):
 
 # TODO make this run faster
 def clean_csv(scenes, lines_in_ep, season, episode):
+    pickle_dir = '/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - New/data_manipulation/pickles/'
     if season < 4:
-        pickle_path = 'verified_lines: season{}, episode {}'.format(season, episode)
+        pickle_path = pickle_dir + 'verified_lines_season{}_episode_{}'.format(season, episode)
     else:
-        pickle_path = 'verified_lines_season{}_episode_{}'.format(season, episode)
+        pickle_path = pickle_dir + 'verified_lines: season{}, episode {}'.format(season, episode)
 
     if path.exists(pickle_path):
         return load_pickle(pickle_path)
 
+    print('no pickles')
     verified_lines = []
     for (speaker, line) in lines_in_ep:
         for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
@@ -97,7 +100,7 @@ def text_join(scenes, lines_in_ep, season, episode):
         while line_is_in_scene(line, scene_in_one_string):
             if line_id == 75:
                 g = 9
-            new_line = np.array([[scene_id, line_id, lines_in_ep[line_id][0],
+            new_line = np.array([[season, episode, scene_id, line_id, lines_in_ep[line_id][0],
                                   lines_in_ep[line_id][1], scene_characters]])
             new_table = np.append(new_table, new_line, axis=0)
             line_id += 1
@@ -145,6 +148,7 @@ def create_final_csv():
             lines = speaker_and_line_dic[(season, episode)]
             episode_table = text_join(scenes=scenes, lines_in_ep=lines, season=season, episode=episode)
             table = np.append(table, episode_table, axis=0)
+            print(season, episode)
             # fname = 'joint_lines_with_scenes_{}_{}.csv'.format(season, episode)
             # pd.DataFrame(episode_table).to_csv(fname)
 
