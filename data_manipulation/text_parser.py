@@ -1,5 +1,7 @@
 import csv
 import pickle
+import glob
+import os
 import pandas as pd
 from os import path
 import numpy as np
@@ -12,7 +14,7 @@ LINES_CSV = "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Proje
 
 # TODO find best ratio
 FUZZY_THRESH = 75
-LINE_FEATURES_NUM = 5
+LINE_FEATURES_NUM = 7
 
 
 def save_pickle(obj, path):
@@ -54,7 +56,11 @@ def get_one_string(scene_sentences):
 
 # TODO make this run faster
 def clean_csv(scenes, lines_in_ep, season, episode):
-    pickle_path = 'verified_lines: season{}, episode {}'.format(season, episode)
+    if season < 4:
+        pickle_path = 'verified_lines: season{}, episode {}'.format(season, episode)
+    else:
+        pickle_path = 'verified_lines_season{}_episode_{}'.format(season, episode)
+
     if path.exists(pickle_path):
         return load_pickle(pickle_path)
 
@@ -92,7 +98,7 @@ def text_join(scenes, lines_in_ep, season, episode):
         while line_is_in_scene(line, scene_in_one_string):
             if line_id == 75:
                 g = 9
-            new_line = np.array([[scene_id, line_id, lines_in_ep[line_id][0],
+            new_line = np.array([[season, episode, scene_id, line_id, lines_in_ep[line_id][0],
                         lines_in_ep[line_id][1], scene_characters]])
             new_table = np.append(new_table, new_line, axis=0)
             line_id += 1
@@ -132,14 +138,31 @@ def create_final_csv():
     scenes_lines_dic = get_scenes_lines_dic()
 
     for season in offsets.keys():
-        if season < 5: continue
+        # if not season ==5 : continue
         for episode in offsets[season].keys():
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
             episode_table = text_join(scenes=scenes, lines_in_ep=lines, season=season, episode=episode)
             table = np.append(table, episode_table, axis=0)
-            fname = 'joint_lines_with_scenes_{}_{}.csv'.format(season, episode)
-            pd.DataFrame(table).to_csv(fname)
+            # fname = 'joint_lines_with_scenes_{}_{}.csv'.format(season, episode)
+            # pd.DataFrame(episode_table).to_csv(fname)
 
+    fname_all_seasons = 'joint_lines_with_scenes_season_{}.csv'.format(season)
+    pd.DataFrame(table).to_csv(fname_all_seasons)
+
+
+
+def merge_csvs():
+    # first add 2 columns to the csv's of season and episode
+    # os.chdir("/mydir")
+    files = {}
+    for file in glob.glob("*.csv"):
+        season, episode = file.split('.')[0].split('scenes_')[1].split('_')
+        season, episode = int(season), int(episode)
+
+        print(file)
+    # merge all csvs by season and episode
+
+# merge_csvs()
 
 create_final_csv()
