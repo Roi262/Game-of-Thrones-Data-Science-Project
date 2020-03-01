@@ -2,4 +2,5 @@
 /visualizations
 /venv
 data_manipulation/test.py
-verified_lines: season4, episode 3
+verified_lines*
+joint_lines_with_scenes*

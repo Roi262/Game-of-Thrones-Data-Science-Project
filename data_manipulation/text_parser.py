@@ -12,7 +12,7 @@ LINES_CSV = "../data/Game of Thrones/kaggle_cleaned.csv"
 
 # TODO find best ratio
 FUZZY_THRESH = 75
-LINE_FEATURES_NUM = 5
+LINE_FEATURES_NUM = 7
 
 
 def save_pickle(obj, path):
@@ -52,10 +52,13 @@ def get_one_string(scene_sentences):
         scene_in_one_string += sentence
     return scene_in_one_string
 
-
 # TODO make this run faster
 def clean_csv(scenes, lines_in_ep, season, episode):
-    pickle_path = f'verified_lines_season_{season}_episode_{episode}'
+    if season < 4:
+        pickle_path = 'verified_lines: season{}, episode {}'.format(season, episode)
+    else:
+        pickle_path = 'verified_lines_season{}_episode_{}'.format(season, episode)
+
     if path.exists(pickle_path):
         return load_pickle(pickle_path)
 
@@ -101,7 +104,7 @@ def text_join(scenes, lines_in_ep, season, episode):
             if line_id == len(lines_in_ep):
                 break
             line = lines_in_ep[line_id][1]
-
+            
     return new_table
 
 
@@ -126,7 +129,7 @@ def get_episode_lines(episodes):
     return speaker_and_line_dic
 
 
-def create_final_csv(season_s, episode_e):
+def create_final_csv():
     # all_scenes = get_scenes()  # TODO extract scenes from csv
     table = np.ndarray(shape=(0, LINE_FEATURES_NUM))
     data = pd.read_csv(LINES_CSV, delimiter=";", header=0)
@@ -136,44 +139,31 @@ def create_final_csv(season_s, episode_e):
     scenes_lines_dic = get_scenes_lines_dic()
 
     for season in offsets.keys():
-        if season not in [season_s]: continue
+        # if not season ==5 : continue
         for episode in offsets[season].keys():
-            if episode not in [episode_e]: continue
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
             episode_table = text_join(scenes=scenes, lines_in_ep=lines, season=season, episode=episode)
-            if episode == 4:
-                j = 0
             table = np.append(table, episode_table, axis=0)
-            k = 2
-    p = 0
+            # fname = 'joint_lines_with_scenes_{}_{}.csv'.format(season, episode)
+            # pd.DataFrame(episode_table).to_csv(fname)
 
-    pd.DataFrame(table).to_csv(f"../data/Game of Thrones/joint_lines_with_scenes_{season_s}_{episode_e}.csv")
-
-# TODO print table to file
-
-create_final_csv(1,6)
-# print(group)
-
-# for season in NUM_OF_SEASONS:
-#     for episode
-# for line in lines_csv:
-
-# for episode in script:
-#     scenes = get_scenes_in_epiode()
-#     lines = get_lines_in_episode()
-#     text_join(table, scenes, lines)
+    fname_all_seasons = 'joint_lines_with_scenes_season_{}.csv'.format(season)
+    pd.DataFrame(table).to_csv(fname_all_seasons)
 
 
-# create_final_csv()
 
+def merge_csvs():
+    # first add 2 columns to the csv's of season and episode
+    # os.chdir("/mydir")
+    files = {}
+    for file in glob.glob("*.csv"):
+        season, episode = file.split('.')[0].split('scenes_')[1].split('_')
+        season, episode = int(season), int(episode)
 
-# while scene_lines_counter < len(lines_in_episode):
-#     line = lines_in_episode[line_id]
-#     if line_is_in_scene(line, scene_in_one_string):
-#         speaker = speakers[line_id]
-#         new_line = [scene_id, line_id, speaker, line, scene_characters]
-#     #  (scene id, line id, line, speaker, set of (other) characters in the scene)
-#         np.append(new_table, new_line, axis=0)
-#     scene_lines_counter += 1
-#     line_id += 1
+        print(file)
+    # merge all csvs by season and episode
+
+# merge_csvs()
+
+create_final_csv()

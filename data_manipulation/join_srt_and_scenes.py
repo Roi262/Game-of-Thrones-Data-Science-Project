@@ -143,6 +143,8 @@ def join_scene_with_srt(srt_csv_filename: str, scene_csv_filename: str, scene_of
 def get_scenes_lines_dic():
     scenes_lines_dic = {}
     for season in offsets.keys():
+        if not season == 4:
+            continue
         for episode in offsets[season].keys():
             scenes_lines_dic[(season, episode)] = join_scene_with_srt(
                 offsets[season][episode]["path"],
