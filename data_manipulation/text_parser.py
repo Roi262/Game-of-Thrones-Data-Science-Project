@@ -132,7 +132,7 @@ def create_final_csv():
     scenes_lines_dic = get_scenes_lines_dic()
 
     for season in offsets.keys():
-        if season < 4: continue
+        if season < 5: continue
         for episode in offsets[season].keys():
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
