@@ -84,7 +84,6 @@ def text_join(scenes, lines_in_ep, season, episode):
 
     line_id = 0
     for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
-        # scene_lines_counter = 0
         # TODO may be a problem here, not enough lines are added
         if line_id == len(lines_in_ep):
                 break
@@ -113,8 +112,6 @@ def get_episode_lines(episodes):
     """
     speaker_and_line_dic = {}
     for episode in episodes:
-        # print(episode)
-        # k=2
         season_num, episode_num = int(episode[0][0]), int(episode[0][1])
         episode_speakers_and_lines = []
         names = episode[1]["Name"].tolist()
@@ -135,44 +132,14 @@ def create_final_csv():
     scenes_lines_dic = get_scenes_lines_dic()
 
     for season in offsets.keys():
-        if not season == 4: continue
+        if season < 4: continue
         for episode in offsets[season].keys():
-            if not episode == 3:
-                continue
-                k = 0
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
             episode_table = text_join(scenes=scenes, lines_in_ep=lines, season=season, episode=episode)
-            if episode == 4:
-                j = 0
             table = np.append(table, episode_table, axis=0)
-            k=2
-    p=0
-    np.savetxt('/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - NEW/data/Game of Thrones/joint_lines_with_scenes.csv', table, delimiter=';')
-# TODO print table to file
+            fname = 'joint_lines_with_scenes_{}_{}.csv'.format(season, episode)
+            pd.DataFrame(table).to_csv(fname)
+
 
 create_final_csv()
-# print(group)
-
-# for season in NUM_OF_SEASONS:
-#     for episode
-# for line in lines_csv:
-
-# for episode in script:
-#     scenes = get_scenes_in_epiode()
-#     lines = get_lines_in_episode()
-#     text_join(table, scenes, lines)
-
-
-# create_final_csv()
-
-
-# while scene_lines_counter < len(lines_in_episode):
-#     line = lines_in_episode[line_id]
-#     if line_is_in_scene(line, scene_in_one_string):
-#         speaker = speakers[line_id]
-#         new_line = [scene_id, line_id, speaker, line, scene_characters]
-#     #  (scene id, line id, line, speaker, set of (other) characters in the scene)
-#         np.append(new_table, new_line, axis=0)
-#     scene_lines_counter += 1
-#     line_id += 1
