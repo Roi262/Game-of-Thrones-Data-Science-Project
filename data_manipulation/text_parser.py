@@ -41,15 +41,18 @@ def get_one_string(scene_sentences):
         scene_in_one_string += sentence
     return scene_in_one_string
 
-
+# TODO make this run faster
 def clean_csv(scenes, lines_in_ep):
     verified_lines = []
 
     for (speaker, line) in lines_in_ep:
         for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
             scene_in_one_string = get_one_string(scene_sentences)
+            # if line == 'No':
+            #     j=0
             if line_is_in_scene(line, scene_in_one_string):
                 verified_lines.append((speaker, line))
+                break
 
     return verified_lines
 
@@ -69,6 +72,8 @@ def text_join(scenes, lines_in_ep):
     for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
         # scene_lines_counter = 0
         # TODO may be a problem here, not enough lines are added
+        if line_id == len(lines_in_ep):
+                break
         scene_in_one_string = get_one_string(scene_sentences)
         line = lines_in_ep[line_id][1]
         while line_is_in_scene(line, scene_in_one_string):
@@ -78,6 +83,8 @@ def text_join(scenes, lines_in_ep):
                         lines_in_ep[line_id][1], scene_characters]])
             new_table = np.append(new_table, new_line, axis=0)
             line_id += 1
+            if line_id == len(lines_in_ep):
+                break
             line = lines_in_ep[line_id][1]
             
     return new_table
@@ -125,7 +132,9 @@ def create_final_csv():
             if episode == 4:
                 j = 0
             table = np.append(table, episode_table, axis=0)
-
+            k=2
+    p=0
+# TODO print table to file
 
 create_final_csv()
 # print(group)
