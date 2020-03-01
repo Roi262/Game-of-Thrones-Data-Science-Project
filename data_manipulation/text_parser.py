@@ -36,7 +36,7 @@ def line_is_in_scene(line, scene_in_one_string):
 
 
 def get_one_string(scene_sentences, season, episode, scene_id):
-    if scenes_in_one_string[(season, episode, scene_id)]:
+    if (season, episode, scene_id) in scenes_in_one_string:
         return scenes_in_one_string[(season, episode, scene_id)]
     scene_in_one_string = ''
     for sentence in scene_sentences:
@@ -49,19 +49,21 @@ def get_one_string(scene_sentences, season, episode, scene_id):
 # TODO make this run faster
 def clean_csv(scenes, lines_in_ep, season, episode):
     verified_lines = []
-    lines_scenes_dic = {}
+    # lines_scenes_dic = {}
+    lines_scenes_set = set()
     for (speaker, line) in lines_in_ep:
         for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
-            lines_scenes_dic[((speaker, line), scene_id)] = False
+            # lines_scenes_dic[((speaker, line), scene_id)] = False
             scene_in_one_string = get_one_string(scene_sentences, season, episode, scene_id)
             # if line == 'No':
             #     j=0
             if line_is_in_scene(line, scene_in_one_string):
-                lines_scenes_dic[((speaker, line), scene_id)] = True
+                lines_scenes_set.add(((speaker, line), scene_id))
+                # lines_scenes_dic[((speaker, line), scene_id)] = True
                 verified_lines.append((speaker, line))
                 break
 
-    return verified_lines, lines_scenes_dic
+    return verified_lines, lines_scenes_set
 
 
 def text_join(scenes, lines_in_ep, season, episode):
@@ -73,16 +75,16 @@ def text_join(scenes, lines_in_ep, season, episode):
     """
     new_table = np.ndarray(shape=(0, LINE_FEATURES_NUM))
 
-    lines_in_ep, lines_scenes_dic = clean_csv(scenes, lines_in_ep, season, episode)
+    lines_in_ep, lines_scenes_set = clean_csv(scenes, lines_in_ep, season, episode)
     line_id = 0
     for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
         # TODO may be a problem here, not enough lines are added
         if line_id == len(lines_in_ep):
                 break
-        scene_in_one_string = get_one_string(scene_sentences)
+        # scene_in_one_string = get_one_string(scene_sentences, season, episode, scene_id)
         speaker = lines_in_ep[line_id][0]
         line = lines_in_ep[line_id][1]
-        while lines_scenes_dic[((speaker, line), scene_id)]:
+        while ((speaker, line), scene_id) in lines_scenes_set:
             # if line == 'Youll have to continue later Its time':
             #     gg=0
             new_line = np.array([[scene_id, line_id, speaker,
@@ -134,7 +136,7 @@ def create_final_csv():
                 k = 0
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
-            episode_table = text_join(scenes=scenes, lines_in_ep=lines, season, episode)
+            episode_table = text_join(scenes=scenes, lines_in_ep=lines, season=season, episode=episode)
             if episode == 4:
                 j = 0
             table = np.append(table, episode_table, axis=0)
