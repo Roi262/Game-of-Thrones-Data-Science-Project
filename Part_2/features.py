@@ -2,15 +2,8 @@ from configure import *
 import ast
 import csv
 
-ALL_CHARACTERS_FORMAL = {}
-with open(CLEAN_DATA_PATH) as f:
-    data = csv.reader(f)
-    
-    for row in data:
-        if row[SPEAKER] not in ALL_CHARACTERS_FORMAL.keys():
 
-
-RELEVANT_CHARACTERS = ALL_CHARACTERS_FORMAL
+RELEVANT_CHARACTERS = CHARACTERS_DIC
 
 def create_special_features():
     spoken_to_in_sent = [0] * len(RELEVANT_CHARACTERS)
