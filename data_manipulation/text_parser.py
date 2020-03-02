@@ -8,8 +8,8 @@ from fuzzywuzzy import process
 from join_srt_and_scenes import get_scenes_lines_dic, offsets
 
 NUM_OF_SEASONS = 7
-# LINES_CSV = "../data/Game of Thrones/kaggle_cleaned.csv"
-LINES_CSV = "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - New/data/Game of Thrones/kaggle_cleaned.csv"
+LINES_CSV = "../data/Game of Thrones/kaggle_cleaned.csv"
+# LINES_CSV = "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - New/data/Game of Thrones/kaggle_cleaned.csv"
 
 # TODO find best ratio
 FUZZY_THRESH = 75
@@ -55,7 +55,7 @@ def get_one_string(scene_sentences):
 
 # TODO make this run faster
 def clean_csv(scenes, lines_in_ep, season, episode):
-    pickle_dir = '/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - New/data_manipulation/pickles/'
+    pickle_dir = '../pickles/'
     if season < 4:
         pickle_path = pickle_dir + 'verified_lines_season{}_episode_{}'.format(season, episode)
     else:
