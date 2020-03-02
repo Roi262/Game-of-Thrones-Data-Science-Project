@@ -1,4 +1,5 @@
 /data
+/data temp
 /visualizations
 /venv
 data_manipulation/test.py

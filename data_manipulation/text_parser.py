@@ -1,5 +1,6 @@
 import csv
-import pickle, glob
+import pickle
+import glob
 import pandas as pd
 from os import path
 import numpy as np
@@ -54,12 +55,16 @@ def get_one_string(scene_sentences):
     return scene_in_one_string
 
 # TODO make this run faster
+
+
 def clean_csv(scenes, lines_in_ep, season, episode):
     pickle_dir = '/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - New/data_manipulation/pickles/'
     if season < 4:
-        pickle_path = pickle_dir + 'verified_lines_season_{}_episode_{}'.format(season, episode)
+        pickle_path = pickle_dir + \
+            'verified_lines_season_{}_episode_{}'.format(season, episode)
     else:
-        pickle_path = pickle_dir + 'verified_lines: season{}, episode {}'.format(season, episode)
+        pickle_path = pickle_dir + \
+            'verified_lines: season{}, episode {}'.format(season, episode)
 
     if path.exists(pickle_path):
         return load_pickle(pickle_path)
@@ -107,7 +112,7 @@ def text_join(scenes, lines_in_ep, season, episode):
             if line_id == len(lines_in_ep):
                 break
             line = lines_in_ep[line_id][1]
-            
+
     return new_table
 
 
@@ -128,7 +133,8 @@ def get_episode_lines(episodes):
         lines = episode[1]["Sentence"].tolist()
         for i in range(len(lines)):
             episode_speakers_and_lines.append((names[i], lines[i]))
-        speaker_and_line_dic[(season_num, episode_num)] = episode_speakers_and_lines
+        speaker_and_line_dic[(season_num, episode_num)
+                             ] = episode_speakers_and_lines
     return speaker_and_line_dic
 
 
@@ -146,28 +152,29 @@ def create_final_csv():
         for episode in offsets[season].keys():
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
-            episode_table = text_join(scenes=scenes, lines_in_ep=lines, season=season, episode=episode)
+            episode_table = text_join(
+                scenes=scenes, lines_in_ep=lines, season=season, episode=episode)
             table = np.append(table, episode_table, axis=0)
             print(season, episode)
             # fname = 'joint_lines_with_scenes_{}_{}.csv'.format(season, episode)
             # pd.DataFrame(episode_table).to_csv(fname)
 
-    fname_all_seasons = 'joint_lines_with_scenes_season_{}.csv'.format(season)
+    fname_all_seasons = 'joint_lines_with_scenes_season.csv'
     pd.DataFrame(table).to_csv(fname_all_seasons)
 
 
+def add_header(header, csv_file_path):
+    with open(csv_file_path, newline='') as f:
+        r = csv.reader(f)
+        data = [line for line in r]
+        data.pop(0)
+    with open('part2_data_lines_with_scenes.csv', 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(header)
+        w.writerows(data)
 
-def merge_csvs():
-    # first add 2 columns to the csv's of season and episode
-    # os.chdir("/mydir")
-    files = {}
-    for file in glob.glob("*.csv"):
-        season, episode = file.split('.')[0].split('scenes_')[1].split('_')
-        season, episode = int(season), int(episode)
 
-        print(file)
-    # merge all csvs by season and episode
-
-# merge_csvs()
-
-create_final_csv()
+# create_final_csv()
+header = ['rowID', 'Season', 'Episode', 'Scene',
+          'Line in Episode', 'Speaker', 'Line', 'Characters']
+add_header(header, 'joint_lines_with_scenes_season.csv')
