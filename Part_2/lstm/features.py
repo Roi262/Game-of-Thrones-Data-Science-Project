@@ -2,6 +2,7 @@ from configure import *
 import ast
 import csv
 import re
+import numpy as np
 
 
 RELEVANT_CHARACTERS = CHARACTERS_DIC
@@ -24,13 +25,15 @@ def spoken_to_in_sent_features(line):
                 # we have this one hot per character code somewhere
     return np.asarray(spoken_to_in_sent)
 
-def get_subject_words():
-    # TODO use top 30 subject words (i.e., words that start with capital letters that are not the first word in a sentence)
-    df = pd.read_csv(CLEAN_DATA_PATH, error_bad_lines=False, delimiter=',', header=0)
-    all_lines = df['Line']
-    subject_words = set()
-    for line in all_lines:
-        for i, word in enumerate(line.split()):
+
+
+# def get_subject_words():
+#     # TODO use top 30 subject words (i.e., words that start with capital letters that are not the first word in a sentence)
+#     df = pd.read_csv(CLEAN_DATA_PATH, error_bad_lines=False, delimiter=',', header=0)
+#     all_lines = df['Line']
+#     subject_words = set()
+#     for line in all_lines:
+#         for i, word in enumerate(line.split()):
             
 
 
@@ -85,10 +88,13 @@ def additional_features(text):
 
 def create_features(line):
     # TODO use tokenize/onehot
-    new_data = 
-    for line in data():
-        features = additional_features(line) + spoken_to_in_sent_features(line)
-        newline = add_features_to_vec()
+    # for line in data():
+    features = np.append(additional_features(line[6]), spoken_to_in_sent_features(line[6]))
+    # add character id
+    features = np.append(features, CHARACTERS_DIC[line[SPEAKER]])
+    return features
+
+    # newline = add_features_to_vec()
         # TODO add line to data
 
 

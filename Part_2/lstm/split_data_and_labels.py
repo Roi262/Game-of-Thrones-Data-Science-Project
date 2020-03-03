@@ -10,7 +10,6 @@ LABELS_FILENAME = "labels.npy"
 def split():
     data = read_data()
     speaker = data[:, SPEAKER_COL]
-    
     text = data[:, TEXT_COL]
     np.save(TEXT_FILENAME, text)
     np.save(LABELS_FILENAME, speaker)
