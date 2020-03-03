@@ -1,7 +1,7 @@
 import csv
 
-part2_data_path = '/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - New/Part_2/part2_data_lines_with_scenes.csv'
-CLEAN_DATA_PATH = 'Part_2/part2_data_cleaned.csv'
+part2_data_path = '../part2_data_lines_with_scenes.csv'
+CLEAN_DATA_PATH = '../part2_data_cleaned.csv'
 # Exceptions: ned-Eddard stark; littlefinger-Petyr Baelish,dany - Daenerys Targaryen
 EXCEPTIONS = {'ned': 'Eddard Stark',
                   'littlefinger': 'Petyr Baelish', 

@@ -26,9 +26,9 @@ MAX_NB_WORDS = 50000
 MAX_SEQUENCE_LENGTH = 250
 EMBEDDING_DIM = 100
 
-NUMBER_OF_CLASSES = 30
+NUMBER_OF_CLASSES = 67  # TODO: change to 30 after adding remove characters function
 
-SPECIAL_FEATURES = 9
+SPECIAL_FEATURES = 539 - 250
 
 
 def create_vector_labels(labels):
@@ -83,7 +83,9 @@ def tokenize_words(data):
     x = tokenizer.texts_to_sequences(lines)
     x = pad_sequences(x, maxlen=MAX_SEQUENCE_LENGTH)
 
-    additional_2 = np.array([features.create_features(data[i]) for i in range(len(data))])
+    SPECIAL_FEATURES = features.create_features(data[0])[1]
+
+    additional_2 = np.array([features.create_features(data[i])[0] for i in range(len(data))])
     x = np.hstack((x, additional_2))
     return x
 
@@ -98,6 +100,7 @@ def labels_to_numbers(labels):
     numbers = np.array([labels_dict[label] for label in labels])
     return numbers
 
+
 def custom_loss_func(y_actual, y_predicted):
     if y_predicted in np.asarray(y_actual):
         return 0
@@ -106,11 +109,11 @@ def custom_loss_func(y_actual, y_predicted):
 
 
 def build_model(input_length, number_of_classes):
-    input_tensor = Input(shape=(input_length, ))
+    input_tensor = Input(shape=(input_length,))
     tensor = Embedding(MAX_NB_WORDS, EMBEDDING_DIM)(input_tensor)
     tensor = SpatialDropout1D(0.2)(tensor)
     tensor = LSTM(100, dropout=0.5, recurrent_dropout=0.2)(tensor)
-    second_input = Input(shape=(SPECIAL_FEATURES, ))
+    second_input = Input(shape=(SPECIAL_FEATURES,))
     tensor = Concatenate()([tensor, second_input])
     tensor = Dense(100, activation='relu')(tensor)
     tensor = Dense(number_of_classes, activation='softmax')(tensor)
@@ -118,7 +121,6 @@ def build_model(input_length, number_of_classes):
     model.compile(loss='mse', optimizer='adam')
     print(model.summary())
     return model
-
 
     # model = Sequential()
     # model.add(Embedding(MAX_NB_WORDS, EMBEDDING_DIM, input_length=input_length))
@@ -134,7 +136,7 @@ def train_model(model, x_train, y_train):
     batch_size = 64
 
     history = model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.1)
-                        # callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
+    # callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
     return history
 
 
@@ -142,18 +144,16 @@ def normalize_labels(labels):
     pass
 
 
-
 if __name__ == "__main__":
     # path = CLEAN_DATA_PATH
     # with open('Part_2/part2_data_cleaned.csv', newline='') as f:
-    data = pd.read_csv('Part_2/part2_data_cleaned.csv', delimiter=',', header=0).to_numpy()
+    data = pd.read_csv('../part2_data_cleaned.csv', delimiter=',', header=0).to_numpy()
     text_data, labels = data[:, :-1], data[:, -1]
 
     x = tokenize_words(text_data)
-    labels = labels_to_numbers(labels)
+    # labels = labels_to_numbers(labels)
 
-    x, labels = remove_classes(x, labels)
-    y = normalize_labels(labels)
+    y = create_vector_labels(labels)
     # y = to_categorical(labels, NUMBER_OF_CLASSES)
 
     # x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
