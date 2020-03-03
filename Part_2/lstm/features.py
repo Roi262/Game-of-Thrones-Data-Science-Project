@@ -92,7 +92,7 @@ def create_features(line):
     features = np.append(additional_features(line[6]), spoken_to_in_sent_features(line[6]))
     # add character id
     features = np.append(features, CHARACTERS_DIC[line[SPEAKER]])
-    return features
+    return features, len(features)
 
     # newline = add_features_to_vec()
         # TODO add line to data

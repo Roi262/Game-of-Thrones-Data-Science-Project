@@ -142,7 +142,6 @@ def normalize_labels(labels):
     pass
 
 
-
 if __name__ == "__main__":
     # path = CLEAN_DATA_PATH
     # with open('Part_2/part2_data_cleaned.csv', newline='') as f:
