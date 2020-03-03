@@ -11,6 +11,8 @@ EXCEPTIONS = {'ned': 'Eddard Stark',
                   'dany': 'Daenerys Targaryen'}
 
 ROW_ID, SEASON, EPISODE, SCENE, LINE_IN_EP_ID, SPEAKER, LINE, CHARACTERS = (i for i in range(8))
+MAX_CHARACTERS = 30
+
 
 ALL_CHARACTERS_FORMAL = set()
 with open(CLEAN_DATA_PATH) as f:

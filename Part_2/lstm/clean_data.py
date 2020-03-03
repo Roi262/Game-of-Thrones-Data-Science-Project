@@ -1,6 +1,8 @@
 import csv
 import ast
 from configure import *
+from collections import defaultdict
+import pandas as pd
 
 
 def clean_lines_with_scenes(path):
@@ -37,4 +39,43 @@ def clean_lines_with_scenes(path):
             # clean ', i.e. Mole's town whore
             # to check more, print line in every instance of 1
 
-clean_lines_with_scenes(part2_data_path)
+def get_most_common_characters(scenes):
+    characters_counter = defaultdict(int)
+    for characters in scenes:
+        for character in characters:
+            characters_counter[character] += 1
+
+    my_dict = {k: v for k, v in sorted(characters_counter.items(), key=lambda item: item[1], reverse=True)}
+    most_common = list(my_dict.keys())[:MAX_CHARACTERS]
+    print(most_common)
+    return most_common
+
+
+def clean_labels(path):
+    new_data = []
+    with open(path, newline='') as f:
+        data = pd.read_csv(f)
+        
+    most_common_characters = get_most_common_characters(data['Characters'])
+        
+    for i, line in enumerate(data):
+        if i ==0: continue
+        cleaned_characters = []
+        for character in line[CHARACTERS]:
+            if character in most_common_characters:
+                cleaned_characters.append(character)
+        new_line = line[:CHARACTERS] + [cleaned_characters]
+        new_data.append(new_line)
+
+# TODO remove lines with irrelevant speakers (not in top 30)
+    new_path = 'part2_data_cleaned_characters.csv'
+    with open(new_path, 'w+', newline='') as f:
+        w = csv.writer(f)
+        w.writerows(new_data)
+
+clean_labels('Part_2/part2_data_cleaned.csv')
+
+
+# clean_lines_with_scenes(part2_data_path)
+
+
