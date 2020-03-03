@@ -41,8 +41,8 @@ def clean_lines_with_scenes(path):
 
 def get_most_common_characters(scenes):
     characters_counter = defaultdict(int)
-    for characters in scenes:
-        for character in characters:
+    for scene in scenes:
+        for character in ast.literal_eval(scene):
             characters_counter[character] += 1
 
     my_dict = {k: v for k, v in sorted(characters_counter.items(), key=lambda item: item[1], reverse=True)}
@@ -54,18 +54,20 @@ def get_most_common_characters(scenes):
 def clean_labels(path):
     new_data = []
     with open(path, newline='') as f:
-        data = pd.read_csv(f)
+        df = pd.read_csv(f)
+        data = csv.reader(f)
         
-    most_common_characters = get_most_common_characters(data['Characters'])
-        
-    for i, line in enumerate(data):
-        if i ==0: continue
-        cleaned_characters = []
-        for character in line[CHARACTERS]:
-            if character in most_common_characters:
-                cleaned_characters.append(character)
-        new_line = line[:CHARACTERS] + [cleaned_characters]
-        new_data.append(new_line)
+        most_common_characters = get_most_common_characters(df['Characters'])
+            
+        for i, line in enumerate(data):
+
+            if i ==0: continue
+            cleaned_characters = []
+            for character in line[CHARACTERS]:
+                if character in most_common_characters:
+                    cleaned_characters.append(character)
+            new_line = line[:CHARACTERS] + [cleaned_characters]
+            new_data.append(new_line)
 
 # TODO remove lines with irrelevant speakers (not in top 30)
     new_path = 'part2_data_cleaned_characters.csv'
