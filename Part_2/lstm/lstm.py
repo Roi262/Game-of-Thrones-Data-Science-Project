@@ -15,8 +15,8 @@ from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
 from split_data_and_labels import TEXT_FILENAME, LABELS_FILENAME
 
-# import features
-# from configure import *
+import features
+from configure import *
 
 REPLACE_BY_SPACE_RE = re.compile('[/(){}\[\]\|@,;]')
 BAD_SYMBOLS_RE = re.compile('[^0-9a-z #+_]')
@@ -115,7 +115,7 @@ def build_model(input_length, number_of_classes):
     tensor = Dense(100, activation='relu')(tensor)
     tensor = Dense(number_of_classes, activation='softmax')(tensor)
     model = Model(inputs=[input_tensor, second_input], outputs=tensor)
-    model.compile(loss=custom_loss_func, optimizer='adam', metrics=['accuracy'])
+    model.compile(loss='mse', optimizer='adam')
     print(model.summary())
     return model
 
