@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 
 from keras import Sequential
 from keras.callbacks import EarlyStopping
-from keras.layers import Embedding, SpatialDropout1D, LSTM, Dense
+from keras.layers import Embedding, SpatialDropout1D, LSTM, Dense, Input, Concatenate
+from keras.models import Model
 from keras_preprocessing.sequence import pad_sequences
 from keras_preprocessing.text import Tokenizer
 from keras.utils import to_categorical
@@ -22,6 +23,8 @@ MAX_SEQUENCE_LENGTH = 250
 EMBEDDING_DIM = 100
 
 NUMBER_OF_CLASSES = 30
+
+SPECIAL_FEATURES = 9
 
 
 def remove_classes(text, labels):
@@ -73,6 +76,8 @@ def tokenize_words(data):
     tokenizer.fit_on_texts(data)
     x = tokenizer.texts_to_sequences(data)
     x = pad_sequences(x, maxlen=MAX_SEQUENCE_LENGTH)
+    additional = np.array([additional_features(data[i]) for i in range(len(data))])
+    x = np.hstack((x, additional))
     return x
 
 
@@ -88,22 +93,76 @@ def labels_to_numbers(labels):
 
 
 def build_model(input_length, number_of_classes):
-    model = Sequential()
-    model.add(Embedding(MAX_NB_WORDS, EMBEDDING_DIM, input_length=input_length))
-    model.add(SpatialDropout1D(0.2))
-    model.add(LSTM(100, dropout=0.2, recurrent_dropout=0.2))
-    model.add(Dense(number_of_classes, activation='softmax'))
+    input_tensor = Input(shape=(input_length, ))
+    tensor = Embedding(MAX_NB_WORDS, EMBEDDING_DIM)(input_tensor)
+    tensor = SpatialDropout1D(0.2)(tensor)
+    tensor = LSTM(100, dropout=0.5, recurrent_dropout=0.2)(tensor)
+    second_input = Input(shape=(SPECIAL_FEATURES, ))
+    tensor = Concatenate()([tensor, second_input])
+    tensor = Dense(100, activation='relu')(tensor)
+    tensor = Dense(number_of_classes, activation='softmax')(tensor)
+    model = Model(inputs=[input_tensor, second_input], outputs=tensor)
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+    print(model.summary())
     return model
 
 
+    # model = Sequential()
+    # model.add(Embedding(MAX_NB_WORDS, EMBEDDING_DIM, input_length=input_length))
+    # model.add(SpatialDropout1D(0.2))
+    # model.add(LSTM(100, dropout=0.5, recurrent_dropout=0.2))
+    # model.add(Dense(number_of_classes, activation='softmax'))
+    # model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+    # return model
+
+
 def train_model(model, x_train, y_train):
-    epochs = 5
+    epochs = 10
     batch_size = 64
 
-    history = model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.1,
-                        callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
+    history = model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.1)
+                        # callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
     return history
+
+
+def additional_features(text):
+    """adds the following additional features:
+    Average Word Length
+    Average Sentence Length By Word
+    Average Sentence Length By Character
+    Special Character Count
+
+    Arguments:
+        text {[type]} -- [description]
+
+    Returns:
+        [type] -- [description]
+    """
+    # TODO add Average Syllable per Word? Functional Words Count?
+
+    # symbols:
+    f = [text.count("?"), text.count("!"), text.count(","), text.count("-"), text.count(".")]
+
+    # avg sentence length
+    text_splitted_to_sentences = re.findall(r"[\w',\- ]+", text)
+    sub_sentences_count = len(text_splitted_to_sentences)
+    if sub_sentences_count == 0:
+        sub_sentences_count = 1
+    words = re.findall(r"[\w']+", text)
+    if len(words) == 0:
+        words = []
+        # smoothing
+        words_count = 1
+    else:
+        words_count = len(words)
+    avg_sentence_length = words_count / sub_sentences_count
+
+    # avg word len
+    letters_counter = 0
+    for _ in words:
+        letters_counter = letters_counter + words_count
+    avg_word_len = letters_counter / words_count
+    return np.asarray(f + [avg_sentence_length, avg_word_len, words_count, letters_counter])
 
 
 if __name__ == "__main__":
@@ -114,20 +173,20 @@ if __name__ == "__main__":
     x, labels = remove_classes(x, labels)
     y = to_categorical(labels, NUMBER_OF_CLASSES)
 
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
-    model = build_model(x.shape[1], NUMBER_OF_CLASSES)
-    history = train_model(model, x_train, y_train)
-    accuracy = model.evaluate(x_test, y_test)
-    print("Accuracy:", accuracy)
+    # x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
+    model = build_model(MAX_SEQUENCE_LENGTH, NUMBER_OF_CLASSES)
+    history = train_model(model, [x[:, :MAX_SEQUENCE_LENGTH], x[:, MAX_SEQUENCE_LENGTH:]], y)
+    # accuracy = model.evaluate(x_test, y_test)
+    # print("Accuracy:", accuracy)
 
     plt.title('Loss')
     plt.plot(history.history['loss'], label='train')
-    plt.plot(history.history['val_loss'], label='test')
+    plt.plot(history.history['val_loss'], label='validation')
     plt.legend()
     plt.show()
 
     plt.title('Accuracy')
     plt.plot(history.history['accuracy'], label='train')
-    plt.plot(history.history['val_accuracy'], label='test')
+    plt.plot(history.history['val_accuracy'], label='validation')
     plt.legend()
     plt.show()
