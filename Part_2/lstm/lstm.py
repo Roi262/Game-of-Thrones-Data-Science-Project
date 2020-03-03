@@ -15,8 +15,8 @@ from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
 from split_data_and_labels import TEXT_FILENAME, LABELS_FILENAME
 
-import features
-from configure import *
+# import features
+# from configure import *
 
 REPLACE_BY_SPACE_RE = re.compile('[/(){}\[\]\|@,;]')
 BAD_SYMBOLS_RE = re.compile('[^0-9a-z #+_]')
@@ -31,20 +31,21 @@ NUMBER_OF_CLASSES = 30
 SPECIAL_FEATURES = 9
 
 
-def remove_classes(text, labels):
-    rows_ind = []
-    bins = range(np.max(labels))
-    histogram, bins = np.histogram(labels, bins=bins)
-    arg = np.array(list(reversed(np.argsort(histogram))))
-    indexes = arg[:NUMBER_OF_CLASSES]
-    for i in range(len(labels)):
-        if labels[i] in indexes:
-            rows_ind.append(i)
-    rows_ind = np.array(rows_ind)
-    text = text[rows_ind]
-    labels = labels[rows_ind]
-    labels = np.array([np.where(indexes == labels[i])[0] for i in range(len(labels))]).reshape((-1,))
-    return text, labels
+def create_vector_labels(labels):
+    all_characters = set()
+    for label in labels:
+        for ch in label:
+            all_characters.add(ch)
+    number_of_labels = len(labels)
+    number_of_characters = len(all_characters)
+    all_characters = list(all_characters)
+    all_characters_dict = {all_characters[i]: i for i in range(number_of_characters)}
+    new_labels = np.zeros((number_of_labels, number_of_characters))
+    for i, label in enumerate(labels):
+        for ch in label:
+            ch_idx = all_characters_dict[ch]
+            new_labels[i, ch_idx] = 1
+    return new_labels
 
 
 def clean_text(text):
@@ -138,7 +139,7 @@ def train_model(model, x_train, y_train):
 
 
 def normalize_labels(labels):
-    
+    pass
 
 
 

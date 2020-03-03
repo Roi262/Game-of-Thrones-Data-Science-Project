@@ -1,4 +1,4 @@
-from configure import *
+# from configure import *
 import ast
 import csv
 import re
