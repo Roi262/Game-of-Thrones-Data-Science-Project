@@ -177,4 +177,4 @@ def add_header(header, csv_file_path):
 # create_final_csv()
 header = ['rowID', 'Season', 'Episode', 'Scene',
           'Line in Episode', 'Speaker', 'Line', 'Characters']
-add_header(header, 'joint_lines_with_scenes_season.csv')
+add_header(header, 'Part_2/part2_data_cleaned.csv')
