@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import ast
 from Part_2.lstm.clean_data import get_most_common_characters
 
@@ -56,8 +57,59 @@ def find_said_on_dict(data):
     return character_said_on_dict
 
 
-def plot_graph(said_on_dict):
-    pass
+def plot_score_data(data):
+    characters = [data_line[0] for data_line in data]
+    number_of_sentences = [data_line[1] for data_line in data]
+    score_data = [data_line[2] for data_line in data]
+
+    ind = np.arange(len(data))  # the x locations for the groups
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(ind - width / 2, number_of_sentences, width, label='Number Of Sentences')
+    rects2 = ax.bar(ind + width / 2, score_data, width, label='Score')
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_ylabel('Scores')
+    ax.set_title('Scores by group and gender')
+    ax.set_xticks(ind)
+    ax.set_xticklabels(characters)
+    ax.legend()
+
+    def autolabel(rects, xpos='center'):
+        """
+        Attach a text label above each bar in *rects*, displaying its height.
+
+        *xpos* indicates which side to place the text w.r.t. the center of
+        the bar. It can be one of the following {'center', 'right', 'left'}.
+        """
+
+        ha = {'center': 'center', 'right': 'left', 'left': 'right'}
+        offset = {'center': 0, 'right': 1, 'left': -1}
+
+        for rect in rects:
+            height = rect.get_height()
+            ax.annotate('{}'.format(height),
+                        xy=(rect.get_x() + rect.get_width() / 2, height),
+                        xytext=(offset[xpos] * 3, 3),  # use 3 points offset
+                        textcoords="offset points",  # in both directions
+                        ha=ha[xpos], va='bottom')
+
+    autolabel(rects1, "left")
+    autolabel(rects2, "right")
+
+    fig.tight_layout()
+
+    plt.show()
+
+
+def get_score_data(said_on_dict):
+    score_data = []
+    for character in said_on_dict.keys():
+        number_of_sentences = len(said_on_dict[character])
+        score = func()  # TODO: call roy's function
+        score_data.append((character, number_of_sentences, score))
+    return score_data
 
 
 def print_dict(d):
