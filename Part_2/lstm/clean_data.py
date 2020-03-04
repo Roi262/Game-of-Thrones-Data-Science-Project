@@ -39,7 +39,7 @@ def clean_lines_with_scenes(path):
             # clean ', i.e. Mole's town whore
             # to check more, print line in every instance of 1
 
-def get_most_common_characters(path):
+def get_most_common_characters(path, num_of_characters=MAX_CHARACTERS):
     with open(path, newline='') as f:
         df = pd.read_csv(f)
         scenes = df['Characters']
@@ -50,7 +50,7 @@ def get_most_common_characters(path):
                 characters_counter[character] += 1
 
         my_dict = {k: v for k, v in sorted(characters_counter.items(), key=lambda item: item[1], reverse=True)}
-        most_common = list(my_dict.keys())[:MAX_CHARACTERS]
+        most_common = list(my_dict.keys())[:num_of_characters]
         print(most_common)
         return most_common
 

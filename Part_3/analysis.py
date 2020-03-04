@@ -1,10 +1,11 @@
 from configure import *
-# 1 pairs of characters who talk to each other most
-
+from ..Part_2.lstm.clean_data import get_most_common_characters
 import nltk
+import numpy as np
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 nltk.download('vader_lexicon')
-
+from itertools import combinations
+NUM_OF_PAIRS = 10
 RELEVENT_CHARACTERS = ALL_CHARACTERS_FORMAL
 
 sid = SentimentIntensityAnalyzer()
@@ -39,7 +40,7 @@ def get_sentiment(sentences):
     return ss['compound']
 
 
-def get_dialogues(data_path, char_1, char_2, conversation_thresh, noise=2):
+def get_dialogues(data_path, char_1, char_2, conversation_thresh=5, noise=.1):
     """get all conversations of these 2 characters
     Arguments:
         data_path {[string]} -- path to csv file
@@ -69,7 +70,7 @@ def get_dialogues(data_path, char_1, char_2, conversation_thresh, noise=2):
                     row_counter += 1
                 else:
                     other_speaker_counter += 1
-                    if other_speaker_counter > noise:
+                    if float(other_speaker_counter)/row_counter > noise:
                         break
             if row_counter >= conversation_thresh:
                 sentiment = get_sentiment([tup[1] for tup in conversation])
@@ -78,22 +79,25 @@ def get_dialogues(data_path, char_1, char_2, conversation_thresh, noise=2):
     return conversations
 
 
-def best_friends():
-    # which characters talk most to each other
-    pairs_dic = {}
-    for pair in pairs_dic.keys():
-        conversations = get_dialogues(
-            data_path, pair[0], pair[1], conversation_thresh=6)
-
-
 def plot_pair():
     pass
 
+def plot_conversations(conversations):
+    for conversation in conversations:
 
-def plot_graph():
-    for pair in character_pairs:
-        plot_pair(pair)
-    pass
+
+def main():
+    # conversations = np.ndarray(shape=(0, 6))
+    conversations = []
+    common_characters = get_most_common_characters('Part_2/part2_data_cleaned.csv')
+    pairs = list(combinations(common_characters,2))
+    for pair in pairs:
+        # conversations = np.append(conversations, get_dialogues(path, pair[0], pair[1]), axis=0)
+        conversations.append(get_dialogues(path, pair[0], pair[1]))
+
+    most_common_conversations = [v for v in sorted(conversations, key=lambda item: item[2], reverse=True)]
+
+    plot_conversations(conversations[:NUM_OF_PAIRS])
 
 
 # def score_function(k, nw) -> float:
