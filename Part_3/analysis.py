@@ -34,10 +34,13 @@ def get_sentiment(sentences):
         [float] -- the compound sentiment of the text as a value in [-1,1]
     """
     text = ''
+    average_compound = 0
     for sent in sentences:
         text += ' ' + sent
-    ss = sid.polarity_scores(text)
-    return ss['compound']
+        average_compound += sid.polarity_scores(sent)['compound']
+    return float(average_compound)/len(sentences)
+    # ss = sid.polarity_scores(text)
+    # return ss['compound']
 
 
 def get_dialogues(data_path, char_1, char_2, conversation_thresh=5, noise=.1):
@@ -86,10 +89,12 @@ def plot_conversations(conversations):
     for conversation in conversations:
 
 
+
 def main():
     # conversations = np.ndarray(shape=(0, 6))
     conversations = []
     common_characters = get_most_common_characters('Part_2/part2_data_cleaned.csv')
+    # get all permutations of common_character pairs
     pairs = list(combinations(common_characters,2))
     for pair in pairs:
         # conversations = np.append(conversations, get_dialogues(path, pair[0], pair[1]), axis=0)

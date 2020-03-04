@@ -79,8 +79,29 @@ def clean_labels(path):
         w = csv.writer(f)
         w.writerows(new_data)
 
+def normalize_scene_ids(path):
+    """ Create new csv where the sceneID of each line equals Season*episode+SceneID
+    
+    Arguments:
+        path {[type]} -- [description]
+    """
+    new_data = []
+    with open(path, newline='') as f:
+        data = csv.reader(f)
+
+        for i, line in enumerate(data):
+            if i == 0: continue #header
+            new_scene_id = (line[SEASON] * line[EPISODE]) + line[SCENE]
+            new_line = line[:SCENE] + [new_scene_id] + line[SCENE + 1: ]
+            new_data.append(new_line)
+
+    new_path = 'part_3_data_cleaned_characters_normalized_sceneIDs.csv'
+    with open(new_path, 'w+', newline='') as f:
+        w = csv.writer(f)
+        w.writerows(new_data)
 
 if __name__ == "__main__":
-    clean_labels('Part_2/part2_data_cleaned.csv')
+    # clean_labels('Part_2/part2_data_cleaned.csv')
+    normalize_scene_ids('Part_2/part2_data_cleaned_characters.csv')
 
 # clean_lines_with_scenes(part2_data_path)
