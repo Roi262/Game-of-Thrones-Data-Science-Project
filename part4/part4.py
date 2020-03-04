@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import ast
 from Part_2.lstm.clean_data import get_most_common_characters
+from Part_3.bonus_analysis import get_sentiment
 
 DATA_PATH = "../Part_2/part2_data_cleaned.csv"
 COLUMN_MAP = {"Line": 6, "Speaker": 5, "Characters": 7}
@@ -62,44 +63,27 @@ def plot_score_data(data):
     number_of_sentences = [data_line[1] for data_line in data]
     score_data = [data_line[2] for data_line in data]
 
-    ind = np.arange(len(data))  # the x locations for the groups
-    width = 0.35  # the width of the bars
+    def color(score):
+        mult_factor = 5
+        green = np.array([0, 1, 0, 1])
+        yellow = np.array([1, 1, 0, 1])
+        red = np.array([1, 0, 0, 1])
+        if score > 0:
+            t = score
+            ret_color = t ** mult_factor * green + (1 - t ** mult_factor) * yellow
+        else:
+            t = - score
+            ret_color = t ** mult_factor * red + (1 - t ** mult_factor) * yellow
+        return tuple(ret_color)
 
-    fig, ax = plt.subplots()
-    rects1 = ax.bar(ind - width / 2, number_of_sentences, width, label='Number Of Sentences')
-    rects2 = ax.bar(ind + width / 2, score_data, width, label='Score')
+    height = number_of_sentences
+    bars = characters
+    y_pos = np.arange(len(bars))
 
-    # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Scores')
-    ax.set_title('Scores by group and gender')
-    ax.set_xticks(ind)
-    ax.set_xticklabels(characters)
-    ax.legend()
-
-    def autolabel(rects, xpos='center'):
-        """
-        Attach a text label above each bar in *rects*, displaying its height.
-
-        *xpos* indicates which side to place the text w.r.t. the center of
-        the bar. It can be one of the following {'center', 'right', 'left'}.
-        """
-
-        ha = {'center': 'center', 'right': 'left', 'left': 'right'}
-        offset = {'center': 0, 'right': 1, 'left': -1}
-
-        for rect in rects:
-            height = rect.get_height()
-            ax.annotate('{}'.format(height),
-                        xy=(rect.get_x() + rect.get_width() / 2, height),
-                        xytext=(offset[xpos] * 3, 3),  # use 3 points offset
-                        textcoords="offset points",  # in both directions
-                        ha=ha[xpos], va='bottom')
-
-    autolabel(rects1, "left")
-    autolabel(rects2, "right")
-
-    fig.tight_layout()
-
+    plt.bar(y_pos, height, color=[color(score) for score in score_data])
+    plt.xticks(y_pos, bars, rotation='vertical')
+    plt.ylabel("Number Of Sentences")
+    plt.title("Sentiment Analysis of gossip Sentences")
     plt.show()
 
 
@@ -107,7 +91,8 @@ def get_score_data(said_on_dict):
     score_data = []
     for character in said_on_dict.keys():
         number_of_sentences = len(said_on_dict[character])
-        score = func()  # TODO: call roy's function
+        sentences = [t[1] for t in said_on_dict[character]]
+        score = get_sentiment(sentences)
         score_data.append((character, number_of_sentences, score))
     return score_data
 
@@ -121,4 +106,6 @@ def print_dict(d):
 
 if __name__ == "__main__":
     data = load_data()
-    print_dict(find_said_on_dict(data))
+    said_on_dict = find_said_on_dict(data)
+    score_data = get_score_data(said_on_dict)
+    plot_score_data(score_data)
