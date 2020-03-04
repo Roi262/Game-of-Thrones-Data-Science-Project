@@ -88,20 +88,33 @@ def normalize_scene_ids(path):
     new_data = []
     with open(path, newline='') as f:
         data = csv.reader(f)
-
+        previous_sceneID = 0
+        sceneID = 0
+        new_scene_id = 0
         for i, line in enumerate(data):
-            if i == 0: continue #header
-            new_scene_id = (line[SEASON] * line[EPISODE]) + line[SCENE]
+            # if i == 0: continue #header
+            # seasonID = ast.literal_eval(line[SEASON])
+            # episodeID = ast.literal_eval(line[EPISODE])
+            # prev_sceneID = ast.literal_eval(line[SCENE])
+            # if episodeID == 2:
+            #     k=0
+            # new_scene_id = (seasonID * episodeID) + prev_sceneID
+            sceneID = ast.literal_eval(line[SCENE])
+            if sceneID > previous_sceneID:
+                sceneID = ast.literal_eval(line[SCENE])
+                new_scene_id += 1
+
             new_line = line[:SCENE] + [new_scene_id] + line[SCENE + 1: ]
             new_data.append(new_line)
+            previous_sceneID = sceneID
 
-    new_path = 'part_3_data_cleaned_characters_normalized_sceneIDs.csv'
+    new_path = 'part_3_data_cleaned_characters_new_sceneIDs.csv'
     with open(new_path, 'w+', newline='') as f:
         w = csv.writer(f)
         w.writerows(new_data)
 
 if __name__ == "__main__":
     # clean_labels('Part_2/part2_data_cleaned.csv')
-    normalize_scene_ids('Part_2/part2_data_cleaned_characters.csv')
+    normalize_scene_ids('part2_data_cleaned_characters.csv')
 
 # clean_lines_with_scenes(part2_data_path)
