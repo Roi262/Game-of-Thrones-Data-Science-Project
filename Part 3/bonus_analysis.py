@@ -1,32 +1,45 @@
 from configure import *
 # 1 pairs of characters who talk to each other most
 
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+nltk.download('vader_lexicon')
 
 RELEVENT_CHARACTERS = ALL_CHARACTERS_FORMAL
+
+sid = SentimentIntensityAnalyzer()
+
+# def get_vader_score(sent):
+#     # Polarity score returns dictionary
+#     ss = sid.polarity_scores(sent)
+#     for k in sorted(ss):
+#         print('{0}: {1}, '.format(k, ss[k]), end='')
+#         print()
+
 
 def get_both_char_lines():
     """returns one list of all lines character A says and
      another list of all lines character B says 
     """
 
-# def score_function(k, nw) -> float:
-#     """[summary]
-    
-#     Arguments:
-#         k {[int]} -- number of rows in conversation
-#         nw {[int]} -- total number of words in conversation
-    
-#     Returns:
-#         float -- function score
-#     """
-#     word_count = 0
-#     for row in rows_in_convo:
-#         char1_lines, char2_lines = get_both_char_lines()
 
 def get_sentiment(sentences):
+    """Calculates sentiment of a text.
     
+    Arguments:
+        sentences {[list]} -- a list of sentences
+    
+    Returns:
+        [float] -- the compound sentiment of the text as a value in [-1,1]
+    """
+    text = ''
+    for sent in sentences:
+        text += ' ' + sent
+    ss = sid.polarity_scores(text)
+    return ss['compound']
 
-def get_dialogues(data_path, char_1, char_2, conversation_thresh, noise= 2):
+
+def get_dialogues(data_path, char_1, char_2, conversation_thresh, noise=2):
     """get all conversations of these 2 characters
     Arguments:
         data_path {[string]} -- path to csv file
@@ -43,7 +56,8 @@ def get_dialogues(data_path, char_1, char_2, conversation_thresh, noise= 2):
         data = csv.reader(f)
         conversations = []
         for i, row in enumerate(data):
-            if i ==0: continue
+            if i == 0:
+                continue
             row_counter = 0
             conversation = []
             word_count = 0
@@ -59,7 +73,8 @@ def get_dialogues(data_path, char_1, char_2, conversation_thresh, noise= 2):
                         break
             if row_counter >= conversation_thresh:
                 sentiment = get_sentiment([tup[1] for tup in conversation])
-                conversations.append((conversation, word_count, len(conversation), (char_1, char_2), sentiment))
+                conversations.append((conversation, word_count, len(
+                    conversation), (char_1, char_2), sentiment))
     return conversations
 
 
@@ -67,14 +82,30 @@ def best_friends():
     # which characters talk most to each other
     pairs_dic = {}
     for pair in pairs_dic.keys():
-        conversations = get_dialogues(data_path, pair[0], pair[1], conversation_thresh=6)
-
+        conversations = get_dialogues(
+            data_path, pair[0], pair[1], conversation_thresh=6)
 
 
 def plot_pair():
     pass
 
+
 def plot_graph():
     for pair in character_pairs:
         plot_pair(pair)
     pass
+
+
+# def score_function(k, nw) -> float:
+#     """[summary]
+
+#     Arguments:
+#         k {[int]} -- number of rows in conversation
+#         nw {[int]} -- total number of words in conversation
+
+#     Returns:
+#         float -- function score
+#     """
+#     word_count = 0
+#     for row in rows_in_convo:
+#         char1_lines, char2_lines = get_both_char_lines()
