@@ -45,8 +45,6 @@ def find_characters_in_text(text, characters):
 
 def find_said_on_dict(data):
     character_said_on_dict = {character: [] for character in MOST_COMMON_CHARACTERS}
-    # if "Brea" in all_characters:
-    #     print(all_characters.index("Brea"))
     for line in data:
         text = line[COLUMN_MAP["Line"]]
         speaker = line[COLUMN_MAP["Speaker"]]
@@ -58,7 +56,7 @@ def find_said_on_dict(data):
     return character_said_on_dict
 
 
-def plot_score_data(data):
+def plot_score_data(data, title=""):
     characters = [data_line[0] for data_line in data]
     number_of_sentences = [data_line[1] for data_line in data]
     score_data = [data_line[2] for data_line in data]
@@ -83,7 +81,7 @@ def plot_score_data(data):
     plt.bar(y_pos, height, color=[color(score) for score in score_data])
     plt.xticks(y_pos, bars, rotation='vertical')
     plt.ylabel("Number Of Sentences")
-    plt.title("Sentiment Analysis of gossip Sentences")
+    plt.title(title)
     plt.show()
 
 
@@ -97,6 +95,16 @@ def get_score_data(said_on_dict):
     return score_data
 
 
+def invert_keys(said_on_dict):
+    said_dict = {character: [] for character in MOST_COMMON_CHARACTERS}
+    for said_on_ch in said_on_dict.keys():
+        for t in said_on_dict[said_on_ch]:
+            said_ch, sentence = t
+            if said_ch in MOST_COMMON_CHARACTERS:
+                said_dict[said_ch].append((said_on_ch, sentence))
+    return said_dict
+
+
 def print_dict(d):
     for key in d.keys():
         print(key, ":")
@@ -107,5 +115,8 @@ def print_dict(d):
 if __name__ == "__main__":
     data = load_data()
     said_on_dict = find_said_on_dict(data)
-    score_data = get_score_data(said_on_dict)
-    plot_score_data(score_data)
+    score_said_on_data = get_score_data(said_on_dict)
+    plot_score_data(score_said_on_data, title="Sentiment Analysis of gossip Sentences ON character")
+    said_dict = invert_keys(said_on_dict)
+    score_said_data = get_score_data(said_dict)
+    plot_score_data(score_said_data, title="Sentiment Analysis of gossip Sentences FROM character")
