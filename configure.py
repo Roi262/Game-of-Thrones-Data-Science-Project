@@ -1,8 +1,13 @@
 import csv
 
-part2_data_path = '../part2_data_lines_with_scenes.csv'
-CLEAN_DATA_PATH = '../part2_data_cleaned.csv'
-# Exceptions: ned-Eddard stark; littlefinger-Petyr Baelish,dany - Daenerys Targaryen
+# ori computer
+# part2_data_path = '../part2_data_lines_with_scenes.csv'
+# CLEAN_DATA_PATH = '../part2_data_cleaned.csv'
+
+# roi computer
+part2_data_path = 'Part_2/part2_data_lines_with_scenes.csv'
+CLEAN_DATA_PATH = 'Part_2/part2_data_cleaned.csv'
+
 EXCEPTIONS = {'ned': 'Eddard Stark',
                   'littlefinger': 'Petyr Baelish', 
                   'ser dontos': 'Dontos Hollard', 
