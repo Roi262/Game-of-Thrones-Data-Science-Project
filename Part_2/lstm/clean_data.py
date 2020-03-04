@@ -52,7 +52,7 @@ def get_most_common_characters(path, num_of_characters=MAX_CHARACTERS):
 
         my_dict = {k: v for k, v in sorted(characters_counter.items(), key=lambda item: item[1], reverse=True)}
         most_common = list(my_dict.keys())[:num_of_characters]
-        print(most_common)
+        # print(most_common)
         return most_common
 
 
