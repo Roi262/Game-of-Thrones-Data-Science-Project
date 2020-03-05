@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Embedding, Conv1D, GlobalMaxPooling1D, Dense
+from tensorflow.keras.layers import Embedding, Conv1D, GlobalMaxPooling1D, Dense, Dropout
 import matplotlib.pyplot as plt
 
 epochs = 20
@@ -59,6 +59,7 @@ def build_model():
     model.add(Conv1D(128, 5, activation='relu'))
     model.add(GlobalMaxPooling1D())
     model.add(Dense(10, activation='relu'))
+    model.add(Dropout(0.5))
     model.add(Dense(NUMBER_OF_CLASSES, activation='sigmoid'))
     model.summary()
     return model
@@ -116,8 +117,6 @@ def plot_history(history):
     plt.ylabel("Loss")
     plt.legend()
     plt.show()
-
-
 
 
 if __name__ == "__main__":
