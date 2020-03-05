@@ -182,11 +182,26 @@ if __name__ == "__main__":
     # plt.legend()
     # plt.show()
 
-    x_train, x_test, y_train, y_test = np.load("x_train.npy"), np.load("x_test.npy"), \
-                                       np.load("y_train.npy"), np.load("y_test.npy")
-    model = build_model(MAX_SEQUENCE_LENGTH, NUMBER_OF_CLASSES)
-    model.load_weights("weights.h5")
-    train_accuracy = calculate_accuracy(model, x_train, y_train)
-    test_accuracy = calculate_accuracy(model, x_test, y_test)
-    print("Train Accuracy:", train_accuracy)
-    print("Test Accuracy:", test_accuracy)
+    # x_train, x_test, y_train, y_test = np.load("x_train.npy"), np.load("x_test.npy"), \
+    #                                    np.load("y_train.npy"), np.load("y_test.npy")
+    # model = build_model(MAX_SEQUENCE_LENGTH, NUMBER_OF_CLASSES)
+    # model.load_weights("weights.h5")
+    # train_accuracy = calculate_accuracy(model, x_train, y_train)
+    # test_accuracy = calculate_accuracy(model, x_test, y_test)
+    # print("Train Accuracy:", train_accuracy)
+    # print("Test Accuracy:", test_accuracy)
+
+    # data = pd.read_csv('../../part2_data_cleaned_characters.csv', delimiter=',', header=None).to_numpy()
+    # text_data, labels = data[:, :-1], data[:, -1]
+    #
+    # x = tokenize_words(text_data)
+    # # labels = labels_to_numbers(labels)
+    #
+    # y = create_vector_labels(labels)
+    # # y = to_categorical(labels, NUMBER_OF_CLASSES)
+    #
+    # n = x.shape[0]
+    # labels = np.random.randint(0, NUMBER_OF_CLASSES, n)
+    # in_y = y[np.arange(n), labels]
+    # accuracy = float(np.sum(in_y)) / n
+    # print(accuracy)
