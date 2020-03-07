@@ -57,8 +57,10 @@ def tokenize_words(data):
 def build_model():
     sequence_input = Input(shape=(maxlen,))
     embedded_sequences = Embedding(vocab_size, embedding_dim)(sequence_input)
-    l_lstm = Bidirectional(LSTM(100))(embedded_sequences)
-    preds = Dense(NUMBER_OF_CLASSES, activation='softmax')(l_lstm)
+    l_lstm = Bidirectional(LSTM(100, dropout=0.2))(embedded_sequences)
+    d1 = Dense(50, activation='relu')(l_lstm)
+    d2 = Dropout(0.2)(d1)
+    preds = Dense(NUMBER_OF_CLASSES, activation='softmax')(d2)
     model = Model(sequence_input, preds)
     model.summary()
     return model

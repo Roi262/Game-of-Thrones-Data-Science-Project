@@ -59,8 +59,7 @@ def build_model():
     model.add(Conv1D(128, 5, activation='relu'))
     model.add(GlobalMaxPooling1D())
     model.add(Dense(10, activation='relu'))
-    model.add(Dropout(0.5))
-    model.add(Dense(NUMBER_OF_CLASSES, activation='sigmoid'))
+    model.add(Dense(NUMBER_OF_CLASSES, activation='softmax'))
     model.summary()
     return model
 
