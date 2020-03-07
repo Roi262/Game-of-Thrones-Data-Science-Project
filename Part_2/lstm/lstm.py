@@ -27,7 +27,7 @@ MAX_NB_WORDS = 50000
 MAX_SEQUENCE_LENGTH = 250
 EMBEDDING_DIM = 100
 
-NUMBER_OF_CLASSES = 30
+NUMBER_OF_CLASSES = 15
 
 SPECIAL_FEATURES = 539 - 250
 
@@ -196,7 +196,7 @@ def calculate_accuracy(model, x, y):
 
 
 if __name__ == "__main__":
-    # data = pd.read_csv('../../part2_data_cleaned_characters.csv', delimiter=',', header=None).to_numpy()
+    # data = pd.read_csv('../../part2_data_cleaned_15_characters.csv', delimiter=',', header=None).to_numpy()
     # text_data, labels = data[:, :-1], data[:, -1]
     #
     # x = tokenize_words(text_data)
@@ -206,6 +206,11 @@ if __name__ == "__main__":
     # # y = to_categorical(labels, NUMBER_OF_CLASSES)
     #
     # x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
+    #
+    # np.save("x_train", x_train)
+    # np.save("x_test", x_test)
+    # np.save("y_train", y_train)
+    # np.save("y_test", y_test)
     #
     # # x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
     # model = build_model(MAX_SEQUENCE_LENGTH, NUMBER_OF_CLASSES)
@@ -220,14 +225,9 @@ if __name__ == "__main__":
     # plt.plot(history.history['val_loss'], label='validation')
     # plt.legend()
     # plt.show()
-    #
-    # # test_loss = model.evaluate(x_test, y_test)
-    # # print("Test Loss:", test_loss)
-    #
-    # np.save("x_train", x_train)
-    # np.save("x_test", x_test)
-    # np.save("y_train", y_train)
-    # np.save("y_test", y_test)
+
+    # test_loss = model.evaluate(x_test, y_test)
+    # print("Test Loss:", test_loss)
 
     # plt.title('Accuracy')
     # plt.plot(history.history['accuracy'], label='train')
@@ -235,11 +235,26 @@ if __name__ == "__main__":
     # plt.legend()
     # plt.show()
 
-    x_train, x_test, y_train, y_test = np.load("x_train.npy"), np.load("x_test.npy"), \
-                                       np.load("y_train.npy"), np.load("y_test.npy")
-    model = build_model(MAX_SEQUENCE_LENGTH, NUMBER_OF_CLASSES)
-    model.load_weights("weights.h5")
-    train_accuracy = calculate_accuracy(model, x_train, y_train)
-    test_accuracy = calculate_accuracy(model, x_test, y_test)
-    print("Train Accuracy:", train_accuracy)
-    print("Test Accuracy:", test_accuracy)
+    # x_train, x_test, y_train, y_test = np.load("x_train.npy"), np.load("x_test.npy"), \
+    #                                    np.load("y_train.npy"), np.load("y_test.npy")
+    # model = build_model(MAX_SEQUENCE_LENGTH, NUMBER_OF_CLASSES)
+    # model.load_weights("weights.h5")
+    # train_accuracy = calculate_accuracy(model, x_train, y_train)
+    # test_accuracy = calculate_accuracy(model, x_test, y_test)
+    # print("Train Accuracy:", train_accuracy)
+    # print("Test Accuracy:", test_accuracy)
+
+    data = pd.read_csv('../../part2_data_cleaned_15_characters.csv', delimiter=',', header=None).to_numpy()
+    text_data, labels = data[:, :-1], data[:, -1]
+
+    x = tokenize_words(text_data)
+    # labels = labels_to_numbers(labels)
+
+    y = create_vector_labels(labels)
+    # y = to_categorical(labels, NUMBER_OF_CLASSES)
+
+    n = x.shape[0]
+    labels = np.random.randint(0, NUMBER_OF_CLASSES, n)
+    in_y = y[np.arange(n), labels]
+    accuracy = float(np.sum(in_y)) / n
+    print(accuracy)
