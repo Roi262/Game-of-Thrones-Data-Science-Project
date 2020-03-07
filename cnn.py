@@ -19,6 +19,11 @@ def get_data():
 
 
 def plot_history(history):
+    """[summary]
+    
+    Arguments:
+        history {[type]} -- [description]
+    """
     acc = history.history['acc']
     val_acc = history.history['val_acc']
     loss = history.history['loss']
@@ -39,6 +44,16 @@ def plot_history(history):
 
 
 def build_model(vocab_size, embedding_dim, input_len):
+    """[summary]
+    
+    Arguments:
+        vocab_size {[type]} -- [description]
+        embedding_dim {[type]} -- [description]
+        input_len {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     model = Sequential()
     model.add(layers.Embedding(vocab_size, embedding_dim, input_len))
     model.add(layers.Conv1D(128, 5, activation='relu'))
@@ -52,6 +67,13 @@ def build_model(vocab_size, embedding_dim, input_len):
 
 
 def train_model(model, x, y):
+    """[summary]
+    
+    Arguments:
+        model {[type]} -- [description]
+        x {[type]} -- [description]
+        y {[type]} -- [description]
+    """
     history = model.fit(x, y, epochs=20, validation_split=0.2,
                         batch_size=10, verbose=1)
     loss, accuracy = model.evaluate(x, y, verbose=False)

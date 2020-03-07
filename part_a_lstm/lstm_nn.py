@@ -28,6 +28,15 @@ SPECIAL_FEATURES = 9
 
 
 def remove_classes(text, labels):
+    """[summary]
+    
+    Arguments:
+        text {[type]} -- [description]
+        labels {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     rows_ind = []
     bins = range(np.max(labels))
     histogram, bins = np.histogram(labels, bins=bins)
@@ -72,6 +81,14 @@ def get_data_and_labels():
 
 
 def tokenize_words(data):
+    """[summary]
+    
+    Arguments:
+        data {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
     tokenizer.fit_on_texts(data)
     x = tokenizer.texts_to_sequences(data)
@@ -93,6 +110,15 @@ def labels_to_numbers(labels):
 
 
 def build_model(input_length, number_of_classes):
+    """[summary]
+    
+    Arguments:
+        input_length {[type]} -- [description]
+        number_of_classes {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     input_tensor = Input(shape=(input_length, ))
     tensor = Embedding(MAX_NB_WORDS, EMBEDDING_DIM)(input_tensor)
     tensor = SpatialDropout1D(0.2)(tensor)
@@ -138,8 +164,6 @@ def additional_features(text):
     Returns:
         [type] -- [description]
     """
-    # TODO add Average Syllable per Word? Functional Words Count?
-
     # symbols:
     f = [text.count("?"), text.count("!"), text.count(","), text.count("-"), text.count(".")]
 

@@ -12,7 +12,7 @@ NUM_OF_SEASONS = 7
 LINES_CSV = "../data/Game of Thrones/kaggle_cleaned.csv"
 # LINES_CSV = "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - New/data/Game of Thrones/kaggle_cleaned.csv"
 
-# TODO find best ratio
+# best fuzzy ratio
 FUZZY_THRESH = 75
 LINE_FEATURES_NUM = 7
 
@@ -48,16 +48,34 @@ def line_is_in_scene(line, scene_in_one_string):
 
 
 def get_one_string(scene_sentences):
+    """
+    Arguments:
+        scene_sentences {[type]} -- [description]
+    
+    Returns:
+        [string] -- all sentences in the scene as one long string
+    """
     scene_in_one_string = ''
     for sentence in scene_sentences:
         scene_in_one_string += ' '
         scene_in_one_string += sentence
     return scene_in_one_string
 
-# TODO make this run faster
-
 
 def clean_csv(scenes, lines_in_ep, season, episode):
+    """This function cleans (removes) all lines from the Kaggle csv file 
+    that do not exist in the srt subtitles files. This happens for example where there is 
+    text in fantasy language in the kaggle file that is not in the srt files.
+    
+    Arguments:
+        scenes {[type]} -- [description]
+        lines_in_ep {[type]} -- [description]
+        season {[type]} -- [description]
+        episode {[type]} -- [description]
+    
+    Returns:
+        [list] -- a list of all verified lines that show up in both datasets
+    """
     pickle_dir = '../pickles/'
     if season < 4:
         pickle_path = pickle_dir + \
@@ -69,13 +87,10 @@ def clean_csv(scenes, lines_in_ep, season, episode):
     if path.exists(pickle_path):
         return load_pickle(pickle_path)
 
-    print('no pickles')
     verified_lines = []
     for (speaker, line) in lines_in_ep:
         for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
             scene_in_one_string = get_one_string(scene_sentences)
-            # if line == 'No':
-            #     j=0
             if line_is_in_scene(line, scene_in_one_string):
                 verified_lines.append((speaker, line))
                 break
@@ -96,15 +111,11 @@ def text_join(scenes, lines_in_ep, season, episode):
 
     line_id = 0
     for scene_id, (scene_sentences, scene_characters) in enumerate(scenes):
-        # scene_lines_counter = 0
-        # TODO may be a problem here, not enough lines are added
         if line_id == len(lines_in_ep):
             break
         scene_in_one_string = get_one_string(scene_sentences)
         line = lines_in_ep[line_id][1]
         while line_is_in_scene(line, scene_in_one_string):
-            if line_id == 75:
-                g = 9
             new_line = np.array([[season, episode, scene_id, line_id, lines_in_ep[line_id][0],
                                   lines_in_ep[line_id][1], scene_characters]])
             new_table = np.append(new_table, new_line, axis=0)
@@ -112,7 +123,6 @@ def text_join(scenes, lines_in_ep, season, episode):
             if line_id == len(lines_in_ep):
                 break
             line = lines_in_ep[line_id][1]
-
     return new_table
 
 
@@ -125,8 +135,6 @@ def get_episode_lines(episodes):
     """
     speaker_and_line_dic = {}
     for episode in episodes:
-        # print(episode)
-        # k=2
         season_num, episode_num = int(episode[0][0]), int(episode[0][1])
         episode_speakers_and_lines = []
         names = episode[1]["Name"].tolist()
@@ -139,7 +147,9 @@ def get_episode_lines(episodes):
 
 
 def create_final_csv():
-    # all_scenes = get_scenes()  # TODO extract scenes from csv
+    """function that creates the final merged and cleaned csv file, from the kaggle dataset, and the 
+    subtitles in scenes dataset.
+    """
     table = np.ndarray(shape=(0, LINE_FEATURES_NUM))
     data = pd.read_csv(LINES_CSV, delimiter=";", header=0)
     df = pd.DataFrame(data)
@@ -148,7 +158,6 @@ def create_final_csv():
     scenes_lines_dic = get_scenes_lines_dic()
 
     for season in offsets.keys():
-        # if not season ==5 : continue
         for episode in offsets[season].keys():
             scenes = scenes_lines_dic[(season, episode)]
             lines = speaker_and_line_dic[(season, episode)]
@@ -164,6 +173,12 @@ def create_final_csv():
 
 
 def add_header(header, csv_file_path):
+    """adds a header to the csv file
+    
+    Arguments:
+        header {[type]} -- [description]
+        csv_file_path {[type]} -- [description]
+    """
     with open(csv_file_path, newline='') as f:
         r = csv.reader(f)
         data = [line for line in r]

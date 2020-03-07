@@ -7,14 +7,18 @@ import numpy as np
 
 RELEVANT_CHARACTERS = CHARACTERS_DIC
 
+
 def spoken_to_in_sent_features(line):
+    """
+
+    Arguments:
+        line {[type]} -- [description]
+
+    Returns:
+        [type] -- [description]
+    """
     spoken_to_in_sent = [0] * len(RELEVANT_CHARACTERS)
-
-    # for row in data:
-    #     line = row[LINE]
-        # characters = ast.literal_eval(row[CHARACTERS])
-
-        # 1. check whether a characters name is said in the line itself
+    # 1. check whether a characters name is said in the line itself
     for character in RELEVANT_CHARACTERS.keys():
         character_subnames = character.split()
         for name in character_subnames:
@@ -26,7 +30,6 @@ def spoken_to_in_sent_features(line):
     return np.asarray(spoken_to_in_sent)
 
 
-
 # def get_subject_words():
 #     # TODO use top 30 subject words (i.e., words that start with capital letters that are not the first word in a sentence)
 #     df = pd.read_csv(CLEAN_DATA_PATH, error_bad_lines=False, delimiter=',', header=0)
@@ -34,10 +37,6 @@ def spoken_to_in_sent_features(line):
 #     subject_words = set()
 #     for line in all_lines:
 #         for i, word in enumerate(line.split()):
-            
-
-
-
 
     # text_path = 'got_lines.txt'
     # with open(text_path, 'w+') as f:
@@ -52,17 +51,16 @@ def additional_features(text):
     Average Sentence Length By Word
     Average Sentence Length By Character
     Special Character Count
-    
+
     Arguments:
         text {[type]} -- [description]
-    
+
     Returns:
         [type] -- [description]
     """
-    # TODO add Average Syllable per Word? Functional Words Count?
-
     # symbols:
-    f = [text.count("?"), text.count("!"), text.count(","), text.count("-"), text.count(".")]
+    f = [text.count("?"), text.count("!"), text.count(","),
+         text.count("-"), text.count(".")]
 
     # avg sentence length
     text_splitted_to_sentences = re.findall(r"[\w',\- ]+", text)
@@ -87,15 +85,8 @@ def additional_features(text):
 
 
 def create_features(line):
-    # TODO use tokenize/onehot
-    # for line in data():
-    features = np.append(additional_features(line[6]), spoken_to_in_sent_features(line[6]))
+    features = np.append(additional_features(
+        line[6]), spoken_to_in_sent_features(line[6]))
     # add character id
     features = np.append(features, CHARACTERS_DIC[line[SPEAKER]])
     return features, len(features)
-
-    # newline = add_features_to_vec()
-        # TODO add line to data
-
-
-

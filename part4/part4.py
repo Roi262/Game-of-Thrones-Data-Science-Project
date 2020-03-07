@@ -16,6 +16,14 @@ def load_data():
 
 
 def all_characters_names(data):
+    """[summary]
+    
+    Arguments:
+        data {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     all_characters = set()
     for line in data:
         characters = ast.literal_eval(line[COLUMN_MAP["Characters"]])
@@ -25,6 +33,15 @@ def all_characters_names(data):
 
 
 def is_character_in_text(character, text):
+    """[summary]
+    
+    Arguments:
+        character {[type]} -- [description]
+        text {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     # return character.lower() in text.lower()
     if character.lower() in text.lower():
         return True
@@ -36,6 +53,15 @@ def is_character_in_text(character, text):
 
 
 def find_characters_in_text(text, characters):
+    """[summary]
+    
+    Arguments:
+        text {[type]} -- [description]
+        characters {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     characters_in_text = []
     for character in characters:
         if is_character_in_text(character, text):
@@ -44,6 +70,14 @@ def find_characters_in_text(text, characters):
 
 
 def find_said_on_dict(data):
+    """[summary]
+    
+    Arguments:
+        data {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     character_said_on_dict = {character: [] for character in MOST_COMMON_CHARACTERS}
     for line in data:
         text = line[COLUMN_MAP["Line"]]
@@ -57,11 +91,30 @@ def find_said_on_dict(data):
 
 
 def plot_score_data(data, title=""):
+    """[summary]
+    
+    Arguments:
+        data {[type]} -- [description]
+    
+    Keyword Arguments:
+        title {str} -- [description] (default: {""})
+    
+    Returns:
+        [type] -- [description]
+    """
     characters = [data_line[0] for data_line in data]
     number_of_sentences = [data_line[1] for data_line in data]
     score_data = [data_line[2] for data_line in data]
 
     def color(score):
+        """[summary]
+        
+        Arguments:
+            score {[type]} -- [description]
+        
+        Returns:
+            [type] -- [description]
+        """
         mult_factor = 5
         green = np.array([0, 1, 0, 1])
         yellow = np.array([1, 1, 0, 1])
@@ -86,6 +139,14 @@ def plot_score_data(data, title=""):
 
 
 def get_score_data(said_on_dict):
+    """[summary]
+    
+    Arguments:
+        said_on_dict {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     score_data = []
     for character in said_on_dict.keys():
         number_of_sentences = len(said_on_dict[character])
@@ -96,6 +157,14 @@ def get_score_data(said_on_dict):
 
 
 def invert_keys(said_on_dict):
+    """[summary]
+    
+    Arguments:
+        said_on_dict {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     said_dict = {character: [] for character in MOST_COMMON_CHARACTERS}
     for said_on_ch in said_on_dict.keys():
         for t in said_on_dict[said_on_ch]:

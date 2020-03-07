@@ -20,7 +20,6 @@ def get_corpus_words():
 
 
 def get_one_hot():
-    # corpus_tokens = ["johny", "went", "here", "i", "went", "there"]
     corpus_tokens, num_of_tokens = get_corpus_words()
     encoder = LabelEncoder()
     city_labels = encoder.fit_transform(corpus_tokens)

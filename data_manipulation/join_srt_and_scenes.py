@@ -102,8 +102,12 @@ def srt_str_to_seconds(st: str) -> int:
 def join_scene_with_srt(srt_csv_filename: str, scene_csv_filename: str, scene_offset: int, season: int, episode: int):
     srt = pd.read_csv(srt_csv_filename, delimiter=";", header=None).to_numpy()
     scenes = pd.read_csv(scene_csv_filename, delimiter=",").to_numpy()
+    """[summary]
+    
+    Returns:
+        [type] -- [description]
+    """
 
-    # scenes_lines_dic = {}
     scenes_lines = []
 
     srt_index = 0
@@ -134,29 +138,21 @@ def join_scene_with_srt(srt_csv_filename: str, scene_csv_filename: str, scene_of
             srt_index += 1
             scenes_lines[-1][0].append(srt_line[3])
 
-    # for lines in scenes_lines:
-    #     print(lines)
-
-    # scenes_lines_dic[(season, episode)] = scenes_lines
     return scenes_lines
 
 def get_scenes_lines_dic():
+    """ for every (season, episode) key, create a list of tuples as the value, 
+    where each tuple represents a scene in the episode, and holds a list of all
+    sentences said in that scene and a list of characters present in that scene.
+    
+    Returns:
+        [dic] -- explained above
+    """
     scenes_lines_dic = {}
     for season in offsets.keys():
-        # if not season == 4:
-        #     continue
         for episode in offsets[season].keys():
             scenes_lines_dic[(season, episode)] = join_scene_with_srt(
                 offsets[season][episode]["path"],
                 "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project - NEW/data/Game of Thrones/scenes_timestamps.csv",
                 offsets[season][episode]["offset"], season, episode)
     return scenes_lines_dic
-
-
-
-
-# if __name__ == "__main__":
-    # scenes_lines_dic[(season, episode)] = join_scene_with_srt(
-    #     "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project/data/Game of Thrones/STR converted to CSV/rois_episodes/Game of Thrones - 4x10 - The Children.1080i.HDTV.CtrlHD.en.csv",
-    #     "/Users/roiaharonson/Code/UNI CODE/INTRO TO DATA SCIENCE/Final Project/data/Game of Thrones/scenes_timestamps.csv",
-    #     offsets[4][10], 4, 10)

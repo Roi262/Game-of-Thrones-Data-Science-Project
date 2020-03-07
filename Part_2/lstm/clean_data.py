@@ -6,12 +6,20 @@ import pandas as pd
 
 
 def clean_lines_with_scenes(path):
+    """ Sync Speaker name in the dataset with their formal name as presented in 
+    the list of present characters. E.g, if speaker = ned, this function changes the
+    value to 'Eddard Stark', or 'cersei' to 'Cersei Lannister'.
+
+    Arguments:
+        path {[string]} -- path to the csv file
+    """
     with open(path, newline='') as f:
         data = csv.reader(f)
         cleaned_data = []
         data_len = 0
         for i, line in enumerate(data):
-            if i == 0: continue
+            if i == 0:
+                continue  # header
             speaker = line[SPEAKER]
             # override exceptions
             if speaker in EXCEPTIONS.keys():
@@ -34,37 +42,40 @@ def clean_lines_with_scenes(path):
     # record number of lines lost in this process
     print(data_len - len(cleaned_data))
 
-    # otherwise, change name of speaker to his formal name
-    # Exceptions: ned-Eddard stark; littlefinger-Petyr Baelish, ser dontos- dontos, dolorous edd - eddison Tollet, marwyn-Archmaester Ebrose,dany - Daenerys Targaryen
-    # clean ', i.e. Mole's town whore
-    # to check more, print line in every instance of 1
-
 
 def get_most_common_characters(path, num_of_characters=MAX_CHARACTERS):
+    """
+    Returns:
+        [list] -- a list of the most common characters based on the number of scenes 
+        they took part in.
+    """
     with open(path, newline='') as f:
         df = pd.read_csv(f)
         scenes = df['Characters']
-
         characters_counter = defaultdict(int)
         for scene in scenes:
             for character in ast.literal_eval(scene):
                 characters_counter[character] += 1
 
-        my_dict = {k: v for k, v in sorted(characters_counter.items(), key=lambda item: item[1], reverse=True)}
+        my_dict = {k: v for k, v in sorted(
+            characters_counter.items(), key=lambda item: item[1], reverse=True)}
         most_common = list(my_dict.keys())[:num_of_characters]
-        # print(most_common)
         return most_common
 
 
 def clean_labels(path):
+    """
+    Remove all data with non common characters. create new csv file with only common characters.
+    Arguments:
+        path {[type]} -- [description]
+    """
     new_data = []
     most_common_characters = get_most_common_characters(path)
     with open(path, newline='') as f:
         data = csv.reader(f)
-
         for i, line in enumerate(data):
-
-            if i == 0: continue
+            if i == 0: # header
+                continue
             cleaned_characters = []
             for character in ast.literal_eval(line[CHARACTERS]):
                 if character in most_common_characters:
@@ -73,17 +84,14 @@ def clean_labels(path):
                 new_line = line[:CHARACTERS] + [cleaned_characters]
                 new_data.append(new_line)
 
-    # TODO remove lines with irrelevant speakers (not in top 30)
     new_path = 'part2_data_cleaned_characters.csv'
     with open(new_path, 'w+', newline='') as f:
         w = csv.writer(f)
         w.writerows(new_data)
 
+
 def normalize_scene_ids(path):
-    """ Create new csv where the sceneID of each line equals Season*episode+SceneID
-    
-    Arguments:
-        path {[type]} -- [description]
+    """ Create new csv where the sceneIDs are organized chronologically w.r.t the entire show
     """
     new_data = []
     with open(path, newline='') as f:
@@ -92,19 +100,12 @@ def normalize_scene_ids(path):
         sceneID = 0
         new_scene_id = 0
         for i, line in enumerate(data):
-            # if i == 0: continue #header
-            # seasonID = ast.literal_eval(line[SEASON])
-            # episodeID = ast.literal_eval(line[EPISODE])
-            # prev_sceneID = ast.literal_eval(line[SCENE])
-            # if episodeID == 2:
-            #     k=0
-            # new_scene_id = (seasonID * episodeID) + prev_sceneID
             sceneID = ast.literal_eval(line[SCENE])
             if sceneID > previous_sceneID:
                 sceneID = ast.literal_eval(line[SCENE])
                 new_scene_id += 1
 
-            new_line = line[:SCENE] + [new_scene_id] + line[SCENE + 1: ]
+            new_line = line[:SCENE] + [new_scene_id] + line[SCENE + 1:]
             new_data.append(new_line)
             previous_sceneID = sceneID
 
@@ -113,8 +114,9 @@ def normalize_scene_ids(path):
         w = csv.writer(f)
         w.writerows(new_data)
 
+
 if __name__ == "__main__":
     # clean_labels('Part_2/part2_data_cleaned.csv')
     normalize_scene_ids('part2_data_cleaned_characters.csv')
 
-# clean_lines_with_scenes(part2_data_path)
+    # clean_lines_with_scenes(part2_data_path)

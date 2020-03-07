@@ -33,6 +33,14 @@ SPECIAL_FEATURES = 539 - 250
 
 
 def create_vector_labels(labels):
+    """[summary]
+    
+    Arguments:
+        labels {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     labels = [ast.literal_eval(label) for label in labels]
     all_characters = set()
     for label in labels:
@@ -79,6 +87,14 @@ def get_data_and_labels(data):
 
 
 def tokenize_words(data):
+    """[summary]
+    
+    Arguments:
+        data {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
     lines = data[:, 6]
     tokenizer.fit_on_texts(lines)
@@ -91,6 +107,14 @@ def tokenize_words(data):
 
 
 def labels_to_numbers(labels):
+    """[summary]
+    
+    Arguments:
+        labels {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     labels_dict = {}
     curr_idx = 0
     for label in labels:
@@ -102,6 +126,15 @@ def labels_to_numbers(labels):
 
 
 def build_model(input_length, number_of_classes):
+    """[summary]
+    
+    Arguments:
+        input_length {[type]} -- [description]
+        number_of_classes {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     input_tensor = Input(shape=(input_length,))
     tensor = Embedding(MAX_NB_WORDS, EMBEDDING_DIM)(input_tensor)
     tensor = SpatialDropout1D(0.2)(tensor)
@@ -125,6 +158,16 @@ def build_model(input_length, number_of_classes):
 
 
 def train_model(model, x_train, y_train):
+    """[summary]
+    
+    Arguments:
+        model {[type]} -- [description]
+        x_train {[type]} -- [description]
+        y_train {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     epochs = 10
     batch_size = 64
 
@@ -134,6 +177,16 @@ def train_model(model, x_train, y_train):
 
 
 def calculate_accuracy(model, x, y):
+    """[summary]
+    
+    Arguments:
+        model {[type]} -- [description]
+        x {[type]} -- [description]
+        y {[type]} -- [description]
+    
+    Returns:
+        [type] -- [description]
+    """
     n = y.shape[0]
     y_predicted = model.predict([x[:, :MAX_SEQUENCE_LENGTH], x[:, MAX_SEQUENCE_LENGTH:]])
     predicted_indexes = np.argmax(y_predicted, axis=1)
