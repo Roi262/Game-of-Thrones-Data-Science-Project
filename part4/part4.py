@@ -15,14 +15,14 @@ def load_data():
     return pd.read_csv(DATA_PATH).to_numpy()
 
 
-def all_characters_names(data):
+def all_characters_names(data: np.ndarray) -> list:
     """[summary]
-    
+    find all character names in the data
     Arguments:
-        data {[type]} -- [description]
+        data {[numpy array]} -- the data array
     
     Returns:
-        [type] -- [description]
+        [list] -- all the character names
     """
     all_characters = set()
     for line in data:
@@ -32,15 +32,15 @@ def all_characters_names(data):
     return list(all_characters)
 
 
-def is_character_in_text(character, text):
+def is_character_in_text(character: str, text: str) -> bool:
     """[summary]
-    
+    check if the character name is in the text
     Arguments:
-        character {[type]} -- [description]
-        text {[type]} -- [description]
+        character {[str]} -- character name
+        text {[str]} -- text line
     
     Returns:
-        [type] -- [description]
+        [bool] -- True if the character name is in the text line, False otherwise
     """
     # return character.lower() in text.lower()
     if character.lower() in text.lower():
@@ -52,15 +52,15 @@ def is_character_in_text(character, text):
     return False
 
 
-def find_characters_in_text(text, characters):
+def find_characters_in_text(text: str, characters: list) -> list:
     """[summary]
-    
+    find all characters in the text
     Arguments:
-        text {[type]} -- [description]
-        characters {[type]} -- [description]
+        text {[str]} -- text line
+        characters {[list]} -- list of characters
     
     Returns:
-        [type] -- [description]
+        [list] -- list of characters that their name is in the text
     """
     characters_in_text = []
     for character in characters:
@@ -69,14 +69,15 @@ def find_characters_in_text(text, characters):
     return characters_in_text
 
 
-def find_said_on_dict(data):
+def find_said_on_dict(data: np.ndarray) -> dict:
     """[summary]
-    
+    find the dictionary with lines that said on characters
     Arguments:
-        data {[type]} -- [description]
+        data {[numpy array]} -- the data array
     
     Returns:
-        [type] -- [description]
+        [dict] -- dictionary with character as key and (speaker, text) as value,
+        where speaker said the text on the character.
     """
     character_said_on_dict = {character: [] for character in MOST_COMMON_CHARACTERS}
     for line in data:
@@ -90,14 +91,14 @@ def find_said_on_dict(data):
     return character_said_on_dict
 
 
-def plot_score_data(data, title=""):
+def plot_score_data(data: list, title: str = "") -> None:
     """[summary]
-    
+    plot the data
     Arguments:
-        data {[type]} -- [description]
+        data {[list]} -- the score data
     
     Keyword Arguments:
-        title {str} -- [description] (default: {""})
+        title {str} -- the title for the graph (default: {""})
     
     Returns:
         [type] -- [description]
@@ -106,14 +107,14 @@ def plot_score_data(data, title=""):
     number_of_sentences = [data_line[1] for data_line in data]
     score_data = [data_line[2] for data_line in data]
 
-    def color(score):
+    def color(score: float) -> tuple:
         """[summary]
-        
+        get the color for a sentiment score
         Arguments:
-            score {[type]} -- [description]
+            score {[float]} -- the sentiment score in range (-1,1)
         
         Returns:
-            [type] -- [description]
+            [tuple] -- the rgb color for the score
         """
         mult_factor = 5
         green = np.array([0, 1, 0, 1])
@@ -138,14 +139,14 @@ def plot_score_data(data, title=""):
     plt.show()
 
 
-def get_score_data(said_on_dict):
+def get_score_data(said_on_dict: dict) -> list:
     """[summary]
-    
+    get the scores for text lines
     Arguments:
-        said_on_dict {[type]} -- [description]
+        said_on_dict {[dict]} -- the dictionary that generated in the find_said_on_dict function
     
     Returns:
-        [type] -- [description]
+        [list] -- the list of sentiment scores
     """
     score_data = []
     for character in said_on_dict.keys():
@@ -156,14 +157,14 @@ def get_score_data(said_on_dict):
     return score_data
 
 
-def invert_keys(said_on_dict):
+def invert_keys(said_on_dict: dict) -> dict:
     """[summary]
-    
+    invert the keys of the dict
     Arguments:
-        said_on_dict {[type]} -- [description]
+        said_on_dict {[dict]} -- the dictionary that generated in the find_said_on_dict function
     
     Returns:
-        [type] -- [description]
+        [dict] -- dictionary with key as the speaker, and said on as the value
     """
     said_dict = {character: [] for character in MOST_COMMON_CHARACTERS}
     for said_on_ch in said_on_dict.keys():

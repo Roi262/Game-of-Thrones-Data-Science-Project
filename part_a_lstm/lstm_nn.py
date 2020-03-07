@@ -1,17 +1,13 @@
-import pandas as pd
 import numpy as np
 import re
 import matplotlib.pyplot as plt
-
-from keras import Sequential
-from keras.callbacks import EarlyStopping
 from keras.layers import Embedding, SpatialDropout1D, LSTM, Dense, Input, Concatenate
 from keras.models import Model
 from keras_preprocessing.sequence import pad_sequences
 from keras_preprocessing.text import Tokenizer
+from keras.callbacks.callbacks import History
 from keras.utils import to_categorical
 from nltk.corpus import stopwords
-from sklearn.model_selection import train_test_split
 from split_data_and_labels import TEXT_FILENAME, LABELS_FILENAME
 
 REPLACE_BY_SPACE_RE = re.compile('[/(){}\[\]\|@,;]')
@@ -27,15 +23,15 @@ NUMBER_OF_CLASSES = 30
 SPECIAL_FEATURES = 9
 
 
-def remove_classes(text, labels):
+def remove_classes(text: np.ndarray, labels: np.ndarray) -> tuple:
     """[summary]
-    
+    remove the classes in not top 30
     Arguments:
-        text {[type]} -- [description]
-        labels {[type]} -- [description]
+        text {[numpy array]} -- the text array
+        labels {[numpy array]} -- the lables array
     
     Returns:
-        [type] -- [description]
+        [tuple] -- the new text and labels
     """
     rows_ind = []
     bins = range(np.max(labels))
@@ -80,14 +76,14 @@ def get_data_and_labels():
     return data, labels
 
 
-def tokenize_words(data):
+def tokenize_words(data: np.ndarray) -> np.ndarray:
     """[summary]
-    
+    tokenize the given data
     Arguments:
-        data {[type]} -- [description]
+        data {[numpy array]} -- the text data
     
     Returns:
-        [type] -- [description]
+        [numpy array] -- the tokenized data
     """
     tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
     tokenizer.fit_on_texts(data)
@@ -98,7 +94,7 @@ def tokenize_words(data):
     return x
 
 
-def labels_to_numbers(labels):
+def labels_to_numbers(labels: np.ndarray) -> np.ndarray:
     labels_dict = {}
     curr_idx = 0
     for label in labels:
@@ -109,21 +105,21 @@ def labels_to_numbers(labels):
     return numbers
 
 
-def build_model(input_length, number_of_classes):
+def build_model(input_length: int, number_of_classes: int) -> Model:
     """[summary]
-    
+    build the model
     Arguments:
-        input_length {[type]} -- [description]
-        number_of_classes {[type]} -- [description]
+        input_length {[int]} -- the input size
+        number_of_classes {[int]} -- the number of classes
     
     Returns:
-        [type] -- [description]
+        [Model] -- the built model
     """
-    input_tensor = Input(shape=(input_length, ))
+    input_tensor = Input(shape=(input_length,))
     tensor = Embedding(MAX_NB_WORDS, EMBEDDING_DIM)(input_tensor)
     tensor = SpatialDropout1D(0.2)(tensor)
     tensor = LSTM(100, dropout=0.5, recurrent_dropout=0.2)(tensor)
-    second_input = Input(shape=(SPECIAL_FEATURES, ))
+    second_input = Input(shape=(SPECIAL_FEATURES,))
     tensor = Concatenate()([tensor, second_input])
     tensor = Dense(100, activation='relu')(tensor)
     tensor = Dense(number_of_classes, activation='softmax')(tensor)
@@ -133,21 +129,11 @@ def build_model(input_length, number_of_classes):
     return model
 
 
-    # model = Sequential()
-    # model.add(Embedding(MAX_NB_WORDS, EMBEDDING_DIM, input_length=input_length))
-    # model.add(SpatialDropout1D(0.2))
-    # model.add(LSTM(100, dropout=0.5, recurrent_dropout=0.2))
-    # model.add(Dense(number_of_classes, activation='softmax'))
-    # model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    # return model
-
-
-def train_model(model, x_train, y_train):
+def train_model(model: Model, x_train: list, y_train: np.ndarray) -> History:
     epochs = 10
     batch_size = 64
 
     history = model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.1)
-                        # callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
     return history
 
 
