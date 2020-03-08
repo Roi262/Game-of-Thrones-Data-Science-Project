@@ -61,7 +61,6 @@ def clean_kaggle_file():
             line = k.readline()
 
 
-# THIS FUNCTION DOESN'T WORK YET
 def match_character_to_quote():
     with open(clean_kaggle_f, 'r') as k, open("everything_except_scene_num.csv", "w") as out:
         k_line = k.readline().split(';')
@@ -88,5 +87,3 @@ def match_character_to_quote():
 
 
 match_character_to_quote()
-
-
