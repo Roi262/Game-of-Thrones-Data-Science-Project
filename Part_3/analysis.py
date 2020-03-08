@@ -1,6 +1,5 @@
 import pickle
 from itertools import combinations
-# from configure import *
 from configure import *
 from Part_2.lstm.clean_data import get_most_common_characters
 import nltk
@@ -18,20 +17,6 @@ NUM_OF_PAIRS = 5
 RELEVENT_CHARACTERS = ALL_CHARACTERS_FORMAL
 
 sid = SentimentIntensityAnalyzer()
-
-
-# def get_vader_score(sent):
-#     # Polarity score returns dictionary
-#     ss = sid.polarity_scores(sent)
-#     for k in sorted(ss):
-#         print('{0}: {1}, '.format(k, ss[k]), end='')
-#         print()
-
-
-def get_both_char_lines():
-    """returns one list of all lines character A says and
-     another list of all lines character B says 
-    """
 
 
 def get_sentiment(sentences):
@@ -52,8 +37,6 @@ def get_sentiment(sentences):
         text += ' ' + sent
         average_compound += sid.polarity_scores(sent)['compound']
     return float(average_compound) / len(sentences)
-    # ss = sid.polarity_scores(text)
-    # return ss['compound']
 
 
 def get_dialogues(data_path, char_1, char_2, conversation_thresh=10, noise=.1):
@@ -97,36 +80,20 @@ def get_dialogues(data_path, char_1, char_2, conversation_thresh=10, noise=.1):
     return conversations
 
 
-def plot_pair():
-    pass
-
-
 def get_arrays(conversations):
-    non_normalized_x = []
     x = []
     y = []
-    scenes_dic = defaultdict(int)
-    passed_scenes_dict = defaultdict(int)
     lines_for_scene = defaultdict(list)
 
     for conversation in conversations:
-        lines_in_scene = conversation[2]
         for sceneID, speaker, line in conversation[0]:
             lines_for_scene[sceneID].append(line)
-            # sentiment = get_sentiment(line)
-            # non_normalized_x.append((sceneID, line))
-            # scenes_dic[sceneID] += 1
 
     for sceneID in lines_for_scene.keys():
         lines = lines_for_scene[sceneID]
         sentiment = get_sentiment(lines)
         x.append(sceneID)
         y.append(sentiment)
-
-    # for sceneID, sentiment in non_normalized_x:
-    #     x.append(sceneID + float(passed_scenes_dict[sceneID]) / scenes_dic[sceneID])
-    #     passed_scenes_dict[sceneID] += 1
-    #     y.append(sentiment)
 
     return np.array(x), np.array(y)
 
@@ -154,13 +121,12 @@ def load_pickle(path):
     with open(path, "rb") as f:
         return pickle.load(f)
 
-def main():
 
+def main():
     pickle_path = "conversations_pickle_5"
     if os.path.exists(pickle_path):
         conversations = load_pickle(pickle_path)
     else:
-        # conversations = np.ndarray(shape=(0, 6))
         conversations = []
         common_characters = get_most_common_characters(
             '../Part_2/part2_data_cleaned.csv')
@@ -168,12 +134,8 @@ def main():
         pairs = list(combinations(common_characters, 2))
         path = '../part_3_data_cleaned_characters_new_sceneIDs.csv'
         for pair in tqdm(pairs):
-            # conversations = np.append(conversations, get_dialogues(path, pair[0], pair[1]), axis=0)
             conversations.append(get_dialogues(path, pair[0], pair[1]))
-
         save_pickle(conversations, pickle_path)
-
-    # plot_conversations(conversations)
 
     most_common_conversations = [v for v in sorted(
         conversations, key=lambda item: len(item), reverse=True)][:NUM_OF_PAIRS]
@@ -183,17 +145,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# def score_function(k, nw) -> float:
-#     """[summary]
-
-#     Arguments:
-#         k {[int]} -- number of rows in conversation
-#         nw {[int]} -- total number of words in conversation
-
-#     Returns:
-#         float -- function score
-#     """
-#     word_count = 0
-#     for row in rows_in_convo:
-#         char1_lines, char2_lines = get_both_char_lines()

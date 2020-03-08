@@ -18,31 +18,14 @@ def spoken_to_in_sent_features(line):
         [type] -- [description]
     """
     spoken_to_in_sent = [0] * len(RELEVANT_CHARACTERS)
-    # 1. check whether a characters name is said in the line itself
+    # check whether a characters name is said in the line itself
     for character in RELEVANT_CHARACTERS.keys():
         character_subnames = character.split()
         for name in character_subnames:
             if name in line.split():
                 spoken_to_in_sent[RELEVANT_CHARACTERS[character]] = 1
                 break
-                # TODO add 1 in 'character spoken to' index. note that for every rele
-                # we have this one hot per character code somewhere
     return np.asarray(spoken_to_in_sent)
-
-
-# def get_subject_words():
-#     # TODO use top 30 subject words (i.e., words that start with capital letters that are not the first word in a sentence)
-#     df = pd.read_csv(CLEAN_DATA_PATH, error_bad_lines=False, delimiter=',', header=0)
-#     all_lines = df['Line']
-#     subject_words = set()
-#     for line in all_lines:
-#         for i, word in enumerate(line.split()):
-
-    # text_path = 'got_lines.txt'
-    # with open(text_path, 'w+') as f:
-    #     # f.writelines(saved_column)
-    #     for sent in all_lines:
-    #         f.write(sent + ' ')
 
 
 def additional_features(text):
