@@ -1,0 +1,1466 @@
+﻿1;00:00:00,634;00:00:02,634;The wolf pup has gone south.
+2;00:00:02,635;00:00:04,763;The North is ripe for
+2;00:00:02,635;00:00:04,763;the taking.
+3;00:00:04,788;00:00:08,201;You'll take a ship to raid the
+3;00:00:04,788;00:00:08,201;fishing villages on the Stony Shore
+4;00:00:08,202;00:00:10,855;I'm to fight fishermen?
+4;00:00:08,202;00:00:10,855;Be careful of their nets.
+5;00:00:11,325;00:00:13,360;Lovely boy.
+5;00:00:11,325;00:00:13,360;What do you want?
+6;00:00:13,394;00:00:14,862;You're called Arry?
+7;00:00:14,896;00:00:16,797;A boy could make a friend.
+8;00:00:16,831;00:00:19,199;This man has the honor
+8;00:00:16,831;00:00:19,199;to be Jaqen H'ghar.
+9;00:00:19,233;00:00:20,967;Every night it's the same.
+10;00:00:21,002;00:00:23,937;I'm running through
+10;00:00:21,002;00:00:23,937;the Godswood howling.
+11;00:00:23,972;00:00:25,739;These are dreams,
+11;00:00:23,972;00:00:25,739;nothing more.
+12;00:00:25,773;00:00:27,942;My dreams are different.
+12;00:00:25,773;00:00:27,942;Mine are true.
+13;00:00:27,976;00:00:31,378;I saw something take that child.
+14;00:00:31,413;00:00:34,948;Wildlings serve crueler
+14;00:00:31,413;00:00:34,948;Gods than you or I.
+15;00:00:34,983;00:00:37,551;Ready my horse.
+15;00:00:34,983;00:00:37,551;We leave at dawn.
+16;00:00:37,585;00:00:40,175;Did Cersei have you
+16;00:00:37,585;00:00:40,175;knighted before or after
+17;00:00:40,200;00:00:41,588;she took you into her bed?
+18;00:00:41,589;00:00:44,023;Nothing to say?
+18;00:00:41,589;00:00:44,023;Mercy! Mercy, My Lord!
+19;00:00:44,058;00:00:47,460;I want to know what Cersei is
+19;00:00:44,058;00:00:47,460;doing and you will tell me.
+20;00:00:47,494;00:00:48,928;Yes, My Lord, I will.
+21;00:00:48,962;00:00:50,897;Sweet boy!
+21;00:00:48,962;00:00:50,897;Help us!
+22;00:00:52,199;00:00:54,000;Round up any survivors.
+23;00:00:54,035;00:00:56,036;We'll take them
+23;00:00:54,035;00:00:56,036;back to Harrenhal.
+24;00:00:56,070;00:00:58,739;This one's a girl
+24;00:00:56,070;00:00:58,739;dressed as a boy.
+25;00:00:58,773;00:01:01,241;Get these prisoners to work.
+25;00:00:58,773;00:01:01,241;Bring the girl.
+26;00:01:01,276;00:01:03,076;I need a new cupbearer.
+27;00:01:03,111;00:01:05,479;I will give you this
+27;00:01:03,111;00:01:05,479;one night to reconsider.
+28;00:01:05,513;00:01:06,580;Otherwise I shall
+28;00:01:05,513;00:01:06,580;destroy you.
+29;00:01:06,615;00:01:08,582;Look to your sins,
+29;00:01:06,615;00:01:08,582;Lord Renly.
+30;00:01:08,616;00:01:10,951;The night is dark
+30;00:01:08,616;00:01:10,951;and full of terrors.
+31;00:01:10,985;00:01:14,421;I will vouch for her,
+31;00:01:10,985;00:01:14,421;her people and her dragons.
+32;00:01:16,090;00:01:17,925;Be it on your head.
+33;00:01:17,959;00:01:20,861;Welcome to Qarth, My Lady.
+34;00:01:20,895;00:01:22,896;Trust you've not forgotten
+34;00:01:20,895;00:01:22,896;your smuggler's tricks.
+35;00:01:22,930;00:01:25,432;What am I bringing ashore?
+35;00:01:22,930;00:01:25,432;The red woman.
+36;00:01:25,466;00:01:27,800;No one must know what you do
+36;00:01:25,466;00:01:27,800;and we'll not speak of this again.
+37;00:01:44,475;00:01:48,475;<font color=#00FF00>♪ Game of Thrones 2x05 ♪</font>
+37;00:01:44,475;00:01:48,475;<font color=#00FFFF>The Ghost of Harrenhal</font>
+37;00:01:44,475;00:01:48,475;Original Air Date on April 29, 2012
+38;00:01:48,500;00:01:52,500;== sync, corrected by <font color=#00ff00>elderman</font> ==
+39;00:01:52,525;00:03:27,252;♪
+40;00:03:43,799;00:03:46,601;You swear it?
+40;00:03:43,799;00:03:46,601;By the mother.
+41;00:03:47,836;00:03:51,272;My son has no interest
+41;00:03:47,836;00:03:51,272;in the Iron Throne.
+42;00:03:56,913;00:03:59,949;Then I see no reason
+42;00:03:56,913;00:03:59,949;for hostility between us.
+43;00:03:59,983;00:04:02,685;Your son can go on calling
+43;00:03:59,983;00:04:02,685;himself King in the North,
+44;00:04:02,719;00:04:06,256;the Starks will have dominion over
+44;00:04:02,719;00:04:06,256;all lands north of Moat Cailin,
+45;00:04:06,290;00:04:08,392;provided he swears me
+45;00:04:06,290;00:04:08,392;an oath of fealty.
+46;00:04:08,426;00:04:09,726;And the wording
+46;00:04:08,426;00:04:09,726;of this oath?
+47;00:04:09,761;00:04:12,529;The same Ned Stark swore
+47;00:04:09,761;00:04:12,529;to Robert 18 years ago.
+48;00:04:14,665;00:04:18,302;Cat, their friendship held
+48;00:04:14,665;00:04:18,302;the kingdoms together.
+49;00:04:22,941;00:04:25,443;And in return
+49;00:04:22,941;00:04:25,443;for my son's loyalty?
+50;00:04:25,477;00:04:28,613;In the morning I'll destroy
+50;00:04:25,477;00:04:28,613;my brother's army.
+51;00:04:28,647;00:04:30,114;When that's done,
+52;00:04:30,149;00:04:32,550;Baratheon and Stark
+52;00:04:30,149;00:04:32,550;will fight
+53;00:04:32,584;00:04:34,419;their common enemy
+53;00:04:32,584;00:04:34,419;together,
+54;00:04:34,453;00:04:36,721;as they have done
+54;00:04:34,453;00:04:36,721;many times before.
+55;00:04:42,896;00:04:46,199;Our two houses
+55;00:04:42,896;00:04:46,199;have always been close,
+56;00:04:46,233;00:04:50,036;which is why I am begging you
+56;00:04:46,233;00:04:50,036;to reconsider this battle.
+57;00:04:50,070;00:04:51,670;Negotiate a peace
+57;00:04:50,070;00:04:51,670;with your brother.
+58;00:04:51,704;00:04:54,439;Negotiate with Stannis?
+59;00:04:54,473;00:04:56,241;You heard him out there.
+60;00:04:56,275;00:04:59,244;I'd have better luck
+60;00:04:56,275;00:04:59,244;debating the wind.
+61;00:05:01,013;00:05:03,781;Please bring my terms
+61;00:05:01,013;00:05:03,781;to your son.
+62;00:05:03,816;00:05:06,116;I believe we are
+62;00:05:03,816;00:05:06,116;natural allies.
+63;00:05:06,151;00:05:07,785;I hope he feels
+63;00:05:06,151;00:05:07,785;the same.
+64;00:05:07,819;00:05:10,688;Together we could end
+64;00:05:07,819;00:05:10,688;this war in a fortnight.
+65;00:05:25,539;00:05:27,674;No!
+66;00:05:30,877;00:05:33,512;No.
+66;00:05:30,877;00:05:33,512;- Follow me!
+67;00:05:36,348;00:05:39,484;You'll die for this.
+67;00:05:36,348;00:05:39,484;No, wait, it wasn't her!
+68;00:05:50,796;00:05:54,165;You'll-.
+68;00:05:50,796;00:05:54,165;No, wa-
+69;00:06:23,529;00:06:26,331;We've got to leave.
+70;00:06:26,365;00:06:28,666;They'll hang you
+70;00:06:26,365;00:06:28,666;for this.
+71;00:06:28,701;00:06:31,803;- Inside the King's tent, go!
+71;00:06:28,701;00:06:31,803;Now!
+72;00:06:31,837;00:06:34,873;I won't leave him.
+73;00:06:36,108;00:06:39,278;You can't avenge him
+73;00:06:36,108;00:06:39,278;if you're dead.
+74;00:06:40,313;00:06:42,548;Over there, go!
+75;00:06:42,582;00:06:44,817;Not that way.
+76;00:07:18,720;00:07:21,122;We need to go home.
+77;00:07:21,156;00:07:24,158;Loras.
+77;00:07:21,156;00:07:24,158;My Lord, My Lady.
+78;00:07:24,192;00:07:25,693;Get out.
+79;00:07:25,727;00:07:27,895;Stannis will be here
+79;00:07:25,727;00:07:27,895;in an hour.
+80;00:07:27,929;00:07:30,698;When he arrives, Renly's
+80;00:07:27,929;00:07:30,698;bannermen will flock to him.
+81;00:07:30,732;00:07:32,934;Your former companions
+81;00:07:30,732;00:07:32,934;will fight for the privilege
+82;00:07:32,968;00:07:35,469;of selling you
+82;00:07:32,968;00:07:35,469;to their new king.
+83;00:07:35,504;00:07:37,371;And you want that
+83;00:07:35,504;00:07:37,371;privilege for yourself.
+84;00:07:37,406;00:07:40,808;You will note that I am
+84;00:07:37,406;00:07:40,808;standing here talking to you,
+85;00:07:40,843;00:07:43,011;not Stannis.
+85;00:07:40,843;00:07:43,011;There's no time for this.
+86;00:07:43,045;00:07:44,513;Ride back to
+86;00:07:43,045;00:07:44,513;Highgarden, sister.
+87;00:07:44,547;00:07:46,615;I'm not running
+87;00:07:44,547;00:07:46,615;from Stannis.
+88;00:07:46,650;00:07:47,884;Brienne of Tarth
+88;00:07:46,650;00:07:47,884;murdered Renly.
+89;00:07:47,918;00:07:51,220;I don't believe that.
+89;00:07:47,918;00:07:51,220;You don't believe that.
+90;00:07:52,389;00:07:55,324;Who gained the most
+90;00:07:52,389;00:07:55,324;from our king's death?
+91;00:07:55,358;00:07:57,326;Stannis.
+92;00:07:57,360;00:07:59,260;I will put a sword
+92;00:07:57,360;00:07:59,260;through his righteous face.
+93;00:07:59,295;00:08:01,563;You can't stay here.
+94;00:08:01,597;00:08:04,232;He would have been
+94;00:08:01,597;00:08:04,232;a true king,
+95;00:08:04,267;00:08:06,568;a good king.
+96;00:08:06,603;00:08:08,437;Tell me, Ser Loras,
+97;00:08:08,471;00:08:11,073;what do you desire
+97;00:08:08,471;00:08:11,073;most in this world?
+98;00:08:11,107;00:08:12,941;Revenge.
+99;00:08:12,975;00:08:15,610;I have always found that to
+99;00:08:12,975;00:08:15,610;be the purest of motivations,
+100;00:08:15,644;00:08:19,180;but you won't have a chance to
+100;00:08:15,644;00:08:19,180;put your sword through Stannis,
+101;00:08:19,214;00:08:20,781;not today.
+102;00:08:20,815;00:08:23,016;You'll be cut to pieces before
+102;00:08:20,815;00:08:23,016;he sets foot on solid ground.
+103;00:08:23,050;00:08:25,285;If it is justice
+103;00:08:23,050;00:08:25,285;that you want,
+104;00:08:25,319;00:08:26,752;be smart about it.
+105;00:08:26,787;00:08:29,288;You can't avenge him
+105;00:08:26,787;00:08:29,288;from the grave.
+106;00:08:31,057;00:08:33,392;Bring the horses.
+107;00:08:35,529;00:08:37,597;Please.
+108;00:09:05,996;00:09:07,497;He was very handsome.
+109;00:09:07,531;00:09:10,065;He was, Your Grace.
+110;00:09:10,100;00:09:12,234;Your Grace.
+111;00:09:13,870;00:09:16,171;Calling yourself king
+111;00:09:13,870;00:09:16,171;doesn't make you one.
+112;00:09:16,205;00:09:19,507;And if Renly wasn't a king,
+112;00:09:16,205;00:09:19,507;I wasn't a queen.
+113;00:09:21,043;00:09:22,943;Do you want to be a queen?
+114;00:09:22,978;00:09:25,079;No.
+115;00:09:26,281;00:09:28,915;I want to be the queen.
+116;00:09:40,463;00:09:42,732;Killed?
+116;00:09:40,463;00:09:42,732;By whom?
+117;00:09:42,766;00:09:44,334;Accounts differ.
+118;00:09:44,368;00:09:47,070;Most seem to implicate
+118;00:09:44,368;00:09:47,070;Catelyn Stark in some way.
+119;00:09:47,104;00:09:48,872;Really?
+119;00:09:47,104;00:09:48,872;Who'd have thought?
+120;00:09:48,906;00:09:51,073;Some say it was one
+120;00:09:48,906;00:09:51,073;of his own Kingsguard,
+121;00:09:51,108;00:09:54,009;while still others say it was
+121;00:09:51,108;00:09:54,009;Stannis himself who did it
+122;00:09:54,044;00:09:56,011;after negotiations
+122;00:09:54,044;00:09:56,011;went sour.
+123;00:09:56,045;00:09:58,079;Whomever did it,
+123;00:09:56,045;00:09:58,079;I say well done.
+124;00:09:58,114;00:09:59,547;It's not what Varys says.
+125;00:09:59,582;00:10:02,217;He says Renly's army is
+125;00:09:59,582;00:10:02,217;flocking to support Stannis,
+126;00:10:02,251;00:10:06,187;which would give Stannis superiority
+126;00:10:02,251;00:10:06,187;over us on both land and sea.
+127;00:10:06,221;00:10:08,722;Littlefinger says we can
+127;00:10:06,221;00:10:08,722;outspend him three to one.
+128;00:10:08,757;00:10:11,592;And I say father raised you to
+128;00:10:08,757;00:10:11,592;have too much respect for money.
+129;00:10:11,626;00:10:13,994;Stannis Baratheon
+129;00:10:11,626;00:10:13,994;is coming for us,
+130;00:10:14,029;00:10:15,429;sooner rather than later.
+131;00:10:15,463;00:10:16,831;Aren't there other things
+131;00:10:15,463;00:10:16,831;you should be doing,
+132;00:10:16,865;00:10:19,100;like sealing my daughter in a crate
+132;00:10:16,865;00:10:19,100;so you can ship her away?
+133;00:10:19,134;00:10:20,472;She'll be safer in Dorne.
+134;00:10:20,497;00:10:22,204;Yes, I know how concerned
+134;00:10:20,497;00:10:22,204;you are for her safety.
+135;00:10:22,205;00:10:24,039;It so happens that I am.
+136;00:10:24,073;00:10:25,808;Myrcella is a sweet,
+136;00:10:24,073;00:10:25,808;innocent girl
+137;00:10:25,842;00:10:27,743;and I don't blame her
+137;00:10:25,842;00:10:27,743;at all for you.
+138;00:10:27,777;00:10:30,379;So clever.
+139;00:10:30,414;00:10:32,882;Aren't you
+139;00:10:30,414;00:10:32,882;always so clever
+140;00:10:32,916;00:10:35,184;with your schemes
+140;00:10:32,916;00:10:35,184;and your plots?
+141;00:10:36,353;00:10:38,253;Schemes and plots
+141;00:10:36,353;00:10:38,253;are the same thing.
+142;00:10:38,288;00:10:40,289;They are going
+142;00:10:38,288;00:10:40,289;to attack us.
+143;00:10:40,323;00:10:41,923;We need to be ready.
+144;00:10:41,958;00:10:44,425;No need to concern
+144;00:10:41,958;00:10:44,425;yourself over it.
+145;00:10:44,460;00:10:47,795;The King is taking personal
+145;00:10:44,460;00:10:47,795;charge of siege preparations.
+146;00:10:47,830;00:10:51,465;May I ask specifically
+146;00:10:47,830;00:10:51,465;what the King has in mind?
+147;00:10:51,499;00:10:53,935;You may specifically
+147;00:10:51,499;00:10:53,935;or you may ask vaguely.
+148;00:10:53,969;00:10:56,203;The answer will be
+148;00:10:53,969;00:10:56,203;the same.
+149;00:11:00,709;00:11:04,679;It's important
+149;00:11:00,709;00:11:04,679;that we talk about this.
+150;00:11:06,983;00:11:09,585;It's the King's
+150;00:11:06,983;00:11:09,585;royal prerogative
+151;00:11:09,619;00:11:13,556;to withhold sensitive information
+151;00:11:09,619;00:11:13,556;from his councilors.
+152;00:11:22,099;00:11:24,234;It's wildfire.
+153;00:11:24,302;00:11:26,003;Wildfire?
+154;00:11:27,572;00:11:30,108;You wouldn't lie to me,
+154;00:11:27,572;00:11:30,108;would you, cousin?
+155;00:11:31,210;00:11:32,877;No.
+155;00:11:31,210;00:11:32,877;That's a lie right there.
+156;00:11:32,911;00:11:35,079;It is not a lie.
+156;00:11:32,911;00:11:35,079;Why would I lie?
+157;00:11:35,114;00:11:37,381;Tell me,
+158;00:11:37,416;00:11:39,117;if the vile allegations
+159;00:11:39,151;00:11:41,686;against my brother
+159;00:11:39,151;00:11:41,686;and sister are true,
+160;00:11:41,720;00:11:44,088;do you think it will
+160;00:11:41,720;00:11:44,088;make Jaime more likely
+161;00:11:44,122;00:11:46,457;to kill you or less likely?
+162;00:11:46,492;00:11:49,178;When I tell him
+162;00:11:46,492;00:11:49,178;you're fucking her, I mean.
+163;00:11:49,203;00:11:50,961;I'm telling you the truth.
+164;00:11:50,962;00:11:52,514;The smart money
+164;00:11:50,962;00:11:52,514;would be on more likely.
+165;00:11:52,539;00:11:54,097;She's making wildfire.
+166;00:11:54,098;00:11:56,733;But then perhaps his own unnatural
+166;00:11:54,098;00:11:56,733;urges will give him sympathy for yours.
+167;00:11:56,767;00:11:58,201;The alchemists' guild
+167;00:11:56,767;00:11:58,201;is being commissioned.
+168;00:11:58,235;00:11:59,936;I suppose there's only
+168;00:11:58,235;00:11:59,936;one way to find out.
+169;00:11:59,970;00:12:02,571;They have thousands of pots
+169;00:11:59,970;00:12:02,571;already stored in their vaults.
+170;00:12:02,606;00:12:04,740;They are planning to launch
+170;00:12:02,606;00:12:04,740;them from the city walls
+171;00:12:04,774;00:12:06,575;into Stannis's ships
+171;00:12:04,774;00:12:06,575;and armies.
+172;00:12:06,609;00:12:09,244;Please.
+173;00:12:09,278;00:12:12,146;When did she
+173;00:12:09,278;00:12:12,146;tell you this?
+174;00:12:13,416;00:12:15,651;I heard her talking
+174;00:12:13,416;00:12:15,651;with the Pyromancer.
+175;00:12:15,685;00:12:19,522;And the other night
+175;00:12:15,685;00:12:19,522;after I left her,
+176;00:12:19,556;00:12:21,825;she went to meet him.
+177;00:12:21,859;00:12:24,795;I swear to you.
+177;00:12:21,859;00:12:24,795;Swear to me on what?
+178;00:12:24,829;00:12:27,565;On my life.
+178;00:12:24,829;00:12:27,565;But I don't care about your life.
+179;00:12:27,599;00:12:29,601;In the Light of the Seven,
+180;00:12:29,635;00:12:31,636;by all that is
+180;00:12:29,635;00:12:31,636;holy and right,
+181;00:12:31,670;00:12:34,138;I, Lancel Lannister,
+181;00:12:31,670;00:12:34,138;do solemnly vow--
+182;00:12:34,172;00:12:35,568;All right, all right.
+182;00:12:34,172;00:12:35,568;Enough.
+183;00:12:35,593;00:12:37,593;Even torturing
+183;00:12:35,593;00:12:37,593;you is boring.
+184;00:12:37,942;00:12:40,544;Just get out.
+185;00:12:43,580;00:12:45,147;Oh, Lancel,
+185;00:12:43,580;00:12:45,147;tell my friend Bronn
+186;00:12:45,182;00:12:48,184;to please kill you if anything
+186;00:12:45,182;00:12:48,184;should happen to me.
+187;00:12:48,218;00:12:51,286;Please kill me if anything
+187;00:12:48,218;00:12:51,286;should happen to Lord Tyrion.
+188;00:12:53,456;00:12:55,590;It will be my pleasure.
+189;00:12:59,629;00:13:02,196;Your Grace.
+189;00:12:59,629;00:13:02,196;What is it?
+190;00:13:02,231;00:13:03,050;Your Grace.
+191;00:13:03,075;00:13:05,032;I'm sorry about
+191;00:13:03,075;00:13:05,032;your brother, Your Grace.
+192;00:13:05,033;00:13:07,512;I wanted to let you know
+192;00:13:05,033;00:13:07,512;that people grieve for him.
+193;00:13:07,537;00:13:08,168;Your Grace.
+194;00:13:08,169;00:13:09,970;Fools love a fool.
+194;00:13:08,169;00:13:09,970;Your Grace.
+195;00:13:10,005;00:13:12,640;I grieve for him as well--
+195;00:13:10,005;00:13:12,640;for the boy he was,
+196;00:13:12,675;00:13:14,309;not the man
+196;00:13:12,675;00:13:14,309;he grew to be.
+197;00:13:14,343;00:13:16,478;I need to speak to you about
+197;00:13:14,343;00:13:16,478;what I saw in that cave.
+198;00:13:16,512;00:13:18,074;I thought I made it clear
+198;00:13:16,512;00:13:18,074;to you there'd be no need to
+199;00:13:18,099;00:13:19,191;speak to me on this matter.
+200;00:13:19,192;00:13:20,021;Your Grace, I--
+201;00:13:20,046;00:13:22,046;I've never known you to
+201;00:13:20,046;00:13:22,046;need to hear a thing twice.
+202;00:13:24,454;00:13:26,255;And I've never known you
+202;00:13:24,454;00:13:26,255;to hide from the truth.
+203;00:13:26,290;00:13:27,791;You've come to lecture
+203;00:13:26,290;00:13:27,791;me on truth?
+204;00:13:27,825;00:13:29,526;I've come to tell you
+204;00:13:27,825;00:13:29,526;that what I saw--
+205;00:13:29,560;00:13:31,661;All my brother's bannermen
+205;00:13:29,560;00:13:31,661;have come to my side.
+206;00:13:33,531;00:13:36,732;Except the Tyrells,
+206;00:13:33,531;00:13:36,732;who fled like cowards.
+207;00:13:36,767;00:13:38,567;They won't be able
+207;00:13:36,767;00:13:38,567;to resist us now.
+208;00:13:38,601;00:13:40,469;Soon I shall be sitting
+208;00:13:38,601;00:13:40,469;on the Iron Throne.
+209;00:13:40,503;00:13:42,337;Nothing is worth
+209;00:13:40,503;00:13:42,337;what this will cost you,
+210;00:13:42,371;00:13:44,806;not even the Iron--
+210;00:13:42,371;00:13:44,806;I'll hear no more about it.
+211;00:13:51,714;00:13:55,117;Take a company of men,
+211;00:13:51,714;00:13:55,117;secure the perimeter.
+212;00:13:55,151;00:13:57,987;When do we sail
+212;00:13:55,151;00:13:57,987;for King's Landing?
+213;00:13:58,021;00:14:00,423;As soon as I've
+213;00:13:58,021;00:14:00,423;consolidated my troops.
+214;00:14:00,457;00:14:02,325;We'll make short work
+214;00:14:00,457;00:14:02,325;of the Lannisters' fleet.
+215;00:14:02,360;00:14:04,394;Once Blackwater Bay
+215;00:14:02,360;00:14:04,394;is cleared,
+216;00:14:04,429;00:14:07,531;we'll deliver our troops to their
+216;00:14:04,429;00:14:07,531;doorstep and take the city.
+217;00:14:09,000;00:14:11,268;And will you bring
+217;00:14:09,000;00:14:11,268;Lady Melisandre with you?
+218;00:14:12,270;00:14:14,371;That's not your concern.
+219;00:14:14,405;00:14:17,874;If you take King's Landing with her
+219;00:14:14,405;00:14:17,874;by your side, the victory will be hers.
+220;00:14:17,908;00:14:20,276;I never thought I'd have reason to
+220;00:14:17,908;00:14:20,276;doubt your loyalty. Was I wrong?
+221;00:14:20,310;00:14:23,212;Loyal service means
+221;00:14:20,310;00:14:23,212;telling hard truths.
+222;00:14:23,247;00:14:25,581;Oh, truth again.
+223;00:14:25,615;00:14:28,717;All right,
+223;00:14:25,615;00:14:28,717;what's the truth?
+224;00:14:28,752;00:14:30,686;The hard truth?
+225;00:14:30,720;00:14:32,655;She's a foreigner
+226;00:14:32,689;00:14:34,790;preaching her
+226;00:14:32,689;00:14:34,790;foreign religion.
+227;00:14:34,824;00:14:39,061;Some believe she whispers orders
+227;00:14:34,824;00:14:39,061;in your ear and you obey.
+228;00:14:41,932;00:14:43,766;What do you believe?
+229;00:14:47,338;00:14:50,841;You won those bannermen
+229;00:14:47,338;00:14:50,841;from Renly.
+230;00:14:50,876;00:14:52,943;Don't lose them to her.
+231;00:14:57,882;00:15:00,717;We set out for King's Landing
+231;00:14:57,882;00:15:00,717;without Lady Melisandre.
+232;00:15:03,587;00:15:06,388;And you lead the fleet
+232;00:15:03,587;00:15:06,388;into Blackwater Bay.
+233;00:15:06,423;00:15:08,957;Your Grace, I'm honored,
+233;00:15:06,423;00:15:08,957;but my time on the sea
+234;00:15:08,991;00:15:11,626;was spent evading ships,
+234;00:15:08,991;00:15:11,626;not attacking them.
+235;00:15:11,660;00:15:13,427;The other lords
+235;00:15:11,660;00:15:13,427;won't be happy.
+236;00:15:13,462;00:15:16,497;Most of those lords should
+236;00:15:13,462;00:15:16,497;consider themselves lucky
+237;00:15:16,532;00:15:18,599;I don't hang them
+237;00:15:16,532;00:15:18,599;for treason.
+238;00:15:20,869;00:15:24,238;Hard truths cut
+238;00:15:20,869;00:15:24,238;both ways, Ser Davos.
+239;00:15:41,156;00:15:41,188;I've got it!
+239;00:15:41,156;00:15:41,188;I've got it!
+240;00:15:43,224;00:15:46,326;So it's that one there
+240;00:15:43,224;00:15:46,326;at the top, on the right.
+241;00:15:47,795;00:15:50,497;Buy my fruit, My Lord.
+241;00:15:47,795;00:15:50,497;Fresh fruit.
+242;00:15:50,531;00:15:52,332;Stannis has more infantry,
+243;00:15:52,366;00:15:54,234;more ships, more horses.
+244;00:15:54,269;00:15:55,970;What do we have?
+245;00:15:56,004;00:15:58,539;There's that mind of yours
+245;00:15:56,004;00:15:58,539;you keep going on about.
+246;00:15:58,573;00:16:01,909;Well, I've never actually been
+246;00:15:58,573;00:16:01,909;able to kill people with it.
+247;00:16:01,943;00:16:04,812;Good thing.
+247;00:16:01,943;00:16:04,812;I'd be out of a job.
+248;00:16:04,847;00:16:07,081;What about your father?
+249;00:16:07,115;00:16:10,451;He hasn't sent
+249;00:16:07,115;00:16:10,451;a raven in weeks.
+250;00:16:10,485;00:16:12,053;He's very busy.
+251;00:16:12,087;00:16:15,956;Being repeatedly humiliated by
+251;00:16:12,087;00:16:15,956;Robb Stark is time-consuming.
+252;00:16:15,991;00:16:18,358;We won't be able to hold
+252;00:16:15,991;00:16:18,358;the city against Stannis,
+253;00:16:18,393;00:16:20,227;not the way Joffrey's
+253;00:16:18,393;00:16:20,227;planning on holding it.
+254;00:16:20,261;00:16:22,429;Corruption, yes.
+255;00:16:22,463;00:16:27,366;We are swollen,
+255;00:16:22,463;00:16:27,366;bloated, foul.
+256;00:16:27,401;00:16:30,770;Brother fornicates with sister
+256;00:16:27,401;00:16:30,770;in the bed of Kings
+257;00:16:30,804;00:16:33,706;and we're surprised when the
+257;00:16:30,804;00:16:33,706;fruit of their incest is rotten?
+258;00:16:34,942;00:16:37,877;Yes, a rotten king.
+259;00:16:37,911;00:16:40,413;It's hard to argue
+259;00:16:37,911;00:16:40,413;with his assessment.
+260;00:16:40,447;00:16:43,049;Not after what he did
+260;00:16:40,447;00:16:43,049;to your birthday present.
+261;00:16:43,083;00:16:45,785;The King is a lost cause.
+262;00:16:45,819;00:16:48,054;It's the rest of us
+262;00:16:45,819;00:16:48,054;I'm worried about now.
+263;00:16:48,088;00:16:51,925;A dancing king, prancing
+263;00:16:48,088;00:16:51,925;down his bloodstained halls
+264;00:16:51,959;00:16:55,862;to the tune of a twisted
+264;00:16:51,959;00:16:55,862;demon monkey.
+265;00:16:57,031;00:16:59,933;You have to admire
+265;00:16:57,031;00:16:59,933;his imagination.
+266;00:16:59,967;00:17:03,336;He's talking about you.
+266;00:16:59,967;00:17:03,336;What?
+267;00:17:03,371;00:17:05,305;Demon monkey?
+268;00:17:05,340;00:17:07,441;People think you're pulling
+268;00:17:05,340;00:17:07,441;the King's strings.
+269;00:17:07,475;00:17:09,677;They blame you
+269;00:17:07,475;00:17:09,677;for the city's ills.
+270;00:17:09,711;00:17:12,546;Blame me?
+270;00:17:09,711;00:17:12,546;I'm trying to save them.
+271;00:17:12,580;00:17:15,582;You don't need
+271;00:17:12,580;00:17:15,582;to convince me.
+272;00:17:15,617;00:17:18,185;Demon monkey.
+273;00:17:18,219;00:17:20,387;( Seagulls screeching
+274;00:17:47,283;00:17:48,883;Yeah, come on.
+275;00:17:48,918;00:17:50,485;You're the crew
+275;00:17:48,918;00:17:50,485;of the sea bitch?
+276;00:17:50,519;00:17:54,255;I'm your commander.
+276;00:17:50,519;00:17:54,255;Welcome.
+277;00:17:56,425;00:17:57,892;Stop.
+278;00:17:57,926;00:18:00,227;Stop!
+279;00:18:00,262;00:18:03,430;Your Captain commands
+279;00:18:00,262;00:18:03,430;you to stop.
+280;00:18:03,465;00:18:06,467;Where are we
+280;00:18:03,465;00:18:06,467;heading, Captain?
+281;00:18:07,969;00:18:11,271;The Stony Shore
+281;00:18:07,969;00:18:11,271;to raid their villages.
+282;00:18:11,306;00:18:13,674;There'll be spoils
+282;00:18:11,306;00:18:13,674;in it for you, and women,
+283;00:18:13,708;00:18:15,243;if you do your jobs well.
+284;00:18:15,277;00:18:18,547;And who decides if we've
+284;00:18:15,277;00:18:18,547;done our jobs well?
+285;00:18:19,916;00:18:22,017;I do.
+286;00:18:22,052;00:18:24,086;Your Captain.
+287;00:18:25,789;00:18:28,625;I have been reaving
+287;00:18:25,789;00:18:28,625;and raping
+288;00:18:28,659;00:18:32,696;since before you left
+288;00:18:28,659;00:18:32,696;Balon's balls, Captain.
+289;00:18:32,730;00:18:36,867;Don't reckon I've got much use
+289;00:18:32,730;00:18:36,867;for your ideas on how to do it.
+290;00:18:36,901;00:18:40,337;Don't reckon I've got
+290;00:18:36,901;00:18:40,337;much use for a captain at all.
+291;00:18:40,371;00:18:44,375;I'm thinking I can do the job
+291;00:18:40,371;00:18:44,375;of captain real well myself.
+292;00:18:44,409;00:18:46,510;All I need is a ship.
+293;00:18:46,544;00:18:48,766;You wouldn't know
+293;00:18:46,544;00:18:48,766;where I could find myself
+294;00:18:48,791;00:18:50,791;a ship now, would you?
+295;00:18:55,219;00:18:56,653;You could do that,
+296;00:18:56,687;00:18:59,055;take the ship,
+296;00:18:56,687;00:18:59,055;head out on your own.
+297;00:18:59,089;00:19:01,529;And I will hunt you down,
+297;00:18:59,089;00:19:01,529;drag you back here in chains,
+298;00:19:01,554;00:19:03,092;and hang you for a traitor.
+299;00:19:03,093;00:19:05,695;Stop. We yield.
+300;00:19:08,432;00:19:11,901;Congratulations
+300;00:19:08,432;00:19:11,901;on your first command.
+301;00:19:11,936;00:19:14,671;Thank you. Kind of you
+301;00:19:11,936;00:19:14,671;to come see me off.
+302;00:19:14,705;00:19:16,172;Oh, I'm not here
+302;00:19:14,705;00:19:16,172;for you.
+303;00:19:16,207;00:19:19,208;I was just on my way
+303;00:19:16,207;00:19:19,208;to Red Harbor.
+304;00:19:19,243;00:19:23,013;I've got 30 ships. There's
+304;00:19:19,243;00:19:23,013;nowhere to put them here.
+305;00:19:23,047;00:19:26,315;Too narrow.
+305;00:19:23,047;00:19:26,315;You'd better get out there.
+306;00:19:26,350;00:19:28,384;Wouldn't want them
+306;00:19:26,350;00:19:28,384;to set sail without you.
+307;00:19:28,418;00:19:30,286;That would never happen.
+308;00:19:30,321;00:19:34,323;My crew would wait on deck
+308;00:19:30,321;00:19:34,323;for a year if I asked them to.
+309;00:19:34,358;00:19:36,859;This lot, though...
+310;00:19:38,362;00:19:41,097;Enjoy the Stony Shore.
+311;00:19:45,469;00:19:48,070;Come on,
+311;00:19:45,469;00:19:48,070;I'll take you out.
+312;00:19:48,105;00:19:49,906;Who are you?
+313;00:19:49,940;00:19:52,008;Dagmer, your first mate.
+314;00:19:53,210;00:19:55,312;Why aren't you with
+314;00:19:53,210;00:19:55,312;the rest of them?
+315;00:19:55,346;00:19:59,416;Or did they send you to row me
+315;00:19:55,346;00:19:59,416;out and dump me halfway in the sea?
+316;00:19:59,450;00:20:00,851;That would be good
+316;00:19:59,450;00:20:00,851;for a laugh.
+317;00:20:00,885;00:20:03,754;They're not gonna respect you
+317;00:20:00,885;00:20:03,754;until you prove yourself.
+318;00:20:03,789;00:20:05,615;And how am I supposed
+318;00:20:03,789;00:20:05,615;to prove myself by pillaging
+319;00:20:05,640;00:20:07,225;piss-poor fishing villages?
+320;00:20:07,226;00:20:09,293;You're not.
+321;00:20:09,328;00:20:11,496;And yet that's the task
+321;00:20:09,328;00:20:11,496;my father has given me
+322;00:20:11,530;00:20:14,899;to prove that
+322;00:20:11,530;00:20:14,899;I'm a true Iron Islander.
+323;00:20:14,933;00:20:17,201;They're all Iron Islanders.
+324;00:20:17,236;00:20:20,705;Do they do as they're told
+324;00:20:17,236;00:20:20,705;or do they do as they like?
+325;00:20:27,746;00:20:30,714;The Stony Shore's not far
+325;00:20:27,746;00:20:30,714;from Torrhen's Square.
+326;00:20:30,748;00:20:33,384;The seat of the House
+326;00:20:30,748;00:20:33,384;of Tallhart--
+327;00:20:33,418;00:20:36,320;a more impressive prize than
+327;00:20:33,418;00:20:36,320;a few fishermen's daughters.
+328;00:20:37,923;00:20:39,614;What, you don't think
+328;00:20:37,923;00:20:39,614;we could take it?
+329;00:20:39,639;00:20:40,792;No, we could.
+330;00:20:40,793;00:20:42,995;We could never hold it
+330;00:20:40,793;00:20:42,995;for more than a few days.
+331;00:20:43,029;00:20:45,397;As soon as Winterfell got word that
+331;00:20:43,029;00:20:45,397;we'd taken Torrhen's Square,
+332;00:20:45,432;00:20:48,234;the Starks would send
+332;00:20:45,432;00:20:48,234;their men to take it back.
+333;00:20:49,770;00:20:52,405;And then--
+334;00:20:57,344;00:20:59,779;take me to my ship.
+335;00:21:03,917;00:21:06,919;The Starks have
+335;00:21:03,917;00:21:06,919;overextended their lines.
+336;00:21:06,954;00:21:09,021;Now that summer's over,
+336;00:21:06,954;00:21:09,021;they'll have a hard time
+337;00:21:09,056;00:21:11,123;keeping their men
+337;00:21:09,056;00:21:11,123;and horses fed.
+338;00:21:11,158;00:21:13,259;The Starks understand winter
+338;00:21:11,158;00:21:13,259;better than we ever will.
+339;00:21:13,294;00:21:14,995;The cold won't beat them.
+340;00:21:15,029;00:21:19,633;Our spies report growing
+340;00:21:15,029;00:21:19,633;discontent among the northern lords.
+341;00:21:19,668;00:21:21,167;They want to return home
+342;00:21:21,192;00:21:23,836;and gather the harvest
+342;00:21:21,192;00:21:23,836;before the crops turn.
+343;00:21:24,340;00:21:27,276;And I'm sure if those same spies
+343;00:21:24,340;00:21:27,276;snuck into our own encampments,
+344;00:21:27,310;00:21:30,480;they would report growing discontent
+344;00:21:27,310;00:21:30,480;amongst the southern lords.
+345;00:21:30,514;00:21:33,382;"This is war;"
+345;00:21:30,514;00:21:33,382;No one's content.
+346;00:21:35,119;00:21:38,354;We've underestimated
+346;00:21:35,119;00:21:38,354;the Stark boy for too long.
+347;00:21:38,389;00:21:41,724;He has a good mind for warfare,
+347;00:21:38,389;00:21:41,724;his men worship him.
+348;00:21:41,759;00:21:43,860;And as long as he keeps
+348;00:21:41,759;00:21:43,860;winning battles,
+349;00:21:43,894;00:21:47,797;they'll keep believing
+349;00:21:43,894;00:21:47,797;he is King in the North.
+350;00:21:47,831;00:21:49,466;You've been waiting
+350;00:21:47,831;00:21:49,466;for him to fail.
+351;00:21:49,500;00:21:52,035;He is not going to fail,
+352;00:21:52,069;00:21:55,038;not without our help.
+353;00:21:57,275;00:21:58,708;So how do we stop him?
+354;00:21:58,743;00:22:01,111;We've worked through
+354;00:21:58,743;00:22:01,111;the night, My Lord.
+355;00:22:01,145;00:22:03,446;Perhaps we'd profit
+355;00:22:01,145;00:22:03,446;from some sleep.
+356;00:22:03,481;00:22:05,515;As I think
+356;00:22:03,481;00:22:05,515;you would, Reginald.
+357;00:22:05,550;00:22:07,117;And because
+357;00:22:05,550;00:22:07,117;you're my cousin,
+358;00:22:07,151;00:22:09,886;I might even let you
+358;00:22:07,151;00:22:09,886;wake from that sleep.
+359;00:22:11,122;00:22:13,457;Go, I'm sure your wife
+359;00:22:11,122;00:22:13,457;must miss you.
+360;00:22:13,491;00:22:15,225;My wife's in Lannisport.
+361;00:22:15,259;00:22:17,461;Well, then you'd
+361;00:22:15,259;00:22:17,461;better start riding.
+362;00:22:18,896;00:22:22,500;Go before I change my mind
+362;00:22:18,896;00:22:22,500;and send her your head.
+363;00:22:22,534;00:22:24,902;If your name
+363;00:22:22,534;00:22:24,902;wasn't Lannister,
+364;00:22:24,937;00:22:28,506;you'd be scrubbing out pots
+364;00:22:24,937;00:22:28,506;in the cook's tent. Go!
+365;00:22:31,376;00:22:33,044;Not wine, water.
+366;00:22:33,078;00:22:35,246;We'll be here
+366;00:22:33,078;00:22:35,246;for some time.
+367;00:22:40,152;00:22:42,887;Girl.
+368;00:22:42,922;00:22:44,923;Where are you from?
+369;00:22:44,957;00:22:46,825;Maidenpool, My Lord.
+370;00:22:46,860;00:22:50,229;And who are the Lords
+370;00:22:46,860;00:22:50,229;of Maidenpool?
+371;00:22:50,263;00:22:54,133;Remind me.
+371;00:22:50,263;00:22:54,133;House Mooton, My Lord.
+372;00:22:54,168;00:22:56,202;And what is their Sigil?
+373;00:23:00,508;00:23:02,142;A red salmon.
+374;00:23:02,176;00:23:05,312;I think a Maidenpool girl
+374;00:23:02,176;00:23:05,312;would remember that.
+375;00:23:06,548;00:23:08,449;You're a northerner,
+375;00:23:06,548;00:23:08,449;aren't you?
+376;00:23:09,651;00:23:12,719;Good. One more time,
+376;00:23:09,651;00:23:12,719;where are you from?
+377;00:23:12,754;00:23:15,722;Barrowton, My Lord.
+377;00:23:12,754;00:23:15,722;House Dustin.
+378;00:23:15,757;00:23:19,827;Two crossed longaxes
+378;00:23:15,757;00:23:19,827;beneath a black crown.
+379;00:23:21,763;00:23:25,399;And what do they say
+379;00:23:21,763;00:23:25,399;of Robb Stark in the North?
+380;00:23:27,735;00:23:30,370;They call him
+380;00:23:27,735;00:23:30,370;the young wolf.
+381;00:23:30,405;00:23:32,840;And?
+382;00:23:32,875;00:23:35,676;They say he rides into battle on
+382;00:23:32,875;00:23:35,676;the back of a giant Direwolf.
+383;00:23:37,980;00:23:41,983;They say he can turn into
+383;00:23:37,980;00:23:41,983;a wolf himself when he wants.
+384;00:23:42,018;00:23:43,986;They say he can't be killed.
+385;00:23:45,288;00:23:46,923;And do you believe them?
+386;00:23:48,025;00:23:50,827;No, My Lord.
+387;00:23:50,862;00:23:52,996;Anyone can be killed.
+388;00:24:00,238;00:24:02,339;Fetch that water.
+389;00:24:42,914;00:24:45,483;A girl says nothing.
+390;00:24:47,919;00:24:50,354;A girl keeps
+390;00:24:47,919;00:24:50,354;her mouth closed.
+391;00:24:50,388;00:24:53,024;No one hears,
+392;00:24:53,058;00:24:56,928;and friends may talk
+392;00:24:53,058;00:24:56,928;in secret, yes?
+393;00:25:00,833;00:25:02,734;A boy becomes a girl.
+394;00:25:02,769;00:25:04,370;I was always a girl.
+395;00:25:04,404;00:25:06,606;And I was always aware.
+396;00:25:06,640;00:25:09,342;But the girl
+396;00:25:06,640;00:25:09,342;keeps secrets.
+397;00:25:09,377;00:25:12,378;It is not for a man
+397;00:25:09,377;00:25:12,378;to spoil them.
+398;00:25:14,381;00:25:16,015;You're one of them now.
+399;00:25:18,551;00:25:21,219;I should have let you burn.
+400;00:25:23,288;00:25:25,789;And you fetch water
+400;00:25:23,288;00:25:25,789;for one of them now.
+401;00:25:25,824;00:25:29,859;Why is this right for you
+401;00:25:25,824;00:25:29,859;and wrong for me?
+402;00:25:29,894;00:25:31,595;I didn't have a choice.
+403;00:25:31,629;00:25:35,699;You did.
+403;00:25:31,629;00:25:35,699;I did.
+404;00:25:35,734;00:25:37,368;And here we are.
+405;00:25:40,572;00:25:42,406;A man pays his debts.
+406;00:25:42,440;00:25:44,775;A man owes three.
+407;00:25:44,809;00:25:46,076;Three what?
+408;00:25:46,111;00:25:50,548;The Red God takes
+408;00:25:46,111;00:25:50,548;what is his, lovely girl.
+409;00:25:50,582;00:25:53,651;And only death
+409;00:25:50,582;00:25:53,651;may pay for life.
+410;00:25:54,787;00:25:57,288;You saved me
+410;00:25:54,787;00:25:57,288;and the two I was with.
+411;00:25:57,323;00:26:00,225;You stole three deaths
+411;00:25:57,323;00:26:00,225;from the Red God.
+412;00:26:03,796;00:26:05,964;We have to give them back.
+413;00:26:08,868;00:26:11,302;Speak three names
+414;00:26:11,336;00:26:13,905;and the man
+414;00:26:11,336;00:26:13,905;will do the rest.
+415;00:26:15,908;00:26:17,642;Three lives
+415;00:26:15,908;00:26:17,642;I will give you--
+416;00:26:17,676;00:26:21,012;no more, no less,
+416;00:26:17,676;00:26:21,012;and we're done.
+417;00:26:21,046;00:26:23,547;I can name anyone
+418;00:26:23,582;00:26:25,883;and you'll kill him?
+419;00:26:25,951;00:26:29,587;A man has said.
+420;00:26:31,723;00:26:33,157;The one who
+420;00:26:31,723;00:26:33,157;tortures everyone.
+421;00:26:33,191;00:26:34,891;A man needs a name.
+422;00:26:34,926;00:26:37,260;I don't know his name.
+423;00:26:37,295;00:26:39,296;They call him
+423;00:26:37,295;00:26:39,296;the Tickler.
+424;00:26:39,330;00:26:41,497;That is enough.
+425;00:26:41,532;00:26:45,634;Go now, girl.
+425;00:26:41,532;00:26:45,634;Your master is thirsty.
+426;00:26:58,982;00:27:00,415;He's not here yet.
+427;00:27:00,450;00:27:02,885;He'd have seen us,
+427;00:27:00,450;00:27:02,885;blown the horn.
+428;00:27:02,919;00:27:05,087;When will he come?
+429;00:27:05,122;00:27:07,123;The Halfhand does things
+429;00:27:05,122;00:27:07,123;in his own time.
+430;00:27:07,157;00:27:09,425;My uncle told me
+430;00:27:07,157;00:27:09,425;stories about him.
+431;00:27:09,460;00:27:11,494;Most of them are true.
+432;00:27:11,529;00:27:14,197;I heard the Halfhand spent half
+432;00:27:11,529;00:27:14,197;of last winter beyond the wall.
+433;00:27:14,231;00:27:15,765;The whole winter.
+434;00:27:15,799;00:27:18,467;He was north of the Skirling Pass
+434;00:27:15,799;00:27:18,467;when the snows came.
+435;00:27:18,502;00:27:20,169;Had to wait for the thaw.
+436;00:27:20,203;00:27:24,172;So it is possible for someone
+436;00:27:20,203;00:27:24,172;to survive out here on their own.
+437;00:27:24,206;00:27:27,609;Well, possible
+437;00:27:24,206;00:27:27,609;for the Halfhand.
+438;00:27:27,643;00:27:29,444;Beautiful, isn't it?
+439;00:27:29,479;00:27:32,012;Gilly would love it here.
+440;00:27:32,047;00:27:35,649;There's nothing more sickening
+440;00:27:32,047;00:27:35,649;than a man in love.
+441;00:28:03,076;00:28:05,377;About time you did something.
+442;00:28:05,411;00:28:08,179;At least you'll keep warm.
+443;00:28:09,749;00:28:12,417;The fist
+443;00:28:09,749;00:28:12,417;of the First Men.
+444;00:28:12,452;00:28:15,955;Think of how old
+444;00:28:12,452;00:28:15,955;this place is--
+445;00:28:15,989;00:28:18,558;before the Targaryens
+445;00:28:15,989;00:28:18,558;defeated the Hendals,
+446;00:28:18,592;00:28:21,361;before the Andals took
+446;00:28:18,592;00:28:21,361;Westeros from the First Men.
+447;00:28:21,395;00:28:24,564;Before I die, please,
+447;00:28:21,395;00:28:24,564;stop talking.
+448;00:28:24,599;00:28:26,834;Thousands and thousands
+448;00:28:24,599;00:28:26,834;of years ago,
+449;00:28:26,868;00:28:29,938;the First Men stood here
+449;00:28:26,868;00:28:29,938;where we're standing
+450;00:28:29,972;00:28:32,273;all through the long night.
+451;00:28:34,343;00:28:36,744;What do you think they
+451;00:28:34,343;00:28:36,744;were like, the First Men?
+452;00:28:36,779;00:28:38,379;Stupid.
+453;00:28:38,413;00:28:41,583;Smart people don't find
+453;00:28:38,413;00:28:41,583;themselves in places like this.
+454;00:28:41,617;00:28:44,152;I think
+454;00:28:41,617;00:28:44,152;they were afraid.
+455;00:28:45,488;00:28:48,223;I think they came here
+455;00:28:45,488;00:28:48,223;to get away from something.
+456;00:28:48,257;00:28:51,793;And I don't think
+456;00:28:48,257;00:28:51,793;it worked.
+457;00:28:55,664;00:28:57,265;Wildlings?
+458;00:28:59,635;00:29:02,003;One blast is for rangers returning.
+459;00:29:02,038;00:29:03,705;Wildlings is two blasts.
+460;00:29:03,739;00:29:07,208;So you got to stand
+460;00:29:03,739;00:29:07,208;there waiting,
+461;00:29:07,242;00:29:09,309;wondering.
+462;00:29:09,344;00:29:10,978;One blast for friends,
+463;00:29:11,013;00:29:13,915;two for foes.
+464;00:29:14,917;00:29:21,256;And three
+464;00:29:14,917;00:29:21,256;for White Walkers.
+465;00:29:21,291;00:29:23,192;It's been 1,000 years,
+466;00:29:23,226;00:29:25,962;but that's the only time
+466;00:29:23,226;00:29:25,962;they blow the horn three times.
+467;00:29:25,996;00:29:29,098;But if it's been 1,000 years,
+467;00:29:25,996;00:29:29,098;how do you know?
+468;00:29:29,132;00:29:32,834;Well...
+468;00:29:29,132;00:29:32,834;I read it in a book.
+469;00:29:32,869;00:29:34,970;Look.
+470;00:29:36,138;00:29:38,272;It's Qhorin Halfhand.
+471;00:29:38,307;00:29:41,509;Aye, we'll live
+471;00:29:38,307;00:29:41,509;another day.
+472;00:29:41,543;00:29:44,111;Hurrah.
+473;00:29:53,454;00:29:56,323;Take care, My Lord.
+474;00:29:56,357;00:29:59,326;I remember reading
+474;00:29:56,357;00:29:59,326;an old sailor's proverb--
+475;00:29:59,360;00:30:02,296;piss on wildfire
+475;00:29:59,360;00:30:02,296;and your cock burns off.
+476;00:30:02,331;00:30:05,967;Oh, I have not conducted
+476;00:30:02,331;00:30:05,967;this experiment.
+477;00:30:06,001;00:30:08,603;It could well be true.
+478;00:30:08,638;00:30:10,472;The substance
+478;00:30:08,638;00:30:10,472;burns so hot,
+479;00:30:10,506;00:30:13,641;it melts wood,
+479;00:30:10,506;00:30:13,641;stone, even steel,
+480;00:30:13,676;00:30:16,978;and, of course, flesh.
+481;00:30:17,012;00:30:21,515;The substance burns so hot,
+481;00:30:17,012;00:30:21,515;it melts flesh like tallow.
+482;00:30:24,852;00:30:28,188;After the dragons died,
+482;00:30:24,852;00:30:28,188;wildfire was the key
+483;00:30:28,222;00:30:29,990;to the Targaryen power.
+484;00:30:30,024;00:30:33,060;My companion takes issue.
+485;00:30:33,094;00:30:35,429;If I could tell you
+485;00:30:33,094;00:30:35,429;how many crazy old men
+486;00:30:35,463;00:30:37,598;I've seen pushing carts
+486;00:30:35,463;00:30:37,598;around army camps
+487;00:30:37,632;00:30:41,335;making grand claims about
+487;00:30:37,632;00:30:41,335;jars full of pig shit...
+488;00:30:41,370;00:30:44,605;No offense meant.
+488;00:30:41,370;00:30:44,605;Our order does not deal in pig shit.
+489;00:30:44,640;00:30:47,341;The substance
+489;00:30:44,640;00:30:47,341;is fire given form.
+490;00:30:47,375;00:30:50,944;And we have been perfecting it
+490;00:30:47,375;00:30:50,944;since the days of Maegor.
+491;00:30:50,979;00:30:52,312;To do what?
+492;00:30:52,347;00:30:55,749;The jars are put in catapults
+492;00:30:52,347;00:30:55,749;and flung at the enemy.
+493;00:30:55,783;00:30:58,451;How much do you have?
+494;00:31:01,288;00:31:05,123;If you could get real soldiers
+494;00:31:01,288;00:31:05,123;to man the catapults,
+495;00:31:05,157;00:31:08,525;then maybe you'd hit
+495;00:31:05,157;00:31:08,525;your target one time in 10,
+496;00:31:08,560;00:31:11,694;but all the real soldiers are in
+496;00:31:08,560;00:31:11,694;the Riverlands with your father.
+497;00:31:11,728;00:31:14,363;My Lord, this man
+497;00:31:11,728;00:31:14,363;is insulting.
+498;00:31:14,398;00:31:16,699;I don't know if you've
+498;00:31:14,398;00:31:16,699;ever seen a battle, old man,
+499;00:31:16,734;00:31:18,368;but things can get
+499;00:31:16,734;00:31:18,368;a bit messy.
+500;00:31:18,402;00:31:19,769;'Cause when we're flinging
+500;00:31:18,402;00:31:19,769;things at Stannis,
+501;00:31:19,803;00:31:21,571;he's flinging them
+501;00:31:19,803;00:31:21,571;right back at us.
+502;00:31:21,605;00:31:24,440;Men die, men shit
+502;00:31:21,605;00:31:24,440;themselves, men run,
+503;00:31:24,474;00:31:26,208;which means
+503;00:31:24,474;00:31:26,208;pots falling,
+504;00:31:26,243;00:31:28,143;which means fire
+504;00:31:26,243;00:31:28,143;inside the walls,
+505;00:31:28,178;00:31:30,444;which means the poor cunts
+505;00:31:28,178;00:31:30,444;trying to defend the city
+506;00:31:30,469;00:31:32,469;end up burning it down.
+507;00:31:32,681;00:31:35,049;My friend remains
+507;00:31:32,681;00:31:35,049;unconvinced.
+508;00:31:35,083;00:31:37,418;He would not dare
+508;00:31:35,083;00:31:37,418;insult my order
+509;00:31:37,452;00:31:39,152;whilst Aerys Targaryen
+509;00:31:37,452;00:31:39,152;lived.
+510;00:31:39,187;00:31:41,788;Well, he's not
+510;00:31:39,187;00:31:41,788;living anymore.
+511;00:31:41,822;00:31:44,924;And all his pots of wildfire
+511;00:31:41,822;00:31:44,924;didn't help him, did they?
+512;00:31:44,959;00:31:48,928;Men win wars,
+512;00:31:44,959;00:31:48,928;not magic tricks.
+513;00:32:04,242;00:32:08,511;We have been working
+513;00:32:04,242;00:32:08,511;tirelessly day and night
+514;00:32:08,546;00:32:13,015;ever since your royal sister
+514;00:32:08,546;00:32:13,015;commanded us to do so.
+515;00:32:13,049;00:32:15,184;Our present count stands
+516;00:32:15,218;00:32:18,720;at 7,811,
+517;00:32:18,754;00:32:22,223;enough to burn Stannis
+517;00:32:18,754;00:32:22,223;Baratheon's fleet
+518;00:32:22,257;00:32:24,358;and armies both.
+519;00:32:24,393;00:32:27,094;This is a shit idea.
+520;00:32:27,128;00:32:30,997;I'm afraid I have to concur
+520;00:32:27,128;00:32:30,997;with my advisor, wisdom Hallyne.
+521;00:32:31,032;00:32:35,268;The contents of this room
+521;00:32:31,032;00:32:35,268;could lay King's Landing low.
+522;00:32:36,904;00:32:40,639;You won't be making wildfire
+522;00:32:36,904;00:32:40,639;for my sister any longer.
+523;00:32:42,242;00:32:44,877;You'll be making it
+523;00:32:42,242;00:32:44,877;for me.
+524;00:32:53,754;00:32:56,022;Dracarys.
+525;00:33:03,564;00:33:05,999;Dracarys.
+526;00:33:15,644;00:33:18,446;He'll be able to feed
+526;00:33:15,644;00:33:18,446;himself from now on.
+527;00:33:21,783;00:33:24,351;Let him sleep, Doreah.
+528;00:33:24,386;00:33:27,155;Yes, Khaleesi.
+529;00:33:29,358;00:33:31,326;He loves you.
+530;00:33:42,205;00:33:44,407;Thank you, my friend.
+531;00:33:45,809;00:33:49,579;Did you see the dress
+531;00:33:45,809;00:33:49,579;Xaro had made for you?
+532;00:33:49,613;00:33:52,648;They say he's the
+532;00:33:49,613;00:33:52,648;wealthiest man in Qarth.
+533;00:33:52,682;00:33:54,917;It is known.
+534;00:33:54,952;00:33:57,954;And if Qarth is the wealthiest
+534;00:33:54,952;00:33:57,954;city in Essos--
+535;00:33:57,989;00:33:59,889;The last time a rich man
+535;00:33:57,989;00:33:59,889;gave me a dress,
+536;00:33:59,923;00:34:02,658;he was selling me
+536;00:33:59,923;00:34:02,658;to Khal Drogo.
+537;00:34:08,431;00:34:12,034;Xaro is our host,
+537;00:34:08,431;00:34:12,034;but we know nothing about him.
+538;00:34:12,068;00:34:14,837;Men like to talk
+538;00:34:12,068;00:34:14,837;about other men
+539;00:34:14,871;00:34:16,873;when they're happy.
+540;00:34:24,415;00:34:26,516;You would look like
+540;00:34:24,415;00:34:26,516;a real princess in Xaro's--
+541;00:34:26,551;00:34:29,587;She's not a princess.
+541;00:34:26,551;00:34:29,587;She's a Khaleesi.
+542;00:34:35,560;00:34:37,861;You should wear it,
+542;00:34:35,560;00:34:37,861;Khaleesi.
+543;00:34:37,895;00:34:39,362;You are their guest.
+544;00:34:39,396;00:34:41,998;It would be rude not to.
+545;00:35:02,353;00:35:04,221;And you must visit
+545;00:35:02,353;00:35:04,221;the night market.
+546;00:35:04,255;00:35:09,093;The Qartheen night market is like
+546;00:35:04,255;00:35:09,093;no night market you've ever seen.
+547;00:35:09,128;00:35:10,996;It sounds wonderful.
+548;00:35:11,030;00:35:12,998;The Meereens think
+548;00:35:11,030;00:35:12,998;they have a night market.
+549;00:35:13,033;00:35:15,300;I will take you
+549;00:35:13,033;00:35:15,300;there myself.
+550;00:35:15,334;00:35:18,770;Please excuse me
+550;00:35:15,334;00:35:18,770;for a moment.
+551;00:35:21,174;00:35:23,509;What are they doing?
+552;00:35:23,543;00:35:27,279;Malakko says the statue
+552;00:35:23,543;00:35:27,279;is too heavy to carry.
+553;00:35:27,314;00:35:28,648;Kovarro says that
+553;00:35:27,314;00:35:28,648;Malakko is an idiot.
+554;00:35:28,682;00:35:31,384;They can pry out the gems,
+554;00:35:28,682;00:35:31,384;the rest is pure gold.
+555;00:35:31,418;00:35:35,021;Very soft. He can chop off
+555;00:35:31,418;00:35:35,021;as much as we can carry.
+556;00:36:02,684;00:36:05,552;My brother used to say the only
+556;00:36:02,684;00:36:05,552;thing the Dothraki knew how to do
+557;00:36:05,586;00:36:07,621;was steal things
+557;00:36:05,586;00:36:07,621;better men have built.
+558;00:36:07,655;00:36:09,356;It's not the only thing.
+559;00:36:09,390;00:36:11,191;They're quite good
+559;00:36:09,390;00:36:11,191;at killing the better men.
+560;00:36:11,225;00:36:14,227;That's not the kind of queen
+560;00:36:11,225;00:36:14,227;I'm going to be.
+561;00:36:14,261;00:36:17,130;Mother of Dragons.
+562;00:36:17,164;00:36:19,366;On behalf of the warlocks
+562;00:36:17,164;00:36:19,366;of Qarth,
+563;00:36:19,400;00:36:21,501;I welcome you.
+564;00:36:22,736;00:36:24,737;A demonstration?
+565;00:36:26,707;00:36:29,876;Take this gem.
+565;00:36:26,707;00:36:29,876;Look at it.
+566;00:36:31,245;00:36:33,646;Into its depths.
+567;00:36:33,681;00:36:36,015;So many facets.
+568;00:36:36,050;00:36:40,186;Look closely enough and you
+568;00:36:36,050;00:36:40,186;can see yourself in them.
+569;00:36:42,489;00:36:44,690;Often more than once.
+570;00:36:47,861;00:36:51,563;Should you grow tired of
+570;00:36:47,861;00:36:51,563;Xaro's baubles and trinkets,
+571;00:36:51,597;00:36:54,933;it would be an honor to host you
+571;00:36:51,597;00:36:54,933;at the House of the Undying.
+572;00:36:54,967;00:36:57,402;You're always welcome,
+573;00:36:57,436;00:37:00,105;Mother of Dragons.
+574;00:37:06,646;00:37:08,981;My apologies.
+575;00:37:09,015;00:37:11,583;Pyat Pree is one
+575;00:37:09,015;00:37:11,583;of the Thirteen.
+576;00:37:11,618;00:37:14,019;It was customary for me
+576;00:37:11,618;00:37:14,019;to extend him an invitation.
+577;00:37:14,053;00:37:17,188;Customs die
+577;00:37:14,053;00:37:17,188;slow deaths in Qarth.
+578;00:37:17,222;00:37:19,990;What is the House
+578;00:37:17,222;00:37:19,990;of the Undying?
+579;00:37:20,025;00:37:23,627;It is where the warlocks go
+579;00:37:20,025;00:37:23,627;to squint at dusty books
+580;00:37:23,661;00:37:25,228;and drink shade
+580;00:37:23,661;00:37:25,228;of the evening.
+581;00:37:25,263;00:37:29,332;It turns their lips blue
+581;00:37:25,263;00:37:29,332;and their minds soft--
+582;00:37:29,366;00:37:32,234;so soft,
+582;00:37:29,366;00:37:32,234;they actually believe
+583;00:37:32,268;00:37:34,269;their parlor tricks
+583;00:37:32,268;00:37:34,269;are magic.
+584;00:37:37,941;00:37:40,576;You watch over her.
+585;00:37:42,279;00:37:44,147;Do I know you?
+586;00:37:44,181;00:37:46,083;I know you.
+587;00:37:46,117;00:37:49,653;Jorah Mormont
+587;00:37:46,117;00:37:49,653;of Bear Island.
+588;00:37:49,687;00:37:51,422;Who are you?
+589;00:37:51,456;00:37:53,758;I'm no one.
+590;00:37:53,792;00:37:55,760;But she is
+590;00:37:53,792;00:37:55,760;the Mother of Dragons.
+591;00:37:55,794;00:37:59,397;She needs true protectors
+591;00:37:55,794;00:37:59,397;now more than ever.
+592;00:37:59,431;00:38:01,399;They shall come
+592;00:37:59,431;00:38:01,399;day and night
+593;00:38:01,433;00:38:03,935;to see the wonder born
+593;00:38:01,433;00:38:03,935;into the world again.
+594;00:38:03,970;00:38:07,473;And when they see,
+594;00:38:03,970;00:38:07,473;they shall lust,
+595;00:38:07,507;00:38:11,310;for dragons are fire
+595;00:38:07,507;00:38:11,310;made flesh.
+596;00:38:11,345;00:38:13,946;And fire is power.
+597;00:38:24,257;00:38:26,525;It looked like Stannis.
+598;00:38:26,559;00:38:29,994;To me it just
+598;00:38:26,559;00:38:29,994;looked like...
+599;00:38:33,433;00:38:36,101;A shadow in
+599;00:38:33,433;00:38:36,101;the shape of a man.
+600;00:38:36,135;00:38:38,170;In the shape
+600;00:38:36,135;00:38:38,170;of Stannis.
+601;00:38:42,543;00:38:45,245;We should reach
+601;00:38:42,543;00:38:45,245;my son's camp tomorrow.
+602;00:38:45,279;00:38:47,380;Will you stay there
+602;00:38:45,279;00:38:47,380;long, My Lady?
+603;00:38:47,415;00:38:51,084;Only long enough to tell
+603;00:38:47,415;00:38:51,084;Robb what I have seen.
+604;00:38:51,119;00:38:54,421;After that, I will leave
+604;00:38:51,119;00:38:54,421;for Winterfell.
+605;00:38:55,589;00:38:57,757;My two youngest need me.
+606;00:38:57,791;00:39:00,926;I've been away from them
+606;00:38:57,791;00:39:00,926;for far too long.
+607;00:39:00,960;00:39:03,862;I never knew my mother.
+608;00:39:04,897;00:39:06,397;I'm sorry.
+609;00:39:06,432;00:39:10,134;My own mother died
+609;00:39:06,432;00:39:10,134;on the birthing bed
+610;00:39:10,168;00:39:13,003;when I was very young.
+611;00:39:16,241;00:39:18,776;It's a bloody business.
+612;00:39:18,810;00:39:22,346;What comes after
+612;00:39:18,810;00:39:22,346;is even harder.
+613;00:39:24,015;00:39:27,151;Once you're safely back
+613;00:39:24,015;00:39:27,151;amongst your own people,
+614;00:39:27,185;00:39:30,321;will you give me leave
+614;00:39:27,185;00:39:30,321;to go, My Lady?
+615;00:39:30,355;00:39:32,557;You mean to kill Stannis.
+616;00:39:32,591;00:39:34,225;I swore a vow.
+617;00:39:34,259;00:39:37,528;But Stannis has
+617;00:39:34,259;00:39:37,528;a great army around him.
+618;00:39:37,562;00:39:40,064;His own guards are sworn
+618;00:39:37,562;00:39:40,064;to keep him safe.
+619;00:39:40,098;00:39:41,965;I'm as good
+619;00:39:40,098;00:39:41,965;as any of them.
+620;00:39:43,435;00:39:44,868;I should never have fled.
+621;00:39:44,903;00:39:48,638;Renly's death
+621;00:39:44,903;00:39:48,638;was no fault of yours.
+622;00:39:48,672;00:39:50,506;You served him bravely.
+623;00:39:50,541;00:39:54,545;I only held him
+623;00:39:50,541;00:39:54,545;that once
+624;00:39:54,579;00:39:57,214;as he was dying.
+625;00:39:59,684;00:40:01,318;He's gone, Brienne.
+626;00:40:01,353;00:40:05,957;You serve nothing and no one
+626;00:40:01,353;00:40:05,957;by following him into the earth.
+627;00:40:07,226;00:40:10,329;Renly's enemies are
+627;00:40:07,226;00:40:10,329;Robb's enemies as well.
+628;00:40:14,968;00:40:17,002;I do not know
+628;00:40:14,968;00:40:17,002;your son, My Lady...
+629;00:40:19,205;00:40:23,174;but I could serve you
+629;00:40:19,205;00:40:23,174;if you would have me.
+630;00:40:23,208;00:40:25,276;You have courage.
+631;00:40:25,310;00:40:27,778;Not battle courage, perhaps,
+632;00:40:27,812;00:40:31,248;but, I don't know,
+633;00:40:31,283;00:40:33,183;a woman's kind of courage.
+634;00:40:33,218;00:40:35,720;And I think that
+634;00:40:33,218;00:40:35,720;when the time comes,
+635;00:40:35,754;00:40:37,221;you will not hold me back.
+636;00:40:37,256;00:40:39,958;Promise me that you
+636;00:40:37,256;00:40:39,958;will not hold me back
+637;00:40:39,992;00:40:42,327;from Stannis.
+638;00:40:46,899;00:40:50,202;When the time comes,
+638;00:40:46,899;00:40:50,202;I will not hold you back.
+639;00:40:56,810;00:40:59,144;Then I am yours,
+639;00:40:56,810;00:40:59,144;My Lady.
+640;00:41:00,246;00:41:01,747;I will shield your back
+641;00:41:01,781;00:41:04,850;and give my life for yours
+641;00:41:01,781;00:41:04,850;if it comes to that.
+642;00:41:04,884;00:41:08,486;I swear it by the Old Gods
+642;00:41:04,884;00:41:08,486;and the new.
+643;00:41:15,428;00:41:18,998;I vow that you shall always
+643;00:41:15,428;00:41:18,998;have a place in my home
+644;00:41:19,033;00:41:21,000;and at my table
+645;00:41:21,034;00:41:23,469;and that I shall ask
+645;00:41:21,034;00:41:23,469;no service of you
+646;00:41:23,504;00:41:26,072;that might
+646;00:41:23,504;00:41:26,072;bring you dishonor.
+647;00:41:26,106;00:41:29,175;I swear it by the Old Gods
+647;00:41:26,106;00:41:29,175;and the new.
+648;00:41:32,446;00:41:34,646;And it's not
+648;00:41:32,446;00:41:34,646;just thieves, My Lord.
+649;00:41:34,982;00:41:37,851;There's wolves
+649;00:41:34,982;00:41:37,851;in them hills now,
+650;00:41:37,885;00:41:40,186;more than I've ever seen.
+651;00:41:40,221;00:41:43,257;They come down in the night
+651;00:41:40,221;00:41:43,257;and they kill my sheep.
+652;00:41:43,291;00:41:47,127;My three sons is away fighting
+652;00:41:43,291;00:41:47,127;for your brother, My Lord.
+653;00:41:47,161;00:41:49,362;They'll fight,
+653;00:41:47,161;00:41:49,362;keep fighting
+654;00:41:49,396;00:41:51,531;till they're told
+654;00:41:49,396;00:41:51,531;to go home.
+655;00:41:51,565;00:41:54,167;I have no one to man
+655;00:41:51,565;00:41:54,167;my flock now. Only me.
+656;00:41:54,201;00:41:57,836;I can't keep watch
+656;00:41:54,201;00:41:57,836;all day and all night.
+657;00:41:59,873;00:42:02,674;We can send two orphan boys
+657;00:41:59,873;00:42:02,674;from Winterstown home with you
+658;00:42:02,709;00:42:04,442;to help watch over
+658;00:42:02,709;00:42:04,442;your flock
+659;00:42:04,477;00:42:06,277;if you can give them
+659;00:42:04,477;00:42:06,277;room and board.
+660;00:42:06,312;00:42:09,013;My wife always prayed
+660;00:42:06,312;00:42:09,013;for more children.
+661;00:42:09,047;00:42:11,415;We'll look after them.
+661;00:42:09,047;00:42:11,415;Thank you, My Lord.
+662;00:42:11,449;00:42:14,786;And may the Gods
+662;00:42:11,449;00:42:14,786;bless you and yours.
+663;00:42:17,657;00:42:19,792;Stop it.
+664;00:42:19,826;00:42:23,129;If that's everyone, I'm going
+664;00:42:19,826;00:42:23,129;to go for a ride before dark.
+665;00:42:23,163;00:42:25,165;Good.
+665;00:42:23,163;00:42:25,165;Hodor.
+666;00:42:25,199;00:42:29,136;Hodor.
+666;00:42:25,199;00:42:29,136;Bran-- Lord Stark.
+667;00:42:29,171;00:42:30,905;Torrhen's Square
+667;00:42:29,171;00:42:30,905;is under siege.
+668;00:42:30,939;00:42:33,607;Torrhen's Square is barely
+668;00:42:30,939;00:42:33,607;40 leagues from here.
+669;00:42:33,641;00:42:36,710;How can the Lannisters
+669;00:42:33,641;00:42:36,710;strike so far north?
+670;00:42:36,745;00:42:39,346;Might be a raiding party
+670;00:42:36,745;00:42:39,346;led by the Mountain.
+671;00:42:39,380;00:42:41,881;Might be Sellswords
+671;00:42:39,380;00:42:41,881;paid by Tywin Lannister.
+672;00:42:41,916;00:42:43,149;We have to help them.
+673;00:42:43,184;00:42:44,684;Most of the fighting men
+673;00:42:43,184;00:42:44,684;are away with Robb,
+674;00:42:44,719;00:42:46,419;but I can gather
+674;00:42:44,719;00:42:46,419;200 decent men.
+675;00:42:46,453;00:42:47,680;Do you need so many?
+676;00:42:47,705;00:42:49,222;If we can't protect
+676;00:42:47,705;00:42:49,222;our own bannermen,
+677;00:42:49,223;00:42:52,025;why should
+677;00:42:49,223;00:42:52,025;they protect us?
+678;00:42:52,059;00:42:54,828;Go, Ser Rodrik.
+678;00:42:52,059;00:42:54,828;Take the men you need.
+679;00:42:54,863;00:42:56,330;Won't take long, My Lord.
+680;00:42:56,364;00:42:58,165;Southerners don't
+680;00:42:56,364;00:42:58,165;do well up here.
+681;00:43:08,578;00:43:11,113;So, what does it mean?
+682;00:43:11,147;00:43:12,189;Ask your Maester Luwin.
+683;00:43:12,214;00:43:14,368;He's the one studying
+683;00:43:12,214;00:43:14,368;books all the time.
+684;00:43:14,517;00:43:17,853;I did ask him. He'd never
+684;00:43:14,517;00:43:17,853;heard of a three-eyed raven.
+685;00:43:17,887;00:43:21,490;Must not mean anything, then
+685;00:43:17,887;00:43:21,490;You're lying.
+686;00:43:21,524;00:43:24,292;You might be a little lord,
+686;00:43:21,524;00:43:24,292;but don't you call me a liar.
+687;00:43:24,326;00:43:27,562;You know what it means.
+687;00:43:24,326;00:43:27,562;I never said I didn't.
+688;00:43:27,596;00:43:29,530;You didn't give me
+688;00:43:27,596;00:43:29,530;an honest answer.
+689;00:43:29,565;00:43:32,567;That's not the same
+689;00:43:29,565;00:43:32,567;as being a liar.
+690;00:43:32,601;00:43:34,202;Well, it's not far off.
+691;00:43:34,236;00:43:38,340;So, you've been dreaming
+691;00:43:34,236;00:43:38,340;of a three-eyed raven again?
+692;00:43:39,776;00:43:43,078;In the Godswood,
+692;00:43:39,776;00:43:43,078;you told me you didn't dream.
+693;00:43:43,113;00:43:45,147;Now who's a liar?
+694;00:43:48,918;00:43:50,953;What did you see
+694;00:43:48,918;00:43:50,953;in your dream?
+695;00:43:53,390;00:43:55,658;Something bad?
+696;00:43:55,692;00:43:57,893;Tell me, boy.
+697;00:44:01,231;00:44:04,166;I dreamt that the sea
+697;00:44:01,231;00:44:04,166;came to Winterfell.
+698;00:44:05,602;00:44:08,069;I saw waves crashing
+698;00:44:05,602;00:44:08,069;against the gates
+699;00:44:08,104;00:44:11,806;and the water came
+699;00:44:08,104;00:44:11,806;flowing over the walls...
+700;00:44:14,143;00:44:16,645;flooded the castle.
+701;00:44:18,848;00:44:21,049;Drowned men
+701;00:44:18,848;00:44:21,049;were floating here
+702;00:44:21,083;00:44:23,218;in the yard.
+703;00:44:25,788;00:44:28,824;Ser Rodrik
+703;00:44:25,788;00:44:28,824;was one of them.
+704;00:44:30,860;00:44:33,562;The sea is hundreds
+704;00:44:30,860;00:44:33,562;of miles away.
+705;00:44:33,597;00:44:35,211;I know.
+706;00:44:35,212;00:44:36,537;It's just a stupid dream.
+707;00:44:36,562;00:44:38,433;I've got to get these
+707;00:44:36,562;00:44:38,433;potatoes to the kitchen.
+708;00:44:38,434;00:44:39,935;Otherwise they'll put me
+708;00:44:38,434;00:44:39,935;in chains again.
+709;00:44:39,970;00:44:42,371;Osha.
+710;00:44:42,405;00:44:44,874;The three-eyed raven,
+711;00:44:44,908;00:44:47,377;what do they say about it
+712;00:44:47,412;00:44:50,213;north of the wall?
+713;00:44:50,248;00:44:53,550;They say all sorts of crazy
+713;00:44:50,248;00:44:53,550;things north of the wall.
+714;00:45:04,696;00:45:07,097;There.
+714;00:45:04,696;00:45:07,097;- Where?
+715;00:45:07,131;00:45:08,898;On that Mountain.
+716;00:45:08,932;00:45:11,400;I don't see very well.
+717;00:45:11,435;00:45:13,035;A fire.
+718;00:45:15,306;00:45:18,308;There's a fire.
+719;00:45:18,342;00:45:21,478;The people sitting around it have
+719;00:45:18,342;00:45:21,478;better eyes than yours or mine.
+720;00:45:21,512;00:45:24,581;When they see us coming,
+720;00:45:21,512;00:45:24,581;that fire becomes a signal.
+721;00:45:24,615;00:45:28,185;Gives Mance Rayder plenty of time.
+721;00:45:24,615;00:45:28,185;to throw a party in our honor.
+722;00:45:28,220;00:45:30,288;How many wildlings
+722;00:45:28,220;00:45:30,288;have joined him?
+723;00:45:30,322;00:45:34,491;From what we can tell,
+723;00:45:30,322;00:45:34,491;all of them.
+724;00:45:39,063;00:45:41,498;Mance has gathered them all
+724;00:45:39,063;00:45:41,498;like deer against the wolves.
+725;00:45:41,533;00:45:43,534;They're almost ready
+725;00:45:41,533;00:45:43,534;to make their move.
+726;00:45:43,568;00:45:45,502;Where?
+727;00:45:45,536;00:45:47,371;Somewhere safe.
+728;00:45:47,405;00:45:49,239;Somewhere south.
+729;00:45:49,273;00:45:52,208;Can't just march
+729;00:45:49,273;00:45:52,208;into their midst.
+730;00:45:52,242;00:45:54,029;And we can't wait for them
+730;00:45:52,242;00:45:54,029;here with nothing but a pile
+731;00:45:54,054;00:45:55,879;of stones to protect us.
+732;00:45:55,880;00:45:58,816;You saying we should
+732;00:45:55,880;00:45:58,816;fall back to the Wall?
+733;00:45:58,850;00:46:02,253;Mance was one of us once.
+734;00:46:02,288;00:46:04,689;Now he's one of them.
+735;00:46:04,724;00:46:07,459;He's gonna teach them
+735;00:46:04,724;00:46:07,459;our way of doing things.
+736;00:46:07,494;00:46:09,395;They'll hit us in force.
+737;00:46:09,429;00:46:11,832;And they won't run away
+737;00:46:09,429;00:46:11,832;when we hit back.
+738;00:46:11,866;00:46:14,301;They're gonna be more
+738;00:46:11,866;00:46:14,301;organized than before,
+739;00:46:14,335;00:46:16,236;more disciplined
+740;00:46:16,270;00:46:18,305;more like us.
+741;00:46:18,339;00:46:20,941;So we need to be
+741;00:46:18,339;00:46:20,941;more like them,
+742;00:46:20,975;00:46:22,876;do things their way.
+743;00:46:22,910;00:46:26,079;Sneak in, kill Mance,
+744;00:46:26,113;00:46:27,714;and scatter them
+744;00:46:26,113;00:46:27,714;to the winds
+745;00:46:27,748;00:46:29,782;before they can march
+745;00:46:27,748;00:46:29,782;on the Wall.
+746;00:46:29,816;00:46:30,663;And to do that...
+747;00:46:30,688;00:46:32,680;We need to get rid
+747;00:46:30,688;00:46:32,680;of those lookouts.
+748;00:46:32,853;00:46:34,654;It's not a job
+748;00:46:32,853;00:46:34,654;for 400 men.
+749;00:46:34,688;00:46:38,391;I need to move fast
+749;00:46:34,688;00:46:38,391;and silent.
+750;00:46:38,425;00:46:42,128;Harker, Stonesnake,
+750;00:46:38,425;00:46:42,128;Borba.
+751;00:46:43,364;00:46:45,565;Lord Commander, I'd like
+751;00:46:43,364;00:46:45,565;to join Lord Qhorin.
+752;00:46:45,599;00:46:48,201;I've been called
+752;00:46:45,599;00:46:48,201;lots of things,
+753;00:46:48,235;00:46:50,123;but that might be
+753;00:46:48,235;00:46:50,123;my first Lord Qhorin.
+754;00:46:50,604;00:46:53,473;You're a steward,
+754;00:46:50,604;00:46:53,473;Snow, not a ranger.
+755;00:46:53,508;00:46:55,742;I've fought
+755;00:46:53,508;00:46:55,742;and killed a Wight.
+756;00:46:55,777;00:46:57,978;How many rangers
+756;00:46:55,777;00:46:57,978;can say that?
+757;00:46:58,013;00:47:00,047;He's the one?
+758;00:47:01,149;00:47:03,550;Aye.
+758;00:47:01,149;00:47:03,550;You killed a Wight.
+759;00:47:03,585;00:47:05,452;You also let an old man
+760;00:47:05,487;00:47:08,322;beat you bloody
+760;00:47:05,487;00:47:08,322;and take your sword.
+761;00:47:08,356;00:47:10,691;Craster?
+762;00:47:10,725;00:47:13,727;In the boy's defense,
+762;00:47:10,725;00:47:13,727;that's a tough old goat.
+763;00:47:16,664;00:47:19,466;I could take up Jon's duties
+763;00:47:16,664;00:47:19,466;while he's gone, My Lord.
+764;00:47:19,500;00:47:22,135;It would be no trouble.
+765;00:47:30,177;00:47:33,580;Well, I hope you make
+765;00:47:30,177;00:47:33,580;a better ranger
+766;00:47:33,614;00:47:35,949;than you do a steward.
+767;00:47:37,652;00:47:39,352;Go on.
+768;00:47:46,528;00:47:48,363;So, tell me,
+769;00:47:48,397;00:47:51,500;how long has your manservant
+769;00:47:48,397;00:47:51,500;been in love with you?
+770;00:47:51,534;00:47:55,237;He's not my manservant
+770;00:47:51,534;00:47:55,237;and he's not in love with me.
+771;00:47:55,271;00:47:57,339;He's my advisor,
+772;00:47:57,374;00:47:59,341;my friend.
+773;00:47:59,376;00:48:00,910;Unlikely.
+774;00:48:00,944;00:48:03,680;I can almost always tell
+774;00:48:00,944;00:48:03,680;what a man wants.
+775;00:48:03,714;00:48:06,049;And what about
+775;00:48:03,714;00:48:06,049;what a woman wants?
+776;00:48:06,083;00:48:08,151;Much more complicated.
+777;00:48:08,186;00:48:10,220;You, for example,
+778;00:48:10,254;00:48:12,823;what do you want?
+779;00:48:12,857;00:48:15,893;To cross the Narrow Sea
+779;00:48:12,857;00:48:15,893;and take back the Iron Throne.
+780;00:48:15,927;00:48:17,461;Why?
+781;00:48:17,496;00:48:19,230;Because I promised
+781;00:48:17,496;00:48:19,230;my Khalasar I'd protect them
+782;00:48:19,264;00:48:21,666;and find them a safe home.
+783;00:48:21,700;00:48:25,304;You want to conquer
+783;00:48:21,700;00:48:25,304;the Seven Kingdoms?
+784;00:48:25,338;00:48:27,006;I want them because
+784;00:48:25,338;00:48:27,006;they're mine by right.
+785;00:48:27,040;00:48:30,109;The Iron Throne is mine
+785;00:48:27,040;00:48:30,109;and I will take it.
+786;00:48:30,144;00:48:31,944;Ah, a conqueror.
+787;00:48:31,979;00:48:34,113;And how did you get
+787;00:48:31,979;00:48:34,113;all of this?
+788;00:48:34,147;00:48:36,182;Did someone give it to you?
+788;00:48:34,147;00:48:36,182;No.
+789;00:48:36,216;00:48:37,716;I come from nothing.
+790;00:48:37,751;00:48:39,918;I hit the docks
+790;00:48:37,751;00:48:39,918;like a piece of cargo,
+791;00:48:39,953;00:48:42,554;except someone normally
+791;00:48:39,953;00:48:42,554;cares what happens to cargo.
+792;00:48:42,556;00:48:45,290;So you wanted more than
+792;00:48:42,556;00:48:45,290;you had and you took it.
+793;00:48:45,324;00:48:49,260;You're a conqueror, too.
+793;00:48:45,324;00:48:49,260;you're just less ambitious.
+794;00:48:50,996;00:48:53,465;Mmm.
+795;00:48:53,499;00:48:56,635;What do you want,
+795;00:48:53,499;00:48:56,635;Xaro Zhoan Daxos?
+796;00:48:56,669;00:48:59,371;At the gates of the city,
+796;00:48:56,669;00:48:59,371;you bled for me.
+797;00:48:59,405;00:49:02,408;Why?
+798;00:49:02,442;00:49:04,777;I will show you why.
+799;00:49:08,135;00:49:11,338;The door and the vault
+799;00:49:08,135;00:49:11,338;is made of Valyrian stone.
+800;00:49:11,519;00:49:15,322;The hardest steel
+800;00:49:11,519;00:49:15,322;does not make a mark.
+801;00:49:15,356;00:49:18,725;I offered the greatest
+801;00:49:15,356;00:49:18,725;locksmiths in Qarth
+802;00:49:18,759;00:49:21,094;their weight in gold
+802;00:49:18,759;00:49:21,094;if they could break into it.
+803;00:49:21,128;00:49:23,696;I made the same offer
+803;00:49:21,128;00:49:23,696;to the greatest thieves.
+804;00:49:23,730;00:49:26,432;They all went home
+804;00:49:23,730;00:49:26,432;empty-handed.
+805;00:49:26,466;00:49:29,735;The only thing that
+805;00:49:26,466;00:49:29,735;can open this door
+806;00:49:29,769;00:49:31,903;is this key.
+807;00:49:31,938;00:49:33,372;And behind the door?
+808;00:49:36,710;00:49:38,878;And it can all be mine?
+809;00:49:38,913;00:49:40,580;All?
+810;00:49:40,615;00:49:44,084;Let us say half.
+811;00:49:44,119;00:49:48,356;More than enough to buy
+811;00:49:44,119;00:49:48,356;horses, ships, armies--
+812;00:49:48,391;00:49:50,492;enough to go home.
+813;00:49:50,526;00:49:53,429;All I have to do?
+814;00:49:53,463;00:49:54,797;Is marry me.
+815;00:49:54,831;00:49:57,933;That was a romantic proposal.
+816;00:49:57,967;00:50:00,302;I've already married
+816;00:49:57,967;00:50:00,302;once for love,
+817;00:50:00,337;00:50:03,072;but the Gods
+817;00:50:00,337;00:50:03,072;stole her from me.
+818;00:50:05,409;00:50:07,310;I come from nothing.
+819;00:50:07,344;00:50:10,212;My mother and father
+819;00:50:07,344;00:50:10,212;never owned a pair of shoes.
+820;00:50:10,246;00:50:13,382;But marry me and I will
+820;00:50:10,246;00:50:13,382;give you the Seven Kingdoms
+821;00:50:13,416;00:50:17,153;and our children will be
+821;00:50:13,416;00:50:17,153;Princes and Princesses.
+822;00:50:19,389;00:50:21,423;See?
+823;00:50:21,457;00:50:24,093;I have more ambition
+823;00:50:21,457;00:50:24,093;than you thought.
+824;00:50:25,562;00:50:27,671;The time is right,
+824;00:50:25,562;00:50:27,671;Daenerys Targaryen,
+825;00:50:27,696;00:50:29,696;first of your name.
+826;00:50:30,067;00:50:32,536;Robert Baratheon
+826;00:50:30,067;00:50:32,536;is dead.
+827;00:50:39,377;00:50:41,712;If you cross the sea
+827;00:50:39,377;00:50:41,712;with an army you bought--
+828;00:50:41,747;00:50:44,015;The Seven Kingdoms are
+828;00:50:41,747;00:50:44,015;at war with one another.
+829;00:50:44,050;00:50:46,451;Four false kings
+829;00:50:44,050;00:50:46,451;destroying the country.
+830;00:50:46,486;00:50:49,788;To win Westeros, you need
+830;00:50:46,486;00:50:49,788;support from Westeros.
+831;00:50:49,823;00:50:51,623;The usurper is dead.
+832;00:50:51,658;00:50:53,325;The Starks fight
+832;00:50:51,658;00:50:53,325;the Lannisters,
+833;00:50:53,359;00:50:55,260;and Baratheons
+833;00:50:53,359;00:50:55,260;fight each other.
+834;00:50:55,294;00:50:56,828;According to
+834;00:50:55,294;00:50:56,828;your new friend
+835;00:50:56,862;00:50:58,596;who earned your trust
+835;00:50:56,862;00:50:58,596;by cutting his hand?
+836;00:50:58,630;00:51:01,499;The time to strike is now. We need
+836;00:50:58,630;00:51:01,499;to find ships and an army
+837;00:51:01,533;00:51:03,423;or we'll spend the rest
+837;00:51:01,533;00:51:03,423;of our lives rotting away
+838;00:51:03,448;00:51:04,469;at the edge of the world.
+839;00:51:04,470;00:51:06,904;Rich men do not become rich
+839;00:51:04,470;00:51:06,904;by giving more than they get.
+840;00:51:06,938;00:51:09,673;They'll give you ships and soldiers
+840;00:51:06,938;00:51:09,673;and they'll own you forever.
+841;00:51:09,708;00:51:13,443;Moving carefully is the hard way,
+841;00:51:09,708;00:51:13,443;but it's the right way.
+842;00:51:13,478;00:51:14,911;And if I'd listened
+842;00:51:13,478;00:51:14,911;to that advice
+843;00:51:14,945;00:51:17,147;outside the gates of Qarth,
+843;00:51:14,945;00:51:17,147;we'd all be dead by now.
+844;00:51:17,181;00:51:20,250;I know the opportunity before you
+844;00:51:17,181;00:51:20,250;seems like the last you'll ever have,
+845;00:51:20,284;00:51:20,991;but you must--
+846;00:51:21,016;00:51:23,016;Do not speak to me
+846;00:51:21,016;00:51:23,016;like I'm a child.
+847;00:51:26,424;00:51:28,792;I only want--
+847;00:51:26,424;00:51:28,792;What do you want?
+848;00:51:28,826;00:51:31,394;Tell me.
+849;00:51:31,429;00:51:32,963;To see you
+849;00:51:31,429;00:51:32,963;on the Iron Throne.
+850;00:51:32,997;00:51:35,732;Why?
+850;00:51:32,997;00:51:35,732;You have a good claim.
+851;00:51:35,766;00:51:38,568;A title.
+851;00:51:35,766;00:51:38,568;A birthright.
+852;00:51:38,602;00:51:41,804;But you have something
+852;00:51:38,602;00:51:41,804;more than that.
+853;00:51:41,838;00:51:46,075;You may cover it up and deny it,
+853;00:51:41,838;00:51:46,075;but you have a gentle heart.
+854;00:51:46,110;00:51:48,611;You would not only
+854;00:51:46,110;00:51:48,611;be respected and feared,
+855;00:51:48,646;00:51:51,147;you would be loved.
+856;00:51:51,181;00:51:53,315;Someone who can rule
+856;00:51:51,181;00:51:53,315;and should rule.
+857;00:51:53,350;00:51:55,439;Centuries come and go
+857;00:51:53,350;00:51:55,439;without a person like that
+858;00:51:55,464;00:51:57,464;coming into the world.
+859;00:51:58,154;00:51:59,721;There are times
+859;00:51:58,154;00:51:59,721;when I look at you
+860;00:51:59,755;00:52:02,623;and still can't
+860;00:51:59,755;00:52:02,623;believe you're real.
+861;00:52:14,602;00:52:17,938;So what would you
+861;00:52:14,602;00:52:17,938;have me do as my advisor?
+862;00:52:23,911;00:52:25,711;Make your own way.
+863;00:52:25,746;00:52:28,547;Find your own ship.
+863;00:52:25,746;00:52:28,547;You only need one.
+864;00:52:28,581;00:52:32,017;The allies we need
+864;00:52:28,581;00:52:32,017;are in Westeros, not Qarth.
+865;00:52:33,253;00:52:35,721;And how do I get
+865;00:52:33,253;00:52:35,721;the ship?
+866;00:52:35,755;00:52:38,257;I'll find it for you.
+867;00:52:38,291;00:52:40,426;A sound ship
+867;00:52:38,291;00:52:40,426;with a good captain.
+868;00:52:46,034;00:52:48,735;I look forward
+868;00:52:46,034;00:52:48,735;to meeting him.
+869;00:52:52,006;00:52:54,140;Khaleesi.
+870;00:53:23,673;00:53:25,809;You should stand
+870;00:53:23,673;00:53:25,809;sideface.
+871;00:53:25,843;00:53:27,978;Sideface?
+872;00:53:28,012;00:53:30,114;Sideways.
+873;00:53:30,148;00:53:32,549;Why?
+873;00:53:30,148;00:53:32,549;Smaller target.
+874;00:53:35,753;00:53:37,721;Am I fighting someone?
+875;00:53:37,755;00:53:40,123;You're practicing
+875;00:53:37,755;00:53:40,123;for a fight.
+876;00:53:41,091;00:53:42,759;You should practice right.
+877;00:53:46,096;00:53:48,031;Guards!
+878;00:53:48,065;00:53:51,067;Help.
+878;00:53:48,065;00:53:51,067;Did you see anything?
+879;00:53:52,903;00:53:56,705;Go up there. Go and see where
+879;00:53:52,903;00:53:56,705;he fell from.
+880;00:54:00,442;00:54:02,410;Go up the back.
+881;00:54:02,444;00:54:04,645;That is strange.
+882;00:54:11,252;00:54:13,252;Move away.
+883;00:54:14,888;00:54:18,358;Stand back.
+883;00:54:14,888;00:54:18,358;He's dead.
+884;00:54:29,527;00:54:33,527;== sync, corrected by <font color=#00ff00>elderman</font> ==
+9999;00:00:0,500;00:00:2,00;<font color=#ffff00 size=14>www.tvsubtitles.net</font>
